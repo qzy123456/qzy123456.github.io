@@ -163,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/kafka%E5%8D%95%E6%9C%BA%E5%AE%89%E8%A3%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -177,7 +177,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2024/09/29/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">Hexo搭建个人博客</a>
+            <a href="/2024/09/29/kafka%E5%8D%95%E6%9C%BA%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">kafka单机安装</a>
         </h2>
 
         <div class="post-meta">
@@ -188,7 +188,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-09-29 15:12:20 / 修改时间：15:15:33" itemprop="dateCreated datePublished" datetime="2024-09-29T15:12:20+08:00">2024-09-29</time>
+              <time title="创建时间：2024-09-29 15:48:27 / 修改时间：15:49:14" itemprop="dateCreated datePublished" datetime="2024-09-29T15:48:27+08:00">2024-09-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -196,7 +196,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                  <a href="/categories/mq/" itemprop="url" rel="index"><span itemprop="name">mq</span></a>
                 </span>
             </span>
 
@@ -211,28 +211,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="新建git项目"><a href="#新建git项目" class="headerlink" title="新建git项目"></a>新建git项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">首先在 GitHub 新建一个仓库（Repository），名称为 https://username&#125;.github.io，注意这个名比较特殊，</span><br><span class="line">必须要是 github.io 为后缀结尾的。比如我的GitHub用户名就叫qzy123456，那我就新建一个qzy123456.github.io，新建完成之后就可以进行后续操作了。</span><br></pre></td></tr></table></figure>
-<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &#123;name&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="安装git推送插件"><a href="#安装git推送插件" class="headerlink" title="安装git推送插件"></a>安装git推送插件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h3 id="安装图片插件"><a href="#安装图片插件" class="headerlink" title="安装图片插件"></a>安装图片插件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-image-link --save</span><br></pre></td></tr></table></figure>
-<h3 id="修改-config-yml中的post-asset-folder-true-这个修改可以同时在source-posts目录下建立一个同名文件夹，用于放图片"><a href="#修改-config-yml中的post-asset-folder-true-这个修改可以同时在source-posts目录下建立一个同名文件夹，用于放图片" class="headerlink" title="修改_config.yml中的post_asset_folder: true 这个修改可以同时在source&#x2F;_posts目录下建立一个同名文件夹，用于放图片"></a>修改_config.yml中的post_asset_folder: true 这个修改可以同时在source&#x2F;_posts目录下建立一个同名文件夹，用于放图片</h3><h3 id="配置站点信息-config-yml-文件，找到-Site-区域"><a href="#配置站点信息-config-yml-文件，找到-Site-区域" class="headerlink" title="配置站点信息_config.yml 文件，找到 Site 区域"></a>配置站点信息_config.yml 文件，找到 Site 区域</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: 齐朝阳的博客</span><br><span class="line">subtitle: 二级title</span><br><span class="line">description: PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</span><br><span class="line">keywords: &quot;PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...&quot;</span><br><span class="line">author: 技术栈</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
-<h3 id="安装主题-在项目根目录"><a href="#安装主题-在项目根目录" class="headerlink" title="安装主题,在项目根目录"></a>安装主题,在项目根目录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<h3 id="修改项目根目录下的-config-yml-文件，找到-theme-字段，修改为-next-即可，修改如下："><a href="#修改项目根目录下的-config-yml-文件，找到-theme-字段，修改为-next-即可，修改如下：" class="headerlink" title="修改项目根目录下的 _config.yml 文件，找到 theme 字段，修改为 next 即可，修改如下："></a>修改项目根目录下的 _config.yml 文件，找到 theme 字段，修改为 next 即可，修改如下：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
-<h3 id="主题配置，注意修改的-themes-next-config-yml-文件"><a href="#主题配置，注意修改的-themes-next-config-yml-文件" class="headerlink" title="主题配置，注意修改的 themes&#x2F;next&#x2F;_config.yml 文件"></a>主题配置，注意修改的 themes&#x2F;next&#x2F;_config.yml 文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
-<h3 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;Page Title&quot;</span><br></pre></td></tr></table></figure>
-<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<h3 id="删除静态文件缓存"><a href="#删除静态文件缓存" class="headerlink" title="删除静态文件缓存"></a>删除静态文件缓存</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
-<h3 id="发布到git-需要配置config"><a href="#发布到git-需要配置config" class="headerlink" title="发布到git,需要配置config"></a>发布到git,需要配置config</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  rero: git@github.com:qzy123456/qzy123456.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
-<h3 id="新建-标签-和分类-页面"><a href="#新建-标签-和分类-页面" class="headerlink" title="新建 标签 和分类 页面"></a>新建 标签 和分类 页面</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在根目录输入命令 hexo new page categories 会自动新建 categorier 文件夹并生成一个index.md文件，将里面的代码改为：</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-01-21 12:12:26</span><br><span class="line">type: &quot;categories&quot; </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="同理，「标签」也一样-hexo-new-page-tags-生成-tags-文件夹，其中会自动生成一个index-md文件，将代码改为："><a href="#同理，「标签」也一样-hexo-new-page-tags-生成-tags-文件夹，其中会自动生成一个index-md文件，将代码改为：" class="headerlink" title="同理，「标签」也一样 hexo new page tags 生成 tags 文件夹，其中会自动生成一个index.md文件，将代码改为："></a>同理，「标签」也一样 hexo new page tags 生成 tags 文件夹，其中会自动生成一个index.md文件，将代码改为：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-01-21 12:13:08</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="配置菜单"><a href="#配置菜单" class="headerlink" title="配置菜单"></a>配置菜单</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">在themes\next下的_config.yml中</span><br><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  #about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br><span class="line"></span><br><span class="line"># Enable / Disable menu icons / item badges.</span><br><span class="line">menu_settings:</span><br><span class="line">  icons: true</span><br></pre></td></tr></table></figure>
-<h3 id="使用时-如果要对文章使用「tags」「categories」，只需在文章开头添加如下代码："><a href="#使用时-如果要对文章使用「tags」「categories」，只需在文章开头添加如下代码：" class="headerlink" title="使用时,如果要对文章使用「tags」「categories」，只需在文章开头添加如下代码："></a>使用时,如果要对文章使用「tags」「categories」，只需在文章开头添加如下代码：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 摸鱼</span><br><span class="line">date: 2020-01-21 12:04:59</span><br><span class="line">tags: 杂项</span><br><span class="line">categories: 技术</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="为了方便，我们可以修改post模板，修改Hexo-scaffolds-post-md"><a href="#为了方便，我们可以修改post模板，修改Hexo-scaffolds-post-md" class="headerlink" title="为了方便，我们可以修改post模板，修改Hexo\scaffolds\post.md"></a>为了方便，我们可以修改post模板，修改Hexo\scaffolds\post.md</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="用base编码处理图片"><a href="#用base编码处理图片" class="headerlink" title="用base编码处理图片"></a>用base编码处理图片</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% asset_img "png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." "Alt text" %}</span><br></pre></td></tr></table></figure>
+          <h3 id="新版本支持kraft，并且在后面会彻底抛弃zookeeper"><a href="#新版本支持kraft，并且在后面会彻底抛弃zookeeper" class="headerlink" title="新版本支持kraft，并且在后面会彻底抛弃zookeeper"></a>新版本支持kraft，并且在后面会彻底抛弃zookeeper</h3><h3 id="二进制包地址-https-downloads-apache-org-kafka"><a href="#二进制包地址-https-downloads-apache-org-kafka" class="headerlink" title="二进制包地址 https://downloads.apache.org/kafka/"></a>二进制包地址 <a target="_blank" rel="noopener" href="https://downloads.apache.org/kafka/">https://downloads.apache.org/kafka/</a></h3><p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/"></p>
+<h3 id="解压之后，编辑config-kraft-server-properties文件，改成自己的ip"><a href="#解压之后，编辑config-kraft-server-properties文件，改成自己的ip" class="headerlink" title="解压之后，编辑config&#x2F;kraft&#x2F;server.properties文件，改成自己的ip"></a>解压之后，编辑config&#x2F;kraft&#x2F;server.properties文件，改成自己的ip</h3><h3 id="在Kafka安装目录的bin文件夹下执行以下命令生成一个新的集群ID，如果只有1个机器也没关系-windows的命令在windows文件夹"><a href="#在Kafka安装目录的bin文件夹下执行以下命令生成一个新的集群ID，如果只有1个机器也没关系-windows的命令在windows文件夹" class="headerlink" title="在Kafka安装目录的bin文件夹下执行以下命令生成一个新的集群ID，如果只有1个机器也没关系,windows的命令在windows文件夹"></a>在Kafka安装目录的bin文件夹下执行以下命令生成一个新的集群ID，如果只有1个机器也没关系,windows的命令在windows文件夹</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kafka-storage.sh random-uuid</span><br><span class="line">或者</span><br><span class="line">kafka-storage.bat random-uuid</span><br></pre></td></tr></table></figure>
+<h3 id="用上一步生成的UUID格式化Kafka的存储目录："><a href="#用上一步生成的UUID格式化Kafka的存储目录：" class="headerlink" title="用上一步生成的UUID格式化Kafka的存储目录："></a>用上一步生成的UUID格式化Kafka的存储目录：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kafka-storage.bat format -t &lt;uuid&gt; -c ..\..\config\kraft\server.properties</span><br><span class="line">或者</span><br><span class="line">kafka-storage.sh  format -t &lt;uuid&gt; -c ../../config/kraft/server.properties</span><br></pre></td></tr></table></figure>
+<h3 id="启动Kafka服务器-这里用的是Kraft的目录下的配置"><a href="#启动Kafka服务器-这里用的是Kraft的目录下的配置" class="headerlink" title="启动Kafka服务器,这里用的是Kraft的目录下的配置"></a>启动Kafka服务器,这里用的是Kraft的目录下的配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kafka-server-start.bat ..\..\config\kraft\server.properties</span><br><span class="line">或者</span><br><span class="line">kafka-server-start.sh ../../config/kraft/server.properties</span><br></pre></td></tr></table></figure>
+<h3 id="docker安装单机版的kafka"><a href="#docker安装单机版的kafka" class="headerlink" title="docker安装单机版的kafka"></a>docker安装单机版的kafka</h3><h3 id="文件夹下有-env和docker-compose-yml两个文件"><a href="#文件夹下有-env和docker-compose-yml两个文件" class="headerlink" title="文件夹下有.env和docker-compose.yml两个文件"></a>文件夹下有.env和docker-compose.yml两个文件</h3><h4 id="env文件内容如下："><a href="#env文件内容如下：" class="headerlink" title=".env文件内容如下："></a>.env文件内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 把下面的 192.168.252.1 改为你的ip地址</span><br><span class="line">ACCESS_ADDR=192.168.252.1:9092</span><br></pre></td></tr></table></figure>
+<h4 id="docker-compose-yml内容如下"><a href="#docker-compose-yml内容如下" class="headerlink" title="docker-compose.yml内容如下"></a>docker-compose.yml内容如下</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3.8&#x27;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  broker:</span><br><span class="line">    image: apache/kafka:3.7.0</span><br><span class="line">    container_name: broker</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;9092:9092&#x27;</span><br><span class="line">    environment:</span><br><span class="line">      kafka_NODE_ID: 1</span><br><span class="line">      kafka_LISTENER_SECURITY_PROTOCOL_MAP: &#x27;CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT&#x27;</span><br><span class="line">      kafka_ADVERTISED_LISTENERS: &#x27;PLAINTEXT_HOST://$&#123;ACCESS_ADDR&#125;,PLAINTEXT://broker:19092&#x27;</span><br><span class="line">      kafka_PROCESS_ROLES: &#x27;broker,controller&#x27;</span><br><span class="line">      kafka_CONTROLLER_QUORUM_VOTERS: &#x27;1@broker:29093&#x27;</span><br><span class="line">      kafka_LISTENERS: &#x27;CONTROLLER://:29093,PLAINTEXT_HOST://:9092,PLAINTEXT://:19092&#x27;</span><br><span class="line">      kafka_INTER_BROKER_LISTENER_NAME: &#x27;PLAINTEXT&#x27;</span><br><span class="line">      kafka_CONTROLLER_LISTENER_NAMES: &#x27;CONTROLLER&#x27;</span><br><span class="line">      CLUSTER_ID: &#x27;4L6g3nShT-eMCtK--X86sw&#x27;</span><br><span class="line">      kafka_OFFSETS_TOPIC_REPLICATION_FACTOR: 1</span><br><span class="line">      kafka_GROUP_INITIAL_REBALANCE_DELAY_MS: 0</span><br><span class="line">      kafka_TRANSACTION_STATE_LOG_MIN_ISR: 1</span><br><span class="line">      kafka_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1</span><br><span class="line">      kafka_LOG_DIRS: &#x27;/var/lib/kafka/data&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">      - $PWD/data/:/var/lib/kafka/data</span><br><span class="line"></span><br><span class="line">  kafka-ui:</span><br><span class="line">    image: provectuslabs/kafka-ui:v0.7.2</span><br><span class="line">    container_name: kafka-ui</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;18080:8080&quot;</span><br><span class="line">    environment:</span><br><span class="line">      kafka_CLUSTERS_0_NAME: &#x27;Local kafka Cluster&#x27;</span><br><span class="line">      kafka_CLUSTERS_0_BOOTSTRAPSERVERS: &#x27;broker:19092&#x27;</span><br><span class="line">      DYNAMIC_CONFIG_ENABLED: &quot;true&quot;</span><br><span class="line">    depends_on:</span><br><span class="line">      - broker</span><br></pre></td></tr></table></figure>
+<h3 id="安装-kafka-集群"><a href="#安装-kafka-集群" class="headerlink" title="安装 kafka 集群"></a>安装 kafka 集群</h3><h4 id="env文件内容如下：-1"><a href="#env文件内容如下：-1" class="headerlink" title=".env文件内容如下："></a>.env文件内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 把下面的 192.168.251.1 改为你的ip地址</span><br><span class="line">kafka_1_ACCESS_ADDR=192.168.251.1:33001</span><br><span class="line">kafka_2_ACCESS_ADDR=192.168.251.1:33002</span><br><span class="line">kafka_3_ACCESS_ADDR=192.168.251.1:33003</span><br></pre></td></tr></table></figure>
+<h4 id="docker-compose-yml内容如下："><a href="#docker-compose-yml内容如下：" class="headerlink" title="docker-compose.yml内容如下："></a>docker-compose.yml内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  kafka-1:</span><br><span class="line">    image: docker.io/bitnami/kafka:3.7</span><br><span class="line">    container_name: kafka-1</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;33001:9092&quot;</span><br><span class="line">    environment:</span><br><span class="line">      # KRaft settings</span><br><span class="line">      - kafka_CFG_NODE_ID=0</span><br><span class="line">      - kafka_CFG_PROCESS_ROLES=controller,broker</span><br><span class="line">      - kafka_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka-1:9093,1@kafka-2:9093,2@kafka-3:9093</span><br><span class="line">      - kafka_KRAFT_CLUSTER_ID=abcdefghijklmnopqrstuv</span><br><span class="line">      # Listeners</span><br><span class="line">      - kafka_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093</span><br><span class="line">      #- kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092</span><br><span class="line">      - kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://$&#123;kafka_1_ACCESS_ADDR&#125;</span><br><span class="line">      - kafka_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT</span><br><span class="line">      - kafka_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER</span><br><span class="line">      - kafka_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT</span><br><span class="line">      # Clustering</span><br><span class="line">      - kafka_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2</span><br><span class="line">    volumes:</span><br><span class="line">      - $PWD/data/kafka-1:/bitnami/kafka</span><br><span class="line">    networks:</span><br><span class="line">      - kafka-net</span><br><span class="line"></span><br><span class="line">  kafka-2:</span><br><span class="line">    image: docker.io/bitnami/kafka:3.7</span><br><span class="line">    container_name: kafka-2</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;33002:9092&quot;</span><br><span class="line">    environment:</span><br><span class="line">      # KRaft settings</span><br><span class="line">      - kafka_CFG_NODE_ID=1</span><br><span class="line">      - kafka_CFG_PROCESS_ROLES=controller,broker</span><br><span class="line">      - kafka_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka-1:9093,1@kafka-2:9093,2@kafka-3:9093</span><br><span class="line">      - kafka_KRAFT_CLUSTER_ID=abcdefghijklmnopqrstuv</span><br><span class="line">      # Listeners</span><br><span class="line">      - kafka_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093</span><br><span class="line">      #- kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092</span><br><span class="line">      - kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://$&#123;kafka_2_ACCESS_ADDR&#125;</span><br><span class="line">      - kafka_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT</span><br><span class="line">      - kafka_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER</span><br><span class="line">      - kafka_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT</span><br><span class="line">      # Clustering</span><br><span class="line">      - kafka_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2</span><br><span class="line">    volumes:</span><br><span class="line">      - $PWD/data/kafka-2:/bitnami/kafka</span><br><span class="line">    networks:</span><br><span class="line">      - kafka-net</span><br><span class="line"></span><br><span class="line">  kafka-3:</span><br><span class="line">    image: docker.io/bitnami/kafka:3.7</span><br><span class="line">    container_name: kafka-3</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;33003:9092&quot;</span><br><span class="line">    environment:</span><br><span class="line">      # KRaft settings</span><br><span class="line">      - kafka_CFG_NODE_ID=2</span><br><span class="line">      - kafka_CFG_PROCESS_ROLES=controller,broker</span><br><span class="line">      - kafka_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka-1:9093,1@kafka-2:9093,2@kafka-3:9093</span><br><span class="line">      - kafka_KRAFT_CLUSTER_ID=abcdefghijklmnopqrstuv</span><br><span class="line">      # Listeners</span><br><span class="line">      - kafka_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093</span><br><span class="line">      #- kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092</span><br><span class="line">      - kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://$&#123;kafka_3_ACCESS_ADDR&#125;</span><br><span class="line">      - kafka_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT</span><br><span class="line">      - kafka_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER</span><br><span class="line">      - kafka_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT</span><br><span class="line">      # Clustering</span><br><span class="line">      - kafka_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2</span><br><span class="line">    volumes:</span><br><span class="line">      - $PWD/data/kafka-3:/bitnami/kafka</span><br><span class="line">    networks:</span><br><span class="line">      - kafka-net</span><br><span class="line"></span><br><span class="line">  kafka-ui:</span><br><span class="line">    image: provectuslabs/kafka-ui:v0.7.2</span><br><span class="line">    restart: always</span><br><span class="line">    container_name: kafka-ui</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;18080:8080&quot;</span><br><span class="line">    environment:</span><br><span class="line">      - kafka_CLUSTERS_0_NAME=Local-Kraft-Cluster</span><br><span class="line">      - kafka_CLUSTERS_0_BOOTSTRAPSERVERS=kafka-1:9092,kafka-2:9092,kafka-3:9092</span><br><span class="line">      - DYNAMIC_CONFIG_ENABLED=true</span><br><span class="line">      - kafka_CLUSTERS_0_AUDIT_TOPICAUDITENABLED=true</span><br><span class="line">      - kafka_CLUSTERS_0_AUDIT_CONSOLEAUDITENABLED=true</span><br><span class="line">    depends_on:</span><br><span class="line">      - kafka-1</span><br><span class="line">      - kafka-2</span><br><span class="line">      - kafka-3</span><br><span class="line">    networks:</span><br><span class="line">      - kafka-net</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  kafka-net:</span><br></pre></td></tr></table></figure>
+<h4 id="第一次使用时，创建一个data文件夹作为数据持久化，并且修改目录data权限："><a href="#第一次使用时，创建一个data文件夹作为数据持久化，并且修改目录data权限：" class="headerlink" title="第一次使用时，创建一个data文件夹作为数据持久化，并且修改目录data权限："></a>第一次使用时，创建一个data文件夹作为数据持久化，并且修改目录data权限：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir data/kafka-1 data/kafka-2 data/kafka-3</span><br><span class="line">chmod -R 0777 data</span><br></pre></td></tr></table></figure>
+<h4 id="docker-compose-up-d-启动服务成功后，可以在浏览器打开-http-localhost-18080-查看kafka信息。"><a href="#docker-compose-up-d-启动服务成功后，可以在浏览器打开-http-localhost-18080-查看kafka信息。" class="headerlink" title="docker-compose up -d ,启动服务成功后，可以在浏览器打开 http://localhost:18080 查看kafka信息。"></a>docker-compose up -d ,启动服务成功后，可以在浏览器打开 <a target="_blank" rel="noopener" href="http://localhost:18080/">http://localhost:18080</a> 查看kafka信息。</h4>
       
     </div>
 
@@ -251,7 +239,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/filebeat%E5%92%8Clogstash%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/kafka%E7%94%9F%E4%BA%A7%E8%80%85%E3%80%81%E6%B6%88%E8%B4%B9%E8%80%85-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%A8%A1%E6%8B%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -265,7 +253,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2024/09/29/filebeat%E5%92%8Clogstash%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">filebeat和logstash的简单配置</a>
+            <a href="/2024/09/29/kafka%E7%94%9F%E4%BA%A7%E8%80%85%E3%80%81%E6%B6%88%E8%B4%B9%E8%80%85-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%A8%A1%E6%8B%9F/" class="post-title-link" itemprop="url">kafka生产者、消费者-命令行模式模拟</a>
         </h2>
 
         <div class="post-meta">
@@ -276,7 +264,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-09-29 10:49:18 / 修改时间：13:52:50" itemprop="dateCreated datePublished" datetime="2024-09-29T10:49:18+08:00">2024-09-29</time>
+              <time title="创建时间：2024-09-29 15:47:05 / 修改时间：15:47:25" itemprop="dateCreated datePublished" datetime="2024-09-29T15:47:05+08:00">2024-09-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,7 +272,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/es/" itemprop="url" rel="index"><span itemprop="name">es</span></a>
+                  <a href="/categories/mq/" itemprop="url" rel="index"><span itemprop="name">mq</span></a>
                 </span>
             </span>
 
@@ -299,10 +287,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="x20-filebeat基本配置"><a href="#x20-filebeat基本配置" class="headerlink" title="&#x20;filebeat基本配置"></a>&#x20;filebeat基本配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># 输入</span><br><span class="line">filebeat.<span class="property">inputs</span>:</span><br><span class="line">- <span class="attr">type</span>: log</span><br><span class="line">  <span class="attr">enabled</span>: <span class="literal">true</span></span><br><span class="line">  <span class="attr">paths</span>:</span><br><span class="line">    - <span class="attr">Z</span>:\webman\runtime\logs\ad-*.<span class="property">log</span></span><br><span class="line">  #json.<span class="property">keys_under_root</span>: <span class="literal">true</span></span><br><span class="line">  #json.<span class="property">overwrite_keys</span>: <span class="literal">true</span></span><br><span class="line">  #json.<span class="property">add_error_key</span>: <span class="literal">true</span>  </span><br><span class="line">  <span class="attr">fields_under_root</span>: <span class="literal">true</span></span><br><span class="line">  #这种配置既可以解析json，又支持原日志</span><br><span class="line">  <span class="attr">processors</span>:</span><br><span class="line">    - <span class="attr">decode_json_fields</span>:</span><br><span class="line">        <span class="attr">fields</span>: [<span class="string">&#x27;message&#x27;</span>]</span><br><span class="line">        <span class="attr">target</span>: <span class="string">&quot;&quot;</span> </span><br><span class="line">        <span class="attr">overwrite_keys</span>: <span class="literal">false</span> </span><br><span class="line">        <span class="attr">process_array</span>: <span class="literal">false</span> </span><br><span class="line">        <span class="attr">max_depth</span>: <span class="number">1</span></span><br><span class="line">    #过滤系统自带的字段,有几个内置的<span class="number">8.9</span>删不掉，低版本貌似可以.或者用logstash删除</span><br><span class="line">    - <span class="attr">drop_fields</span>:</span><br><span class="line">        <span class="attr">fields</span>: [<span class="string">&quot;log&quot;</span>,<span class="string">&quot;host&quot;</span>,<span class="string">&quot;input&quot;</span>,<span class="string">&quot;agent&quot;</span>,<span class="string">&quot;ecs&quot;</span>,<span class="string">&quot;host&quot;</span>]</span><br><span class="line">    #把日志的时间当成es的时间</span><br><span class="line">    - <span class="attr">date</span>:</span><br><span class="line">        <span class="attr">field</span>: log.<span class="property">time</span> # 日志里的时间字段，</span><br><span class="line">        <span class="attr">formats</span>:</span><br><span class="line">          - <span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span> #时间字段的格式</span><br><span class="line">        <span class="attr">timezone</span>: <span class="title class_">Asia</span>/<span class="title class_">Shanghai</span></span><br><span class="line">        <span class="attr">target_field</span>: <span class="string">&quot;@timestamp&quot;</span> #要替换的字段，或者可以新增</span><br><span class="line"></span><br><span class="line"># 指定索引的分区数</span><br><span class="line">setup.<span class="property">template</span>.<span class="property">settings</span>:</span><br><span class="line">  index.<span class="property">number_of_shards</span>: <span class="number">3</span></span><br><span class="line"># 输出到指定<span class="variable constant_">ES</span>的配置</span><br><span class="line">output.<span class="property">elasticsearch</span>:</span><br><span class="line">  <span class="attr">hosts</span>: [<span class="string">&quot;localhost:9200&quot;</span>]</span><br><span class="line">  <span class="attr">index</span>: <span class="string">&quot;emps-ad-log-%&#123;+yyyy.MM.dd&#125;&quot;</span></span><br><span class="line">setup.<span class="property">template</span>.<span class="property">name</span>: <span class="string">&quot;emps-ad-log&quot;</span></span><br><span class="line">setup.<span class="property">template</span>.<span class="property">pattern</span>: <span class="string">&quot;emps-ad-log-*&quot;</span>  </span><br></pre></td></tr></table></figure>
-
-<h3 id="logstash的简单配置"><a href="#logstash的简单配置" class="headerlink" title="logstash的简单配置"></a>logstash的简单配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line"> file &#123;</span><br><span class="line">    path =&gt; [ &quot;/home/ubuntu/php/webman/runtime/logs/ad-*.log&quot; ]</span><br><span class="line">   #从头开始读，sincedb_path 文件存在时，会从记录的开始读</span><br><span class="line">   start_position =&gt; &quot;beginning&quot;</span><br><span class="line">   #不记录读取文件的位置，测试时候用</span><br><span class="line">   sincedb_path =&gt; &quot;/dev/null&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">filter &#123;</span><br><span class="line">  json &#123;</span><br><span class="line">    source =&gt; &quot;message&quot;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  mutate &#123;</span><br><span class="line">    remove_field =&gt; [&quot;event&quot;,&#x27;file&#x27;,&#x27;log&#x27;, &quot;path&quot;, &quot;host&quot;, &quot;@version&quot;]</span><br><span class="line">  &#125;</span><br><span class="line">  #把日志时间作为es的时间</span><br><span class="line">  date &#123;</span><br><span class="line">     match =&gt;[&quot;time&quot;,&quot;yyyy-MM-dd HH:mm:ss&quot;] #把日志的time解析成对应的格式</span><br><span class="line">	 timezone =&gt; &quot;Asia/Shanghai&quot;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">output &#123;</span><br><span class="line">  #stdout &#123;</span><br><span class="line">  #  codec =&gt; rubydebug</span><br><span class="line">  #&#125;</span><br><span class="line">  elasticsearch &#123;</span><br><span class="line">    hosts =&gt; [&quot;localhost:9200&quot;]  # Elasticsearch 服务器的地址和端口</span><br><span class="line">    index =&gt; &quot;your_custom_index&quot;  # 自定义索引名称，替换为你想要的索引名</span><br><span class="line"> 	template_name =&gt; &quot;your_custom_template&quot;</span><br><span class="line">    #template_overwrite =&gt; true</span><br><span class="line">    template_pattern =&gt; &quot;your_pattern*&quot;  # 指定匹配索引名称的模式</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p><img src="/2024/09/29/filebeat%E5%92%8Clogstash%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/3302358-20231108173702655-1012356458.png"></p>
+          <h3 id="win环境下，如果是linux，切换目录，用sh脚本就行"><a href="#win环境下，如果是linux，切换目录，用sh脚本就行" class="headerlink" title="win环境下，如果是linux，切换目录，用sh脚本就行"></a>win环境下，如果是linux，切换目录，用sh脚本就行</h3><h3 id="kafka安装在上一篇"><a href="#kafka安装在上一篇" class="headerlink" title="kafka安装在上一篇"></a>kafka安装在上一篇</h3><h3 id="Kraft启动kafka"><a href="#Kraft启动kafka" class="headerlink" title="Kraft启动kafka"></a>Kraft启动kafka</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-server-start.bat ..\..\config\kraft\server.properties</span><br></pre></td></tr></table></figure>
+<h3 id="生产者，启动之后，命令行输入要生产的消息"><a href="#生产者，启动之后，命令行输入要生产的消息" class="headerlink" title="生产者，启动之后，命令行输入要生产的消息"></a>生产者，启动之后，命令行输入要生产的消息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-console-producer.bat --topic test-topic --bootstrap-server 192.168.252.1:9092</span><br></pre></td></tr></table></figure>
+<h3 id="kafka的消费者是分组的，也就是相同的group认为是一组，同一组下，多个消费者，只能有一个消费者能消费到消息。"><a href="#kafka的消费者是分组的，也就是相同的group认为是一组，同一组下，多个消费者，只能有一个消费者能消费到消息。" class="headerlink" title="kafka的消费者是分组的，也就是相同的group认为是一组，同一组下，多个消费者，只能有一个消费者能消费到消息。"></a>kafka的消费者是分组的，也就是相同的group认为是一组，同一组下，多个消费者，只能有一个消费者能消费到消息。</h3><h3 id="想要做成发布订阅模式，就做成group名字不一样"><a href="#想要做成发布订阅模式，就做成group名字不一样" class="headerlink" title="想要做成发布订阅模式，就做成group名字不一样"></a>想要做成发布订阅模式，就做成group名字不一样</h3><h3 id="消费者1"><a href="#消费者1" class="headerlink" title="消费者1"></a>消费者1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-console-consumer.bat --topic test-topic --bootstrap-server 192.168.252.1:9092 --group group1</span><br></pre></td></tr></table></figure>
+<h3 id="消费者2"><a href="#消费者2" class="headerlink" title="消费者2"></a>消费者2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-console-consumer.bat --topic test-topic --bootstrap-server 192.168.252.1:9092 --group group2</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -322,7 +310,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/%E5%88%9D%E8%AF%86actix/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -336,7 +324,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/" class="post-title-link" itemprop="url">docker安装es+kibana</a>
+            <a href="/2024/09/29/%E5%88%9D%E8%AF%86actix/" class="post-title-link" itemprop="url">初识actix</a>
         </h2>
 
         <div class="post-meta">
@@ -347,7 +335,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-09-29 10:41:05 / 修改时间：13:52:35" itemprop="dateCreated datePublished" datetime="2024-09-29T10:41:05+08:00">2024-09-29</time>
+              <time title="创建时间：2024-09-29 15:45:24 / 修改时间：15:45:49" itemprop="dateCreated datePublished" datetime="2024-09-29T15:45:24+08:00">2024-09-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -355,7 +343,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/es/" itemprop="url" rel="index"><span itemprop="name">es</span></a>
+                  <a href="/categories/rust/" itemprop="url" rel="index"><span itemprop="name">rust</span></a>
                 </span>
             </span>
 
@@ -370,11 +358,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="es，可以选择自己想要的版本"><a href="#es，可以选择自己想要的版本" class="headerlink" title="es，可以选择自己想要的版本"></a>es，可以选择自己想要的版本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; -e ES_JAVA_OPTS=&quot;-Xms512m -Xmx512m&quot; -d elasticsearch:7.16.2</span><br></pre></td></tr></table></figure>
-<h3 id="kibana"><a href="#kibana" class="headerlink" title="kibana"></a>kibana</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run --name kibana -e ELASTICSEARCH_HOSTS=http://192.168.252.128:9200 -p 5601:5601 -d kibana:7.16.2</span><br><span class="line">或者</span><br><span class="line">docker run -d --name kibana -p 5601:5601 \</span><br><span class="line">-e ELASTICSEARCH_HOSTS=http://192.168.252.128:9200 \ #Es Url</span><br><span class="line">-e ELASTICSEARCH_USERNAME=root \  #Es 账号，Es不开启认证可不设置</span><br><span class="line">-e ELASTICSEARCH_PASSWORD=123456  \ #Es 密码 ，Es不开启认证可不设置</span><br><span class="line">-e I18N_LOCALE=zh-CN \ #汉化</span><br><span class="line">kibana:7.16.2</span><br></pre></td></tr></table></figure>
-<h3 id="修改kibana的配置"><a href="#修改kibana的配置" class="headerlink" title="修改kibana的配置"></a>修改kibana的配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it kibana  /bin/sh</span><br></pre></td></tr></table></figure>
-<h3 id="修改kibana-yml，然后保存退出：-wq"><a href="#修改kibana-yml，然后保存退出：-wq" class="headerlink" title="修改kibana.yml，然后保存退出：:wq"></a>修改kibana.yml，然后保存退出：:wq</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server.name: kibana</span><br><span class="line">server.host: &quot;0&quot;</span><br><span class="line">#注意这里的ip不能是localhost，是本地的ip地址</span><br><span class="line">elasticsearch.hosts: [ &quot;http://192.168.252.128:9200&quot; ]  </span><br><span class="line">xpack.monitoring.ui.container.elasticsearch.enabled: true</span><br><span class="line">#设置kibana中文显示</span><br><span class="line">i18n.locale: zh-CN</span><br></pre></td></tr></table></figure>
-<h3 id="访问-http-192-168-1-1-5601-和-http-192-168-1-1-9200"><a href="#访问-http-192-168-1-1-5601-和-http-192-168-1-1-9200" class="headerlink" title="访问 http://192.168.1.1:5601 和 http://192.168.1.1:9200"></a>访问 <a target="_blank" rel="noopener" href="http://192.168.1.1:5601/">http://192.168.1.1:5601</a> 和 <a target="_blank" rel="noopener" href="http://192.168.1.1:9200/">http://192.168.1.1:9200</a></h3>
+          <h3 id="新建cargo项目"><a href="#新建cargo项目" class="headerlink" title="新建cargo项目"></a>新建cargo项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo new rust-web</span><br></pre></td></tr></table></figure>
+<h3 id="编辑Cargo-toml"><a href="#编辑Cargo-toml" class="headerlink" title="编辑Cargo.toml"></a>编辑Cargo.toml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[dependencies]</span><br><span class="line">actix-web = &quot;4&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="编写main-rs"><a href="#编写main-rs" class="headerlink" title="编写main.rs"></a>编写main.rs</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">use actix_web::&#123;get,web, App, HttpServer, Responder,HttpResponse&#125;;</span><br><span class="line"></span><br><span class="line">#[actix_web::main]</span><br><span class="line">async fn main() -&gt; std::io::Result&lt;()&gt; &#123;</span><br><span class="line">    HttpServer::new(|| &#123;</span><br><span class="line">        App::new()</span><br><span class="line">        .service(hello) //如果定义了get，post，直接用service</span><br><span class="line">        .route(&quot;/index&quot;, web::get().to(indexs)) //如果没有定义，需要用route方法</span><br><span class="line">    &#125;)</span><br><span class="line">    .workers(8) // 设置工作线程数量</span><br><span class="line">    .bind((&quot;127.0.0.1&quot;, 8080))?</span><br><span class="line">    .run()</span><br><span class="line">    .await</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async fn indexs() -&gt; impl Responder &#123;</span><br><span class="line">    HttpResponse::Ok().body(&quot;index&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#[get(&quot;/&quot;)]</span><br><span class="line">async fn hello() -&gt; impl Responder &#123;</span><br><span class="line">    HttpResponse::Ok().body(&quot;Hello world!&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cargo run</span><br><span class="line">或者</span><br><span class="line">cargo build</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -393,7 +381,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/%E5%AE%89%E8%A3%85clickhouse-%E5%BB%BA%E8%A1%A8-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Rust%E7%BC%96%E5%86%99wasm%E5%85%A5%E9%97%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -407,7 +395,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2024/09/29/%E5%AE%89%E8%A3%85clickhouse-%E5%BB%BA%E8%A1%A8-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" class="post-title-link" itemprop="url">安装clickhouse+建表+增删改查</a>
+            <a href="/2024/09/29/Rust%E7%BC%96%E5%86%99wasm%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">Rust编写wasm入门</a>
         </h2>
 
         <div class="post-meta">
@@ -418,7 +406,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-09-29 10:36:36 / 修改时间：13:53:15" itemprop="dateCreated datePublished" datetime="2024-09-29T10:36:36+08:00">2024-09-29</time>
+              <time title="创建时间：2024-09-29 15:42:39 / 修改时间：15:44:28" itemprop="dateCreated datePublished" datetime="2024-09-29T15:42:39+08:00">2024-09-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -426,7 +414,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/es/" itemprop="url" rel="index"><span itemprop="name">es</span></a>
+                  <a href="/categories/rust/" itemprop="url" rel="index"><span itemprop="name">rust</span></a>
                 </span>
             </span>
 
@@ -441,24 +429,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name clickhouse-server --ulimit nofile=262144:262144 --volume=$HOME/clickhouse:/var/lib/clickhouse -p 8123:8123 -p 9000:9000 -p 9004:9004 clickhouse/clickhouse-server</span><br></pre></td></tr></table></figure>
-<h3 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 8919F6BD2B48D754</span><br></pre></td></tr></table></figure>
-<h4 id="向-etc-apt-sources-list-d-目录添加-ClickHouse-存储库："><a href="#向-etc-apt-sources-list-d-目录添加-ClickHouse-存储库：" class="headerlink" title="向 &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F; 目录添加 ClickHouse 存储库："></a>向 &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F; 目录添加 ClickHouse 存储库：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;deb https://packages.clickhouse.com/deb stable main&quot; | sudo tee /etc/apt/sources.list.d/clickhouse.list</span><br></pre></td></tr></table></figure>
-<h4 id="更新-apt-包索引："><a href="#更新-apt-包索引：" class="headerlink" title="更新 apt 包索引："></a>更新 apt 包索引：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
-<h4 id="安装-ClickHouse-服务器和客户端："><a href="#安装-ClickHouse-服务器和客户端：" class="headerlink" title="安装 ClickHouse 服务器和客户端："></a>安装 ClickHouse 服务器和客户端：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y clickhouse-server clickhouse-client</span><br></pre></td></tr></table></figure>
-<h4 id="启动-ClickHouse-服务："><a href="#启动-ClickHouse-服务：" class="headerlink" title="启动 ClickHouse 服务："></a>启动 ClickHouse 服务：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service clickhouse-server start</span><br></pre></td></tr></table></figure>
-<h4 id="连接到-ClickHouse-服务器："><a href="#连接到-ClickHouse-服务器：" class="headerlink" title="连接到 ClickHouse 服务器："></a>连接到 ClickHouse 服务器：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clickhouse-client</span><br></pre></td></tr></table></figure>
-<h3 id="apt安装的中间会让你输入密码。下面是如何修改密码"><a href="#apt安装的中间会让你输入密码。下面是如何修改密码" class="headerlink" title="apt安装的中间会让你输入密码。下面是如何修改密码"></a>apt安装的中间会让你输入密码。下面是如何修改密码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -n 密码 | openssl dgst -sha256</span><br></pre></td></tr></table></figure>
-<h3 id="修改对应的xml文件，apt的在-etc-clickhouse-server-users-d-。docker的在刚才的-HOME-clickhouse"><a href="#修改对应的xml文件，apt的在-etc-clickhouse-server-users-d-。docker的在刚才的-HOME-clickhouse" class="headerlink" title="修改对应的xml文件，apt的在&#x2F;etc&#x2F;clickhouse-server&#x2F;users.d&#x2F;。docker的在刚才的$HOME&#x2F;clickhouse"></a>修改对应的xml文件，apt的在&#x2F;etc&#x2F;clickhouse-server&#x2F;users.d&#x2F;。docker的在刚才的$HOME&#x2F;clickhouse</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;clickhouse&gt;</span><br><span class="line">    &lt;users&gt;</span><br><span class="line">        &lt;default&gt;</span><br><span class="line">            &lt;password remove=&#x27;1&#x27; /&gt;</span><br><span class="line">            #### 修改这个</span><br><span class="line">            &lt;password_sha256_hex&gt;86250f09bcf44ec7efb5864e12201a8e63f04e9d377f6a66470e2604325523c7&lt;/password_sha256_hex&gt;</span><br><span class="line">        &lt;/default&gt;</span><br><span class="line">    &lt;/users&gt;</span><br><span class="line">&lt;/clickhouse&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="使用默认账号，登陆。PS：docker需要进入到容器内-docker-exec-it"><a href="#使用默认账号，登陆。PS：docker需要进入到容器内-docker-exec-it" class="headerlink" title="使用默认账号，登陆。PS：docker需要进入到容器内 docker exec -it"></a>使用默认账号，登陆。PS：docker需要进入到容器内 docker exec -it</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clickhouse-client </span><br><span class="line">#输入密码</span><br></pre></td></tr></table></figure>
-<h3 id="剩下的基本跟mysql一样了"><a href="#剩下的基本跟mysql一样了" class="headerlink" title="剩下的基本跟mysql一样了"></a>剩下的基本跟mysql一样了</h3><h3 id="建库"><a href="#建库" class="headerlink" title="建库"></a>建库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE IF NOT EXISTS my_database;</span><br></pre></td></tr></table></figure>
-<h3 id="显示所有库-show-database；"><a href="#显示所有库-show-database；" class="headerlink" title="显示所有库 show database；"></a>显示所有库 show database；</h3><p><img src="/2024/09/29/%E5%AE%89%E8%A3%85clickhouse-%E5%BB%BA%E8%A1%A8-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/3302358-20240919095852116-1495472751.png"></p>
-<h3 id="使用某个库-use-my-database；"><a href="#使用某个库-use-my-database；" class="headerlink" title="使用某个库 use my_database；"></a>使用某个库 use my_database；</h3><h3 id="建表略有不同，引擎常用的是MergeTree-ORDER-BY是定义主键"><a href="#建表略有不同，引擎常用的是MergeTree-ORDER-BY是定义主键" class="headerlink" title="建表略有不同，引擎常用的是MergeTree,ORDER BY是定义主键"></a>建表略有不同，引擎常用的是MergeTree,ORDER BY是定义主键</h3><h3 id="注意，不支持主键自增，需要自己维护主键，或者使用uuid。例如-id-UUID-DEFAULT-generateUUIDv4"><a href="#注意，不支持主键自增，需要自己维护主键，或者使用uuid。例如-id-UUID-DEFAULT-generateUUIDv4" class="headerlink" title="注意，不支持主键自增，需要自己维护主键，或者使用uuid。例如 id UUID DEFAULT generateUUIDv4(),"></a>注意，不支持主键自增，需要自己维护主键，或者使用uuid。例如 <code>id</code> UUID DEFAULT generateUUIDv4(),</h3><h4 id="partition-by-id-分区，可选"><a href="#partition-by-id-分区，可选" class="headerlink" title="partition by (id) 分区，可选"></a>partition by (id) 分区，可选</h4><h4 id="PRIMARY-KEY-id-主键，可选"><a href="#PRIMARY-KEY-id-主键，可选" class="headerlink" title="PRIMARY KEY (id) 主键，可选"></a>PRIMARY KEY (id) 主键，可选</h4><h4 id="ORDER-BY-必选"><a href="#ORDER-BY-必选" class="headerlink" title="ORDER BY 必选"></a>ORDER BY 必选</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE my_database.my_table</span><br><span class="line">(</span><br><span class="line">    `id` UInt32,</span><br><span class="line">    `name` String,</span><br><span class="line">    `timestamp` DateTime,</span><br><span class="line">    `value` Float32</span><br><span class="line">)</span><br><span class="line">ENGINE = MergeTree()</span><br><span class="line">partition by (id)</span><br><span class="line">PRIMARY KEY (id)</span><br><span class="line">ORDER BY id;</span><br></pre></td></tr></table></figure>
-<h3 id="插入数据，插入多行数据"><a href="#插入数据，插入多行数据" class="headerlink" title="插入数据，插入多行数据"></a>插入数据，插入多行数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO my_database.my_table (id, name, timestamp, value) VALUES (1, &#x27;John Doe&#x27;, &#x27;2021-01-01 00:00:00&#x27;, 1.0);</span><br><span class="line">INSERT INTO my_database.my_table (id, name, timestamp, value) VALUES (2, &#x27;Jane Doe&#x27;, &#x27;2021-01-02 00:00:00&#x27;, 2.0), (3, &#x27;Mike Smith&#x27;, &#x27;2021-01-03 00:00:00&#x27;, 3.0);</span><br></pre></td></tr></table></figure>
-<h3 id="查询数据-查询特定列-条件查询-范围查询-排序查询结果-限制查询结果数量"><a href="#查询数据-查询特定列-条件查询-范围查询-排序查询结果-限制查询结果数量" class="headerlink" title="查询数据,查询特定列,条件查询,范围查询,排序查询结果,限制查询结果数量"></a>查询数据,查询特定列,条件查询,范围查询,排序查询结果,限制查询结果数量</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM my_database.my_table;</span><br><span class="line">SELECT name, value FROM my_database.my_table;</span><br><span class="line">SELECT * FROM my_database.my_table WHERE id = 1;</span><br><span class="line">SELECT * FROM my_database.my_table WHERE timestamp &gt;= &#x27;2021-01-01 00:00:00&#x27; AND timestamp &lt;= &#x27;2021-01-31 23:59:59&#x27;;</span><br><span class="line">SELECT * FROM my_database.my_table ORDER BY timestamp DESC;</span><br><span class="line">SELECT * FROM my_database.my_table LIMIT 10;</span><br></pre></td></tr></table></figure>
-<h3 id="更新数据-ClickHouse-支持-ALTER-TABLE-来修改表结构，例如添加或删除列，但不支持传统意义上的-UPDATE-语句来修改现有数据。需要使用-ALTER-TABLE。"><a href="#更新数据-ClickHouse-支持-ALTER-TABLE-来修改表结构，例如添加或删除列，但不支持传统意义上的-UPDATE-语句来修改现有数据。需要使用-ALTER-TABLE。" class="headerlink" title="更新数据,ClickHouse 支持 ALTER TABLE 来修改表结构，例如添加或删除列，但不支持传统意义上的 UPDATE 语句来修改现有数据。需要使用 ALTER TABLE。"></a>更新数据,ClickHouse 支持 ALTER TABLE 来修改表结构，例如添加或删除列，但不支持传统意义上的 UPDATE 语句来修改现有数据。需要使用 ALTER TABLE。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE my_database.my_table UPDATE name = &#x27;new_value&#x27; WHERE id = 2;</span><br></pre></td></tr></table></figure>
-<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM my_database.my_table WHERE id = 1</span><br><span class="line">或</span><br><span class="line">ALTER TABLE my_database.my_table DELETE WHERE id = 1;</span><br></pre></td></tr></table></figure>
-<h3 id="使用python操作"><a href="#使用python操作" class="headerlink" title="使用python操作"></a>使用python操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">from clickhouse_driver import Client</span><br><span class="line"> </span><br><span class="line"># 连接到ClickHouse服务器</span><br><span class="line">client = Client(host=&#x27;127.0.0.1&#x27;, user=&#x27;default&#x27;, password=&#x27;123456&#x27;)</span><br><span class="line"> </span><br><span class="line"># 创建数据库</span><br><span class="line">#client.execute(&#x27;CREATE DATABASE IF NOT EXISTS test_db&#x27;)</span><br><span class="line"> </span><br><span class="line"># 使用特定数据库</span><br><span class="line">client.execute(&#x27;USE my_database&#x27;)</span><br><span class="line"> </span><br><span class="line"># 创建表</span><br><span class="line">#client.execute(&quot;CREATE TABLE my_table(`id` UInt32,`name` String,`timestamp` DateTime,`value` Float32)ENGINE = MergeTree() ORDER BY id;&quot;)</span><br><span class="line"> </span><br><span class="line"># 插入数据</span><br><span class="line">#client.execute(&quot;INSERT INTO my_database.my_table (id, name, timestamp, value) VALUES (2, &#x27;Jane Doe&#x27;, &#x27;2021-01-02 00:00:00&#x27;, 2.0), (3, &#x27;Mike Smith&#x27;, &#x27;2021-01-03 00:00:00&#x27;, 3.0);&quot;)</span><br><span class="line"> </span><br><span class="line"># 查询数据</span><br><span class="line">result = client.execute(&#x27;SELECT * FROM my_table&#x27;)</span><br><span class="line">for row in result:</span><br><span class="line">    print(row)</span><br><span class="line"> </span><br><span class="line"># 关闭客户端连接</span><br><span class="line">client.disconnect()</span><br></pre></td></tr></table></figure>
+          <h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo new --lib my-wasm</span><br></pre></td></tr></table></figure>
+<h3 id="添加依赖Cargo-toml"><a href="#添加依赖Cargo-toml" class="headerlink" title="添加依赖Cargo.toml"></a>添加依赖Cargo.toml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[dependencies]</span><br><span class="line">wasm-bindgen = &quot;0.2&quot;</span><br><span class="line"></span><br><span class="line">[lib]</span><br><span class="line">crate-type = [&quot;cdylib&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="编写代码-src-lib-rs"><a href="#编写代码-src-lib-rs" class="headerlink" title="编写代码 src&#x2F;lib.rs"></a>编写代码 src&#x2F;lib.rs</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use wasm_bindgen::prelude::*;</span><br><span class="line"></span><br><span class="line">#[wasm_bindgen]</span><br><span class="line">pub fn add(a: i32, b: i32) -&gt; i32 &#123;</span><br><span class="line">       a + b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安装扩展，构建wasm"><a href="#安装扩展，构建wasm" class="headerlink" title="安装扩展，构建wasm"></a>安装扩展，构建wasm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## 添加 wasm-pack </span><br><span class="line">cargo install wasm-pack</span><br><span class="line">## 构建</span><br><span class="line">wasm-pack build --target web</span><br></pre></td></tr></table></figure>
+<h3 id="pkg文件夹"><a href="#pkg文件夹" class="headerlink" title="pkg文件夹"></a>pkg文件夹</h3><p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/"></p>
+<h3 id="编写html测试页面"><a href="#编写html测试页面" class="headerlink" title="编写html测试页面"></a>编写html测试页面</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Rust Wasm Example&lt;/title&gt;</span><br><span class="line">    &lt;script type=&quot;module&quot;&gt;</span><br><span class="line">        import init, &#123; add &#125; from &#x27;./pkg/my_wasm.js&#x27;;</span><br><span class="line">            async function run() &#123;</span><br><span class="line">                await init();</span><br><span class="line">                console.log(add(2, 3));</span><br><span class="line">            &#125;</span><br><span class="line">           run();</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h1&gt;Rust Wasm Example&lt;/h1&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/"></p>
+<h3 id="html需要在服务器环境下打开，如果以文件方式打开，会报错跨域-我这里直接用go做文件服务器了"><a href="#html需要在服务器环境下打开，如果以文件方式打开，会报错跨域-我这里直接用go做文件服务器了" class="headerlink" title="html需要在服务器环境下打开，如果以文件方式打开，会报错跨域,我这里直接用go做文件服务器了"></a>html需要在服务器环境下打开，如果以文件方式打开，会报错跨域,我这里直接用go做文件服务器了</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	// 设置文件服务器的根目录</span><br><span class="line">	http.Handle(&quot;/&quot;, http.FileServer(http.Dir(&quot;.&quot;)))</span><br><span class="line">	// 定义服务器监听的端口</span><br><span class="line">	port := &quot;8080&quot;</span><br><span class="line">	// 启动服务器</span><br><span class="line">	fmt.Printf(&quot;Starting file server on http://localhost:%s/\n&quot;, port)</span><br><span class="line">	err := http.ListenAndServe(&quot;:&quot;+port, nil)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;Error starting file server: &quot;, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -477,7 +456,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Swoole%E4%B9%8BHyperf%E6%A1%86%E6%9E%B6%E7%9A%84%E8%BF%81%E7%A7%BB%E5%92%8C%E5%A1%AB%E5%85%85/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Gitlab-GitlabRunner-CI-CD/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -491,7 +470,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2024/09/29/Swoole%E4%B9%8BHyperf%E6%A1%86%E6%9E%B6%E7%9A%84%E8%BF%81%E7%A7%BB%E5%92%8C%E5%A1%AB%E5%85%85/" class="post-title-link" itemprop="url">Swoole之Hyperf框架的迁移和填充</a>
+            <a href="/2024/09/29/Gitlab-GitlabRunner-CI-CD/" class="post-title-link" itemprop="url">Gitlab+GitlabRunner CI/CD</a>
         </h2>
 
         <div class="post-meta">
@@ -502,7 +481,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-09-29 10:28:03 / 修改时间：13:53:08" itemprop="dateCreated datePublished" datetime="2024-09-29T10:28:03+08:00">2024-09-29</time>
+              <time title="创建时间：2024-09-29 15:37:00 / 修改时间：15:39:41" itemprop="dateCreated datePublished" datetime="2024-09-29T15:37:00+08:00">2024-09-29</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -510,7 +489,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
                 </span>
             </span>
 
@@ -525,14 +504,365 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。"><a href="#hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。" class="headerlink" title="hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。"></a>hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。</h3><h3 id="生成迁移文件-这点文档有，具体可以参考文档-https-hyperf-wiki-3-1-zh-cn-db-migration"><a href="#生成迁移文件-这点文档有，具体可以参考文档-https-hyperf-wiki-3-1-zh-cn-db-migration" class="headerlink" title="生成迁移文件,这点文档有，具体可以参考文档 https://hyperf.wiki/3.1/#/zh-cn/db/migration"></a>生成迁移文件,这点文档有，具体可以参考文档 <a target="_blank" rel="noopener" href="https://hyperf.wiki/3.1/#/zh-cn/db/migration">https://hyperf.wiki/3.1/#/zh-cn/db/migration</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php gen:migration create_users_table</span><br></pre></td></tr></table></figure>
-<h3 id="修改migrations文件夹下的对应文件-驼峰命名修改了create-users-table-为了测试，数据库只有2个字段"><a href="#修改migrations文件夹下的对应文件-驼峰命名修改了create-users-table-为了测试，数据库只有2个字段" class="headerlink" title="修改migrations文件夹下的对应文件(驼峰命名修改了create_users_table),为了测试，数据库只有2个字段"></a>修改migrations文件夹下的对应文件(驼峰命名修改了create_users_table),为了测试，数据库只有2个字段</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public function up(): void</span><br><span class="line">    &#123;</span><br><span class="line">        Schema::create(&#x27;users&#x27;, function (Blueprint $table) &#123;</span><br><span class="line">            $table-&gt;bigIncrements(&#x27;id&#x27;);</span><br><span class="line">            $table-&gt;string(&#x27;name&#x27;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="开始迁移"><a href="#开始迁移" class="headerlink" title="开始迁移"></a>开始迁移</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php migrate</span><br></pre></td></tr></table></figure>
-<h3 id="迁移-填充，得有填充文件"><a href="#迁移-填充，得有填充文件" class="headerlink" title="迁移+填充，得有填充文件"></a>迁移+填充，得有填充文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php migrate --seed</span><br></pre></td></tr></table></figure>
-<h3 id="迁移单个"><a href="#迁移单个" class="headerlink" title="迁移单个"></a>迁移单个</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php migrate --path=migrations/xx.php</span><br></pre></td></tr></table></figure>
-<h3 id="生成填充文件。PS：这点详细的可以参考laravel的文档。"><a href="#生成填充文件。PS：这点详细的可以参考laravel的文档。" class="headerlink" title="生成填充文件。PS：这点详细的可以参考laravel的文档。"></a>生成填充文件。PS：这点详细的可以参考laravel的文档。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php gen:seeder UserSeeder</span><br></pre></td></tr></table></figure>
-<h3 id="修改seeders文件夹下的对应文件，如果有表关系映射，跟laravel的写法一样"><a href="#修改seeders文件夹下的对应文件，如果有表关系映射，跟laravel的写法一样" class="headerlink" title="修改seeders文件夹下的对应文件，如果有表关系映射，跟laravel的写法一样"></a>修改seeders文件夹下的对应文件，如果有表关系映射，跟laravel的写法一样</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">declare(strict_types=1);</span><br><span class="line"></span><br><span class="line">use Hyperf\Database\Seeders\Seeder;</span><br><span class="line">use Hyperf\DbConnection\Db;</span><br><span class="line"></span><br><span class="line">class UserSeeder extends Seeder</span><br><span class="line">&#123;</span><br><span class="line">    public function run()</span><br><span class="line">    &#123;</span><br><span class="line">        DB::table(&#x27;users&#x27;)-&gt;insert([</span><br><span class="line">            [&#x27;name&#x27; =&gt; &quot;hello1&quot;],</span><br><span class="line">            [&#x27;name&#x27; =&gt; &quot;hello2&quot;]</span><br><span class="line">        ]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行填充，单个填充跟laravel有区别，要指定路径-文件名"><a href="#执行填充，单个填充跟laravel有区别，要指定路径-文件名" class="headerlink" title="执行填充，单个填充跟laravel有区别，要指定路径+文件名"></a>执行填充，单个填充跟laravel有区别，要指定路径+文件名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> //全部填充</span><br><span class="line"> php bin/hyperf.php db:seed </span><br><span class="line">//根据绝对路径进行单个填充</span><br><span class="line">php bin/hyperf.php db:seed --path=seeder/user_seeder.php</span><br></pre></td></tr></table></figure>
+          <h2 id="注意-gitlab跟runner版本要一致，不然会出问题"><a href="#注意-gitlab跟runner版本要一致，不然会出问题" class="headerlink" title="注意 gitlab跟runner版本要一致，不然会出问题"></a>注意 gitlab跟runner版本要一致，不然会出问题</h2><h3 id="docker安装gitlab"><a href="#docker安装gitlab" class="headerlink" title="docker安装gitlab"></a>docker安装gitlab</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/</span><br><span class="line">mkdir gitlab</span><br><span class="line">export GITLAB_HOME=/opt/gitlab</span><br></pre></td></tr></table></figure>
+<h3 id="由于官方版本的gitlab-gitlab-ce-latest创建runner老是404，后来装了jh版本的。"><a href="#由于官方版本的gitlab-gitlab-ce-latest创建runner老是404，后来装了jh版本的。" class="headerlink" title="由于官方版本的gitlab&#x2F;gitlab-ce:latest创建runner老是404，后来装了jh版本的。"></a>由于官方版本的gitlab&#x2F;gitlab-ce:latest创建runner老是404，后来装了jh版本的。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run --detach \</span><br><span class="line">  --hostname gitlab.example.com \</span><br><span class="line">  --publish 443:443 --publish 9001:80 --publish 2222:22 \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --restart always \</span><br><span class="line">  --volume $GITLAB_HOME/config:/etc/gitlab \</span><br><span class="line">  --volume $GITLAB_HOME/logs:/var/log/gitlab \</span><br><span class="line">  --volume $GITLAB_HOME/data:/var/opt/gitlab \</span><br><span class="line">  --shm-size 256m \</span><br><span class="line">  registry.gitlab.cn/omnibus/gitlab-jh:latest</span><br></pre></td></tr></table></figure>
+<h3 id="访问极狐-GitLab-URL，http-192-168-252-131-9001-并使用用户名-root-和来自以下命令的密码登录："><a href="#访问极狐-GitLab-URL，http-192-168-252-131-9001-并使用用户名-root-和来自以下命令的密码登录：" class="headerlink" title="访问极狐 GitLab URL，http://192.168.252.131:9001,并使用用户名 root 和来自以下命令的密码登录："></a>访问极狐 GitLab URL，<a href="http://192.168.252.131:9001,并使用用户名">http://192.168.252.131:9001,并使用用户名</a> root 和来自以下命令的密码登录：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@root~]# docker exec -it gitlab grep &#x27;Password:&#x27; /etc/gitlab/initial_root_password</span><br><span class="line">Password: xxzIrC8HPFfuxVmGSyxxxx221Ihu+a2edEySMw=</span><br></pre></td></tr></table></figure>
+<h3 id="登录，然后创建项目，上传公钥，省略。。。"><a href="#登录，然后创建项目，上传公钥，省略。。。" class="headerlink" title="登录，然后创建项目，上传公钥，省略。。。"></a>登录，然后创建项目，上传公钥，省略。。。</h3><h3 id="Docker方式安装注册gitlab-runner"><a href="#Docker方式安装注册gitlab-runner" class="headerlink" title="Docker方式安装注册gitlab-runner"></a>Docker方式安装注册gitlab-runner</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name gitlab-runner --restart always \</span><br><span class="line">  -v /opt/gitlab-runner/config:/etc/gitlab-runner \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  gitlab/gitlab-runner:latest</span><br></pre></td></tr></table></figure>
+<h3 id="创建runner-以及注册runner"><a href="#创建runner-以及注册runner" class="headerlink" title="创建runner,以及注册runner"></a>创建runner,以及注册runner</h3><p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/1.png"><br><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/2.png"><br><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/3.png"><br><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/4.png"></p>
+<h3 id="进入runner容器内-docker-exec-it-gitlab-runner-bin-bash"><a href="#进入runner容器内-docker-exec-it-gitlab-runner-bin-bash" class="headerlink" title="进入runner容器内 docker exec -it gitlab-runner &#x2F;bin&#x2F;bash"></a>进入runner容器内 docker exec -it gitlab-runner &#x2F;bin&#x2F;bash</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner register  --url http://192.168.252.131:9001  --token glrt-Tz6onF8_bUSeNwaqqg8w</span><br><span class="line"># 然后在交互界面，最后选择输入shell</span><br></pre></td></tr></table></figure>
+<h2 id="极狐有个小坑"><a href="#极狐有个小坑" class="headerlink" title="极狐有个小坑"></a>极狐有个小坑</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">没有自带vim命令，要在容器内自行安装，其实也可在宿主机映射的目录修改</span><br><span class="line">[root@249b6b18ffa8]# apt update</span><br><span class="line">[root@249b6b18ffa8]# apt install -y vim</span><br><span class="line"># 修改配置，增加clone_url配置，跟url并列</span><br><span class="line">[root@249b6b18ffa8]# vi /opt/gitlab-runner/config/config.toml</span><br><span class="line">[[runners]]</span><br><span class="line">  name = &quot;9b499a1ad4dc&quot;</span><br><span class="line">  url = &quot;http://192.168.252.131:9001&quot;</span><br><span class="line">  id = 10</span><br><span class="line">  token = &quot;glrt-Tz6onF8_bUSeNwaqqg8w&quot;</span><br><span class="line">  token_obtained_at = 2024-03-07T03:43:37Z</span><br><span class="line">  token_expires_at = 0001-01-01T00:00:00Z</span><br><span class="line">  executor = &quot;shell&quot;</span><br><span class="line">  [runners.cache]</span><br><span class="line">    MaxUploadedArchiveSize = 0</span><br><span class="line"># 重启gitlab-runner所在容器</span><br><span class="line">docker restart gitlab-runner</span><br></pre></td></tr></table></figure>
+<h3 id="开始创建-gitlab-ci-yml-官方示例，只是用来跑通项目"><a href="#开始创建-gitlab-ci-yml-官方示例，只是用来跑通项目" class="headerlink" title="开始创建 .gitlab-ci.yml 官方示例，只是用来跑通项目"></a>开始创建 .gitlab-ci.yml 官方示例，只是用来跑通项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">stages:          # List of stages for jobs, and their order of execution</span><br><span class="line">  - build</span><br><span class="line">  - test</span><br><span class="line">  - deploy</span><br><span class="line"></span><br><span class="line">build-job:       # This job runs in the build stage, which runs first.</span><br><span class="line">  stage: build</span><br><span class="line">  script:</span><br><span class="line">    - echo &quot;Compiling the code...&quot;</span><br><span class="line">    - echo &quot;Compile complete.&quot;</span><br><span class="line"></span><br><span class="line">unit-test-job:   # This job runs in the test stage.</span><br><span class="line">  stage: test    # It only starts when the job in the build stage completes successfully.</span><br><span class="line">  script:</span><br><span class="line">    - echo &quot;Running unit tests... This will take about 60 seconds.&quot;</span><br><span class="line">    - echo &quot;Code coverage is 90%&quot;</span><br><span class="line"></span><br><span class="line">lint-test-job:   # This job also runs in the test stage.</span><br><span class="line">  stage: test    # It can run at the same time as unit-test-job (in parallel).</span><br><span class="line">  script:</span><br><span class="line">    - echo &quot;Linting code... This will take about 10 seconds.&quot;</span><br><span class="line">    - echo &quot;No lint issues found.&quot;</span><br><span class="line"></span><br><span class="line">deploy-job:      # This job runs in the deploy stage.</span><br><span class="line">  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.</span><br><span class="line">  environment: production</span><br><span class="line">  script:</span><br><span class="line">    - echo &quot;Deploying application...&quot;</span><br><span class="line">    - echo &quot;Application successfully deployed.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/5.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/%E8%A7%A3%E5%86%B3git%E6%8F%90%E4%BA%A4%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/%E8%A7%A3%E5%86%B3git%E6%8F%90%E4%BA%A4%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/" class="post-title-link" itemprop="url">解决git提交每次都要输入密码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:35:26 / 修改时间：15:35:44" itemprop="dateCreated datePublished" datetime="2024-09-29T15:35:26+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="如果您已将公钥添加到GitLab，并且仍然每次都要求输入用户名和密码，这可能是由于使用了HTTPS-URL而非SSH-URL来访问GitLab仓库。"><a href="#如果您已将公钥添加到GitLab，并且仍然每次都要求输入用户名和密码，这可能是由于使用了HTTPS-URL而非SSH-URL来访问GitLab仓库。" class="headerlink" title="如果您已将公钥添加到GitLab，并且仍然每次都要求输入用户名和密码，这可能是由于使用了HTTPS URL而非SSH URL来访问GitLab仓库。"></a>如果您已将公钥添加到GitLab，并且仍然每次都要求输入用户名和密码，这可能是由于使用了HTTPS URL而非SSH URL来访问GitLab仓库。</h3><h3 id="当使用HTTPS-URL时，GitLab将要求输入用户名和密码来进行身份验证，即使您已将SSH公钥添加到GitLab中。要解决这个问题，您需要将仓库的远程URL更改为SSH-URL。"><a href="#当使用HTTPS-URL时，GitLab将要求输入用户名和密码来进行身份验证，即使您已将SSH公钥添加到GitLab中。要解决这个问题，您需要将仓库的远程URL更改为SSH-URL。" class="headerlink" title="当使用HTTPS URL时，GitLab将要求输入用户名和密码来进行身份验证，即使您已将SSH公钥添加到GitLab中。要解决这个问题，您需要将仓库的远程URL更改为SSH URL。"></a>当使用HTTPS URL时，GitLab将要求输入用户名和密码来进行身份验证，即使您已将SSH公钥添加到GitLab中。要解决这个问题，您需要将仓库的远程URL更改为SSH URL。</h3><h3 id="可以使用以下命令来更改Git仓库的远程URL："><a href="#可以使用以下命令来更改Git仓库的远程URL：" class="headerlink" title="可以使用以下命令来更改Git仓库的远程URL："></a>可以使用以下命令来更改Git仓库的远程URL：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin git@your-gitlab-domain.com:yourusername/yourrepository.git</span><br></pre></td></tr></table></figure>
+<h3 id="或者在我们的项目目录下打开控制台，输入"><a href="#或者在我们的项目目录下打开控制台，输入" class="headerlink" title="或者在我们的项目目录下打开控制台，输入"></a>或者在我们的项目目录下打开控制台，输入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
+<h3 id="然后生成一个-git-credentials，上边记录你的账号和密码，只需要输入一次用户名和密码，就会把账户信息保存到这个文件中。下次就不会弹出让你输入用户名和密码的提示啦"><a href="#然后生成一个-git-credentials，上边记录你的账号和密码，只需要输入一次用户名和密码，就会把账户信息保存到这个文件中。下次就不会弹出让你输入用户名和密码的提示啦" class="headerlink" title="然后生成一个.git-credentials，上边记录你的账号和密码，只需要输入一次用户名和密码，就会把账户信息保存到这个文件中。下次就不会弹出让你输入用户名和密码的提示啦"></a>然后生成一个.git-credentials，上边记录你的账号和密码，只需要输入一次用户名和密码，就会把账户信息保存到这个文件中。下次就不会弹出让你输入用户名和密码的提示啦</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/git-%E5%BF%BD%E7%95%A5idea%E6%96%87%E4%BB%B6%E5%A4%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/git-%E5%BF%BD%E7%95%A5idea%E6%96%87%E4%BB%B6%E5%A4%B9/" class="post-title-link" itemprop="url">git 忽略idea文件夹</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:34:24 / 修改时间：15:34:41" itemprop="dateCreated datePublished" datetime="2024-09-29T15:34:24+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="如果-gitignore文件不存在-在项目的根目录下创建一个名为-gitignore的文件，并在该文件中添加以下内容："><a href="#如果-gitignore文件不存在-在项目的根目录下创建一个名为-gitignore的文件，并在该文件中添加以下内容：" class="headerlink" title="如果.gitignore文件不存在,在项目的根目录下创建一个名为.gitignore的文件，并在该文件中添加以下内容："></a>如果.gitignore文件不存在,在项目的根目录下创建一个名为.gitignore的文件，并在该文件中添加以下内容：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.idea/</span><br></pre></td></tr></table></figure>
+<h3 id="如果-idea文件夹已经被跟踪，运行git-rm-–cached-idea来从Git跟踪中移除它，然后再提交这个更改。"><a href="#如果-idea文件夹已经被跟踪，运行git-rm-–cached-idea来从Git跟踪中移除它，然后再提交这个更改。" class="headerlink" title="如果.idea文件夹已经被跟踪，运行git rm –cached .idea来从Git跟踪中移除它，然后再提交这个更改。"></a>如果.idea文件夹已经被跟踪，运行git rm –cached .idea来从Git跟踪中移除它，然后再提交这个更改。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .idea</span><br><span class="line">git commit -m &quot;xxxxx&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/git%E6%8A%A5%E9%94%99LFS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/git%E6%8A%A5%E9%94%99LFS/" class="post-title-link" itemprop="url">git报错LFS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:31:37 / 修改时间：15:31:49" itemprop="dateCreated datePublished" datetime="2024-09-29T15:31:37+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="报LFS错"><a href="#报LFS错" class="headerlink" title="报LFS错"></a>报LFS错</h3><h4 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Authentication error: Authentication required: LFS only supported repository in paid enterprise.</span><br></pre></td></tr></table></figure>
+<h4 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">batch response: LFS only supported repository in paid enterprise.</span><br></pre></td></tr></table></figure>
+<h3 id="第一个错误可以执行以下命令：命令中的-your-gitee-your-repo-是你的远程仓库地址，根据自己情况替换。"><a href="#第一个错误可以执行以下命令：命令中的-your-gitee-your-repo-是你的远程仓库地址，根据自己情况替换。" class="headerlink" title="第一个错误可以执行以下命令：命令中的{your_gitee}&#x2F;{your_repo}是你的远程仓库地址，根据自己情况替换。"></a>第一个错误可以执行以下命令：命令中的{your_gitee}&#x2F;{your_repo}是你的远程仓库地址，根据自己情况替换。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config lfs.https://gitee.com/&#123;your_gitee&#125;/&#123;your_repo&#125;.git/info/lfs.locksverify false</span><br></pre></td></tr></table></figure>
+<h3 id="第二个错误可以尝试删除-git-hooks-pre-push文件-最后重新push一下即可"><a href="#第二个错误可以尝试删除-git-hooks-pre-push文件-最后重新push一下即可" class="headerlink" title="第二个错误可以尝试删除.&#x2F;git&#x2F;hooks&#x2F;pre-push文件,最后重新push一下即可"></a>第二个错误可以尝试删除.&#x2F;git&#x2F;hooks&#x2F;pre-push文件,最后重新push一下即可</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/git%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/git%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5/" class="post-title-link" itemprop="url">git生成公钥</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:30:29 / 修改时间：15:30:49" itemprop="dateCreated datePublished" datetime="2024-09-29T15:30:29+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="老是忘记-还是做个笔记把"><a href="#老是忘记-还是做个笔记把" class="headerlink" title="老是忘记  还是做个笔记把"></a>老是忘记  还是做个笔记把</h3><h3 id="命令，-x65-x6d-x61-x69-x6c-64-x65-109-x61-x69-x6c-x2e-x63-x6f-x6d-替换成自己的邮箱"><a href="#命令，-x65-x6d-x61-x69-x6c-64-x65-109-x61-x69-x6c-x2e-x63-x6f-x6d-替换成自己的邮箱" class="headerlink" title="命令，&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#x65;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;替换成自己的邮箱"></a>命令，<a href="mailto:&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#x65;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#x65;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a>替换成自己的邮箱</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@email.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="生成公钥位置"><a href="#生成公钥位置" class="headerlink" title="生成公钥位置"></a>生成公钥位置</h3><h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\[用户名]\.ssh</span><br></pre></td></tr></table></figure>
+<h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.ssh</span><br></pre></td></tr></table></figure>
+<h3 id="把id-rsa-pub的内容，复制到git的后台"><a href="#把id-rsa-pub的内容，复制到git的后台" class="headerlink" title="把id_rsa.pub的内容，复制到git的后台"></a>把id_rsa.pub的内容，复制到git的后台</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Git%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E6%9D%83%E9%99%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Git%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E6%9D%83%E9%99%90/" class="post-title-link" itemprop="url">Git忽略文件夹权限</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:29:15 / 修改时间：15:33:34" itemprop="dateCreated datePublished" datetime="2024-09-29T15:29:15+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="项目范围"><a href="#项目范围" class="headerlink" title="项目范围"></a>项目范围</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.fileMode false</span><br></pre></td></tr></table></figure>
+<h3 id="也可以在git的全局范围内生效"><a href="#也可以在git的全局范围内生效" class="headerlink" title="也可以在git的全局范围内生效"></a>也可以在git的全局范围内生效</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.filemode false</span><br></pre></td></tr></table></figure>
+<h3 id="也可以通过修改-“-gitconfig”-文件，在其中添加下面内容"><a href="#也可以通过修改-“-gitconfig”-文件，在其中添加下面内容" class="headerlink" title="也可以通过修改 “~&#x2F;.gitconfig” 文件，在其中添加下面内容"></a>也可以通过修改 “~&#x2F;.gitconfig” 文件，在其中添加下面内容</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        filemode = false</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -550,7 +880,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -616,20 +946,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-count">56</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
