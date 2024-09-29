@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta property="og:type" content="website">
+<meta property="og:title" content="齐朝阳的博客">
+<meta property="og:url" content="http://example.com/page/3/index.html">
+<meta property="og:site_name" content="齐朝阳的博客">
+<meta property="og:description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="技术栈">
+<meta property="article:tag" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/3/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>齐朝阳的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">齐朝阳的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Redis%E4%BA%8B%E5%8A%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Redis%E4%BA%8B%E5%8A%A1/" class="post-title-link" itemprop="url">Redis事务</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:01:35 / 修改时间：16:01:51" itemprop="dateCreated datePublished" datetime="2024-09-29T16:01:35+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="其实redis的事务是个假事务，没有实现原子性，"><a href="#其实redis的事务是个假事务，没有实现原子性，" class="headerlink" title="其实redis的事务是个假事务，没有实现原子性，"></a>其实redis的事务是个假事务，没有实现原子性，</h1><h3 id="若要php支持事务，必须一起执行-其中incr会报错"><a href="#若要php支持事务，必须一起执行-其中incr会报错" class="headerlink" title="若要php支持事务，必须一起执行,其中incr会报错"></a>若要php支持事务，必须一起执行,其中incr会报错</h3><pre><code>$status =  $redis-&gt;multi()-&gt;lPush($key1, &#39;1123&#39;)-&gt;lPush($key2, &#39;2123&#39;)-&gt;incr(&quot;age&quot;,&quot;age&quot;)-&gt;exec();
+</code></pre>
+<!---->
+
+<pre><code>try &#123;
+    $redis = new Redis();
+    $redis-&gt;connect(&#39;192.168.75.132&#39;, 6379);
+    //开启事务
+    $redis-&gt;multi();
+    $redis-&gt;setex(&#39;keyTest&#39;, 60, 1);
+    $redis-&gt;get(&#39;keyTest&#39;);
+    $redis-&gt;incr(&#39;keyTest&#39;);
+    $redis-&gt;get(&#39;keyTest&#39;);
+    //执行事务
+    $ret = $redis-&gt;exec();
+    print_r($ret);
+&#125; catch (Exception $e)&#123;
+    echo $e-&gt;getMessage();
+&#125;
+//输出
+Array
+(
+    [0] =&gt; 1
+    [1] =&gt; 1
+    [2] =&gt; 2
+    [3] =&gt; 2
+)
+</code></pre>
+<h1 id="取消事务"><a href="#取消事务" class="headerlink" title="取消事务"></a>取消事务</h1><pre><code>try &#123;
+    $redis = new Redis();
+    $redis-&gt;connect(&#39;192.168.75.132&#39;, 6379);
+    //先设置缓存keyTest为1
+    $redis-&gt;setex(&#39;keyTest&#39;, 60, 1);
+    //开启事务
+    $redis-&gt;multi();
+    $redis-&gt;setex(&#39;keyTest&#39;, 60, 10);
+    $redis-&gt;get(&#39;keyTest&#39;);
+    $redis-&gt;incr(&#39;keyTest&#39;);
+    $redis-&gt;get(&#39;keyTest&#39;);
+    //取消事务
+    $redis-&gt;discard();
+    $ret = $redis-&gt;get(&#39;keyTest&#39;);
+    var_dump($ret);
+    //查看keyTest
+&#125; catch (Exception $e)&#123;
+    echo $e-&gt;getMessage();
+&#125;
+//输出
+string(1) &quot;1&quot;
+</code></pre>
+<h1 id="监视键，并执行事务"><a href="#监视键，并执行事务" class="headerlink" title="监视键，并执行事务"></a>监视键，并执行事务</h1><pre><code>try &#123;
+    $redis = new Redis();
+    $redis-&gt;connect(&#39;192.168.75.132&#39;, 6379);
+    //先设置缓存keyTest为1
+    $redis-&gt;setex(&#39;keyTest&#39;, 60, 1);
+    //监视keyTest
+    $redis-&gt;watch(array(&#39;keyTest&#39;));
+    //假设在开始监视之后，执行事务之前，keyTest被并发操作redis的其他用户修改了
+    $redis-&gt;setex(&#39;keyTest&#39;, 60, 10);
+    //开启事务
+    $redis-&gt;multi();
+    $redis-&gt;incr(&#39;keyTest&#39;);
+    //执行事务
+    $ret = $redis-&gt;exec();
+    var_dump($ret);
+    $ret = $redis-&gt;get(&#39;keyTest&#39;);
+    var_dump($ret);
+    //查看keyTest
+&#125; catch (Exception $e)&#123;
+    echo $e-&gt;getMessage();
+&#125;
+//输出 
+bool(false)
+string(2) &quot;10&quot;
+</code></pre>
+<h1 id="redis抢购"><a href="#redis抢购" class="headerlink" title="redis抢购"></a>redis抢购</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">header(&quot;content-type:text/html;charset=utf-8&quot;);</span><br><span class="line">$redis = new Redis();</span><br><span class="line">$redis-&gt;connect(&#x27;127.0.0.1&#x27;, 6379);</span><br><span class="line">$redis-&gt;watch(&quot;mywatchlist&quot;);</span><br><span class="line">$len = $redis-&gt;hlen(&quot;mywatchlist&quot;);</span><br><span class="line">$rob_total = 100; //抢购数量</span><br><span class="line">if ($len &lt; $rob_total) &#123;</span><br><span class="line">    $redis-&gt;multi();</span><br><span class="line">    $redis-&gt;hSet(&quot;mywatchlist&quot;, &quot;user_id_&quot; . mt_rand(1, 999999), time());</span><br><span class="line">    $rob_result = $redis-&gt;exec();</span><br><span class="line">    //file_put_contents(&quot;log.txt&quot;, $len . PHP_EOL, FILE_APPEND);</span><br><span class="line">    if ($rob_result) &#123;</span><br><span class="line">        $mywatchlist = $redis-&gt;hGetAll(&quot;mywatchlist&quot;);</span><br><span class="line">        echo &#x27;抢购成功&#x27; . PHP_EOL;</span><br><span class="line">        echo &#x27;剩余数量：&#x27; . ($rob_total - $len - 1) . PHP_EOL;</span><br><span class="line">        echo &#x27;用户列表：&#x27; . PHP_EOL;</span><br><span class="line">        print_r($mywatchlist);</span><br><span class="line">        exit;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        exit(&#x27;手气不好，再抢购！&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    exit(&#x27;已卖光&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Redis%E8%BF%87%E6%9C%9F%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Redis%E8%BF%87%E6%9C%9F%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/" class="post-title-link" itemprop="url">Redis过期删除策略</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:00:30 / 修改时间：16:00:48" itemprop="dateCreated datePublished" datetime="2024-09-29T16:00:30+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="定时删除；"><a href="#定时删除；" class="headerlink" title="定时删除；"></a>定时删除；</h2><h2 id="惰性删除；"><a href="#惰性删除；" class="headerlink" title="惰性删除；"></a>惰性删除；</h2><h2 id="定期删除；"><a href="#定期删除；" class="headerlink" title="定期删除；"></a>定期删除；</h2><h3 id="定时删除策略是怎么样的？"><a href="#定时删除策略是怎么样的？" class="headerlink" title="定时删除策略是怎么样的？"></a>定时删除策略是怎么样的？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">定时删除策略的做法是，在设置 key 的过期时间时，同时创建一个定时事件，当时间到达时，由事件处理器自动执行 key 的删除操作。</span><br><span class="line"># By default &quot;hz&quot; is set to 10. Raising the value will use more CPU when</span><br><span class="line"># Redis is idle, but at the same time will make Redis more responsive when</span><br><span class="line"># there are many keys expiring at the same time, and timeouts may be</span><br><span class="line"># handled with more precision.</span><br><span class="line">#</span><br><span class="line"># The range is between 1 and 500, however a value over 100 is usually not</span><br><span class="line"># a good idea. Most users should use the default of 10 and raise this up to</span><br><span class="line"># 100 only in environments where very low latency is required.</span><br><span class="line">hz 10</span><br><span class="line">定时删除策略的优点：</span><br><span class="line"></span><br><span class="line">可以保证过期 key 会被尽快删除，也就是内存可以被尽快地释放。因此，定时删除对内存是最友好的。</span><br><span class="line">定时删除策略的缺点：</span><br><span class="line"></span><br><span class="line">在过期 key 比较多的情况下，删除过期 key 可能会占用相当一部分 CPU 时间，在内存不紧张但 CPU 时间紧张的情况下，将 CPU 时间用于删除和当前任务无关的过期键上，</span><br><span class="line">无疑会对服务器的响应时间和吞吐量造成影响。所以，定时删除策略对 CPU 不友好。</span><br></pre></td></tr></table></figure>
+<h3 id="惰性删除策略是怎么样的？"><a href="#惰性删除策略是怎么样的？" class="headerlink" title="惰性删除策略是怎么样的？"></a>惰性删除策略是怎么样的？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">惰性删除策略的做法是，不主动删除过期键，每次从数据库访问 key 时，都检测 key 是否过期，如果过期则删除该 key。</span><br><span class="line"></span><br><span class="line">惰性删除策略的优点：</span><br><span class="line"></span><br><span class="line">因为每次访问时，才会检查 key 是否过期，所以此策略只会使用很少的系统资源，因此，惰性删除策略对 CPU 时间最友好。</span><br><span class="line">惰性删除策略的缺点：</span><br><span class="line"></span><br><span class="line">如果一个 key 已经过期，而这个 key 又仍然保留在数据库中，那么只要这个过期 key 一直没有被访问，它所占用的内存就不会释放，造成了一定的内存空间浪费。</span><br><span class="line">所以，惰性删除策略对内存不友好。</span><br></pre></td></tr></table></figure>
+<h3 id="定期删除策略是怎么样的？"><a href="#定期删除策略是怎么样的？" class="headerlink" title="定期删除策略是怎么样的？"></a>定期删除策略是怎么样的？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">定期删除策略的做法是，每隔一段时间「随机」从数据库中取出一定数量的 key 进行检查，并删除其中的过期key。</span><br><span class="line">定期删除策略的优点：</span><br><span class="line"></span><br><span class="line">通过限制删除操作执行的时长和频率，来减少删除操作对 CPU 的影响，同时也能删除一部分过期的数据减少了过期键对空间的无效占用。</span><br><span class="line">定期删除策略的缺点：</span><br><span class="line"></span><br><span class="line">内存清理方面没有定时删除效果好，同时没有惰性删除使用的系统资源少。</span><br><span class="line">难以确定删除操作执行的时长和频率。如果执行的太频繁，定期删除策略变得和定时删除策略一样，对CPU不友好；如果执行的太少，那又和惰性删除一样了，</span><br><span class="line">过期 key 占用的内存不会及时得到释放。</span><br><span class="line">#Redis 过期删除策略是什么？</span><br><span class="line">前面介绍了三种过期删除策略，每一种都有优缺点，仅使用某一个策略都不能满足实际需求。</span><br></pre></td></tr></table></figure>
+<h2 id="所以，-Redis-选择「惰性删除-定期删除」这两种策略配和使用，以求在合理使用-CPU-时间和避免内存浪费之间取得平衡。"><a href="#所以，-Redis-选择「惰性删除-定期删除」这两种策略配和使用，以求在合理使用-CPU-时间和避免内存浪费之间取得平衡。" class="headerlink" title="所以， Redis 选择「惰性删除+定期删除」这两种策略配和使用，以求在合理使用 CPU 时间和避免内存浪费之间取得平衡。"></a>所以， Redis 选择「惰性删除+定期删除」这两种策略配和使用，以求在合理使用 CPU 时间和避免内存浪费之间取得平衡。</h2><h2 id="Redis-是怎么实现定期删除的？"><a href="#Redis-是怎么实现定期删除的？" class="headerlink" title="Redis 是怎么实现定期删除的？"></a>Redis 是怎么实现定期删除的？</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">定期删除策略的做法：每隔一段时间「随机」从数据库中取出一定数量的 key 进行检查，并删除其中的过期key。</span><br><span class="line"></span><br><span class="line">1、这个间隔检查的时间是多长呢？</span><br><span class="line"></span><br><span class="line">在 Redis 中，默认每秒进行 10 次过期检查一次数据库，此配置可通过 Redis 的配置文件 redis.conf 进行配置，配置键为 hz 它的默认值是 hz 10。</span><br><span class="line"></span><br><span class="line">特别强调下，每次检查数据库并不是遍历过期字典中的所有 key，而是从数据库中随机抽取一定数量的 key 进行过期检查。</span><br><span class="line"></span><br><span class="line">2、随机抽查的数量是多少呢？</span><br><span class="line"></span><br><span class="line">我查了下源码，定期删除的实现在 expire.c 文件下的 activeExpireCycle 函数中，其中随机抽查的数量由 ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP 定义的，它是写死在代码中的，数值是 20。</span><br><span class="line"></span><br><span class="line">也就是说，数据库每轮抽查时，会随机选择 20 个 key 判断是否过期。</span><br><span class="line"></span><br><span class="line">接下来，详细说说 Redis 的定期删除的流程：</span><br><span class="line"></span><br><span class="line">从过期字典中随机抽取 20 个 key；</span><br><span class="line">检查这 20 个 key 是否过期，并删除已过期的 key；</span><br><span class="line">如果本轮检查的已过期 key 的数量，超过 5 个（20/4），也就是「已过期 key 的数量」占比「随机抽取 key 的数量」大于 25%，则继续重复步骤 1；如果已过期的 key 比例小于 25%，</span><br><span class="line">则停止继续删除过期 key，然后等待下一轮再检查。</span><br><span class="line">可以看到，定期删除是一个循环的流程。</span><br><span class="line"></span><br><span class="line">那 Redis 为了保证定期删除不会出现循环过度，导致线程卡死现象，为此增加了定期删除循环流程的时间上限，默认不会超过 25ms。</span><br></pre></td></tr></table></figure>
+<h3 id="针对定期删除的流程伪代码："><a href="#针对定期删除的流程伪代码：" class="headerlink" title="针对定期删除的流程伪代码："></a>针对定期删除的流程伪代码：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">do &#123;</span><br><span class="line">    //已过期的数量</span><br><span class="line">    expired = 0；</span><br><span class="line">    //随机抽取的数量</span><br><span class="line">    num = 20;</span><br><span class="line">    while (num--) &#123;</span><br><span class="line">        //1. 从过期字典中随机抽取 1 个 key</span><br><span class="line">        //2. 判断该 key 是否过期，如果已过期则进行删除，同时对 expired++</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // 超过时间限制则退出</span><br><span class="line">    if (timelimit_exit) return;</span><br><span class="line"></span><br><span class="line">  /* 如果本轮检查的已过期 key 的数量，超过 25%，则继续随机抽查，否则退出本轮检查 */</span><br><span class="line">&#125; while (expired &gt; 20/4); </span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/%E6%9F%A5%E6%89%BEredis%E6%B0%B8%E4%B8%8D%E8%BF%87%E6%9C%9F%E7%9A%84key/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/%E6%9F%A5%E6%89%BEredis%E6%B0%B8%E4%B8%8D%E8%BF%87%E6%9C%9F%E7%9A%84key/" class="post-title-link" itemprop="url">查找redis永不过期的key</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:59:18 / 修改时间：15:59:46" itemprop="dateCreated datePublished" datetime="2024-09-29T15:59:18+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="keys-阻塞进程，消耗比较大，慎用"><a href="#keys-阻塞进程，消耗比较大，慎用" class="headerlink" title="keys *阻塞进程，消耗比较大，慎用"></a>keys *阻塞进程，消耗比较大，慎用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line"></span><br><span class="line"># 设置要遍历的 Redis 数据库数量</span><br><span class="line">db_count=16</span><br><span class="line"></span><br><span class="line"># 输出文件名</span><br><span class="line">output_file=&quot;never_expire_keys.txt&quot;</span><br><span class="line"></span><br><span class="line"># 循环遍历 0 到 15 的数据库</span><br><span class="line">for (( db=0; db&lt;$db_count; db++ )); do</span><br><span class="line">    echo &quot;正在检查数据库 $db 的永不过期键...&quot;</span><br><span class="line">    # 连接到当前数据库</span><br><span class="line">    redis-cli select $db</span><br><span class="line">    </span><br><span class="line">    # 查询当前数据库中的所有键，并检查它们的 TTL</span><br><span class="line">    redis-cli keys &quot;*&quot; | while read -r key; do</span><br><span class="line">        ttl=$(redis-cli ttl &quot;$key&quot;)</span><br><span class="line">        </span><br><span class="line">        # 如果 TTL 等于 -1，表示键永不过期</span><br><span class="line">        if [ &quot;$ttl&quot; -eq -1 ]; then</span><br><span class="line">            # 将永不过期的键和它所属的数据库编号写入文件</span><br><span class="line">            echo &quot;$db:$key&quot; &gt;&gt; &quot;$output_file&quot;</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">echo &quot;永不过期的键已写入到 $output_file 文件中&quot;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Redis%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Redis%E5%87%A0%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-title-link" itemprop="url">Redis几种常用数据类型的数据结构</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:57:40 / 修改时间：15:58:35" itemprop="dateCreated datePublished" datetime="2024-09-29T15:57:40+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="以下是redis-7版本以下适用"><a href="#以下是redis-7版本以下适用" class="headerlink" title="以下是redis-7版本以下适用"></a>以下是redis-7版本以下适用</h3><h3 id="string"><a href="#string" class="headerlink" title="string"></a>string</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int编码：当字符串长度小于等于12字节并且字符串可以表示为整数时，Redis会使用int编码。</span><br><span class="line">        这样可以节省内存，并且在执行一些命令时可以直接进行数值计算。</span><br><span class="line">embstr编码：当字符串长度小于等于39字节时，Redis会使用embstr编码。这种编码方式会将</span><br><span class="line">           字符串和存储它的结构体一起分配在内存中，这样可以减少内存碎片和结构体的开销。</span><br><span class="line">raw编码：当字符串长度大于39字节或者字符串不能表示为整数时，Redis会使用raw编码。</span><br><span class="line">         这种编码方式直接将字符串存储在一个结构体中，没有进行任何优化。</span><br></pre></td></tr></table></figure>
+<h3 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ziplist（压缩列表）：当Hash类型的元素比较少，且元素的大小比较小（小于64字节）时，Redis采用ziplist作为Hash类型的内部编码。</span><br><span class="line">                   ziplist是一种紧凑的、压缩的列表结构，可以节省内存空间。但是，ziplist只能进行线性查找，不支持快速的随机访问。</span><br><span class="line">hashtable（字典）：当Hash类型的元素比较多，或者元素的大小比较大（大于64字节）时，Redis采用hashtable作为Hash类型的内部编码。</span><br><span class="line">                  hashtable是一种基于链表的哈希表结构，可以快速地进行随机访问。但是，hashtable需要占用更多的内存空间。</span><br></pre></td></tr></table></figure>
+<h3 id="list"><a href="#list" class="headerlink" title="list"></a>list</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ziplist</span><br><span class="line">        ziplist是一种特殊的编码方式，它可以将小数据量的列表存储在一个连续的内存块中，节省了内存空间，同时还可以提高存取效率。</span><br><span class="line">       ziplist编码的列表最大长度为2^16-1个元素，每个元素可以是字符串类型、整数类型或浮点数类型。在ziplist中，</span><br><span class="line">      每个元素都被存储为一个字节数组，并包含一个前缀和一个后缀，用于标识该元素的类型和长度。</span><br><span class="line"></span><br><span class="line">linkedlist</span><br><span class="line">         linkedlist是一种常规的双向链表结构，它可以存储任意长度的列表，并且支持高效的插入和删除操作。在linkedlist中，</span><br><span class="line">         每个节点都包含了一个指向前一个节点和后一个节点的指针，以及一个存储元素数据的指针。</span><br><span class="line">         linkedlist适用于存储大数量的列表，它没有像ziplist那样的内存限制，但是会占用更多的内存空间。</span><br></pre></td></tr></table></figure>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">intset（整数集合）：当Set类型只包含整数类型的数据，并且元素数量较少（小于512个）时，Redis会使用intset作为Set类型的内部编码。</span><br><span class="line">                   intset是一种紧凑的、压缩的整数集合结构，可以节省内存空间，并且支持快速的查找、插入和删除操作。在intset中，</span><br><span class="line">                   所有元素都按照从小到大的顺序排列，并且可以使用不同的编码方式（16位、32位、64位）存储不同大小范围内的整数。</span><br><span class="line">hashtable（字典）：当Set类型包含字符串类型或者元素数量较多时，Redis会使用hashtable作为Set类型的内部编码。hashtable是一种基于链表的哈希表结构，</span><br><span class="line">                  可以快速地进行随机访问、插入和删除操作。在hashtable中，每个元素都被存储为一个字符串，并且使用哈希函数将字符串映射到一个桶中，然后在桶中进行查找、插入和删除操作。</span><br></pre></td></tr></table></figure>
+<h3 id="zset"><a href="#zset" class="headerlink" title="zset"></a>zset</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ziplist编码：当Zset中元素个数小于128个，并且所有元素的长度都小于64字节时，Redis会使用ziplist编码存储Zset。 </span><br><span class="line">            这种编码方式可以节省内存空间，并且可以提高存取效率，但是不支持随机访问和范围查询。</span><br><span class="line">skiplist编码：当Zset中元素个数大于等于128个，或者有一个元素的长度大于64字节时，Redis会使用skiplist编码存储Zset。</span><br><span class="line">              这种编码方式支持高效的随机访问和范围查询，但是需要占用更多的内存空间。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Redis-%E7%9A%84%E6%B7%B7%E5%90%88%E6%8C%81%E4%B9%85%E5%8C%96/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Redis-%E7%9A%84%E6%B7%B7%E5%90%88%E6%8C%81%E4%B9%85%E5%8C%96/" class="post-title-link" itemprop="url">Redis 的混合持久化</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:56:33 / 修改时间：15:56:56" itemprop="dateCreated datePublished" datetime="2024-09-29T15:56:33+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">aof-use-rdb-preamble 选项设置为 yes，并且要同时启用 RDB 和 AOF 两种持久化</span><br></pre></td></tr></table></figure>
+<h3 id="启用-AOF-模式"><a href="#启用-AOF-模式" class="headerlink" title="启用 AOF 模式"></a>启用 AOF 模式</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">将 appendonly 设置为 yes。默认是 no。</span><br><span class="line">always: 每次写操作后都同步。</span><br><span class="line">everysec: 每秒同步一次。</span><br><span class="line">no: 由操作系统决定何时同步。</span><br><span class="line">默认设置是 everysec。</span><br><span class="line">当 Redis 进行 AOF 重写或快照保存时，避免主进程 fsync 的延迟？</span><br><span class="line">设置 no-appendfsync-on-rewrite 为 yes。默认是 no</span><br></pre></td></tr></table></figure>
+<h3 id="启用RDB"><a href="#启用RDB" class="headerlink" title="启用RDB"></a>启用RDB</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">save 3600 1        # 3600秒内如果超过1个key被修改则生成 RDB</span><br><span class="line">save 300 100       # 300秒内如果超过100个key被修改则生成 RDB</span><br><span class="line">save 60 10000      # 60秒内如果超过10000个key被修改则生成 RDB</span><br></pre></td></tr></table></figure>
+<h3 id="混合持久化的优缺点"><a href="#混合持久化的优缺点" class="headerlink" title="混合持久化的优缺点"></a>混合持久化的优缺点</h3><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">更快的启动速度：混合持久化结合了RDB的速度优势，所以Redis可以更快地重新启动，不用等待很久。</span><br><span class="line">数据安全：利用AOF的方式，即使服务器突然断电，也只会丢失极短的时间内的数据。</span><br><span class="line">文件更小巧：因为混合持久化结合了 RDB 和 AOF 的优势，所以文件大小和冗余度都可以得到控制。</span><br><span class="line">两全其美：简单说，它就是RDB和AOF的结合体，带来了两者的好处。</span><br></pre></td></tr></table></figure>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">稍微复杂：因为它结合了两种技术，所以处理起来比单一的 RDB 或 AOF 要复杂一点。</span><br><span class="line">可能占更多空间：在某些情况下，保存数据的文件可能会比只使用 RDB 或AOF 的文件要大一些。</span><br><span class="line">写入速度：可能会稍慢一些，特别是当数据需要经常被保存到硬盘时（比如当 appendfsync 配置为“always”时）</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/acme-sh%E5%AE%9E%E7%8E%B0%E5%9F%9F%E5%90%8DSSL%E8%AF%81%E4%B9%A6%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E4%B8%8E%E6%9B%B4%E6%96%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/acme-sh%E5%AE%9E%E7%8E%B0%E5%9F%9F%E5%90%8DSSL%E8%AF%81%E4%B9%A6%E8%87%AA%E5%8A%A8%E7%94%B3%E8%AF%B7%E4%B8%8E%E6%9B%B4%E6%96%B0/" class="post-title-link" itemprop="url">acme.sh实现域名SSL证书自动申请与更新</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:54:58 / 修改时间：15:55:35" itemprop="dateCreated datePublished" datetime="2024-09-29T15:54:58+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="域名注册与解析位于阿里云"><a href="#域名注册与解析位于阿里云" class="headerlink" title="域名注册与解析位于阿里云"></a>域名注册与解析位于阿里云</h3><h3 id="安装acme-sh"><a href="#安装acme-sh" class="headerlink" title="安装acme.sh"></a>安装acme.sh</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line">或者</span><br><span class="line">wget -O -  https://get.acme.sh | sh</span><br></pre></td></tr></table></figure>
+<h3 id="这个自动安装过程完成了以下几个步骤（上面那一步默认已经执行了这个操作，如果成功了，这步省略）"><a href="#这个自动安装过程完成了以下几个步骤（上面那一步默认已经执行了这个操作，如果成功了，这步省略）" class="headerlink" title="这个自动安装过程完成了以下几个步骤（上面那一步默认已经执行了这个操作，如果成功了，这步省略）"></a>这个自动安装过程完成了以下几个步骤（上面那一步默认已经执行了这个操作，如果成功了，这步省略）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">拷贝sh脚本到~/.acme.sh/</span><br><span class="line">创建alias别名acme.sh=~/.acme.sh/acme.sh</span><br><span class="line">启动定时器crontab</span><br></pre></td></tr></table></figure>
+<h3 id="配置阿里云解析"><a href="#配置阿里云解析" class="headerlink" title="配置阿里云解析"></a>配置阿里云解析</h3><h4 id="运行如下命令，配置阿里云api接口的key和secret，其中的值需要到阿里云控制台中去寻找。"><a href="#运行如下命令，配置阿里云api接口的key和secret，其中的值需要到阿里云控制台中去寻找。" class="headerlink" title="运行如下命令，配置阿里云api接口的key和secret，其中的值需要到阿里云控制台中去寻找。"></a>运行如下命令，配置阿里云api接口的key和secret，其中的值需要到阿里云控制台中去寻找。</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export Ali_Key=&quot;xxxxxxxxxxxx&quot;</span><br><span class="line">export Ali_Secret=&quot;yyyyyyyyyyyyyy&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="这两个配置将永久保存在文件-acme-sh-account-conf中"><a href="#这两个配置将永久保存在文件-acme-sh-account-conf中" class="headerlink" title="这两个配置将永久保存在文件~&#x2F;.acme.sh&#x2F;account.conf中"></a>这两个配置将永久保存在文件~&#x2F;.acme.sh&#x2F;account.conf中</h3><h4 id="为域名申请证书"><a href="#为域名申请证书" class="headerlink" title="为域名申请证书"></a>为域名申请证书</h4><h4 id="运行如下命令，一键申请证书。"><a href="#运行如下命令，一键申请证书。" class="headerlink" title="运行如下命令，一键申请证书。"></a>运行如下命令，一键申请证书。</h4><h4 id="这一步需要在dns后台加一个泛域名的解析，也就是"><a href="#这一步需要在dns后台加一个泛域名的解析，也就是" class="headerlink" title="这一步需要在dns后台加一个泛域名的解析，也就是*"></a>这一步需要在dns后台加一个泛域名的解析，也就是*</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme.sh --issue --dns dns_ali -d *.example.com</span><br></pre></td></tr></table></figure>
+<h3 id="证书申请成功后，保存在-acme-sh-example-com目录下"><a href="#证书申请成功后，保存在-acme-sh-example-com目录下" class="headerlink" title="证书申请成功后，保存在~&#x2F;.acme.sh&#x2F;*.example.com目录下"></a>证书申请成功后，保存在~&#x2F;.acme.sh&#x2F;*.example.com目录下</h3><h3 id="将证书部署到nginx"><a href="#将证书部署到nginx" class="headerlink" title="将证书部署到nginx"></a>将证书部署到nginx</h3><h3 id="运行如下命令，自动将证书部署到nginx。"><a href="#运行如下命令，自动将证书部署到nginx。" class="headerlink" title="运行如下命令，自动将证书部署到nginx。"></a>运行如下命令，自动将证书部署到nginx。</h3><h3 id="比如我们要部署www域名，这个www也要在dns后台先解析，acmh只是申请一个通用证书"><a href="#比如我们要部署www域名，这个www也要在dns后台先解析，acmh只是申请一个通用证书" class="headerlink" title="比如我们要部署www域名，这个www也要在dns后台先解析，acmh只是申请一个通用证书"></a>比如我们要部署www域名，这个www也要在dns后台先解析，acmh只是申请一个通用证书</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">acme.sh --install-cert -d www.example.com --key-file /etc/nginx/cert/www.example.com.key --fullchain-file /etc/nginx/cert/www.example.com.pem </span><br></pre></td></tr></table></figure>
+<h3 id="该命令中的参数将自动保存在-acme-sh-www-example-com目录下的www-example-com-conf文件里，定时器更新证书的时候实现自动部署。"><a href="#该命令中的参数将自动保存在-acme-sh-www-example-com目录下的www-example-com-conf文件里，定时器更新证书的时候实现自动部署。" class="headerlink" title="该命令中的参数将自动保存在~&#x2F;.acme.sh&#x2F;www.example.com目录下的www.example.com.conf文件里，定时器更新证书的时候实现自动部署。"></a>该命令中的参数将自动保存在~&#x2F;.acme.sh&#x2F;<a target="_blank" rel="noopener" href="http://www.example.com目录下的www.example.com.conf文件里,定时器更新证书的时候实现自动部署./">www.example.com目录下的www.example.com.conf文件里，定时器更新证书的时候实现自动部署。</a></h3><h3 id="配置nginx"><a href="#配置nginx" class="headerlink" title="配置nginx"></a>配置nginx</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 80;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name www.example.com;</span><br><span class="line"></span><br><span class="line">        ssl on;</span><br><span class="line">        ssl_certificate  /etc/nginx/cert/www.example.com.pem;</span><br><span class="line">        ssl_certificate_key /etc/nginx/cert/www.example.com.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_session_cache shared:SSL:20m;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">        ssl_prefer_server_ciphers   on;</span><br><span class="line">        location / &#123;</span><br><span class="line">            proxy_pass http://localhost:3000;</span><br><span class="line">            proxy_redirect off;</span><br><span class="line">            proxy_set_header Host $host;</span><br><span class="line">            proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">            proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A0%B9%E6%8D%AE%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD%E9%A2%84%E8%A7%88%E8%BF%98%E6%98%AF%E4%B8%8B%E8%BD%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/nginx%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%A0%B9%E6%8D%AE%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B%E5%88%A4%E6%96%AD%E9%A2%84%E8%A7%88%E8%BF%98%E6%98%AF%E4%B8%8B%E8%BD%BD/" class="post-title-link" itemprop="url">nginx文件服务器根据文件类型判断预览还是下载</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:53:32 / 修改时间：15:53:49" itemprop="dateCreated datePublished" datetime="2024-09-29T15:53:32+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"> location /file &#123;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    alias /usr/share/nginx/html/files; #文件根目录</span><br><span class="line">    autoindex off;</span><br><span class="line">    autoindex_exact_size off;</span><br><span class="line">    autoindex_localtime on;</span><br><span class="line">    # 按理说只用配置这一个，但是下面不生效，只能复制几份</span><br><span class="line">    add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27; always;</span><br><span class="line">    add_header &#x27;Access-Control-Allow-Methods&#x27; &#x27;GET, OPTIONS&#x27; always;</span><br><span class="line">    add_header &#x27;Access-Control-Allow-Headers&#x27; &#x27;Origin, X-Requested-With, Content-Type, Accept&#x27; always;</span><br><span class="line">    # 配置如果是json文件就为下载模式</span><br><span class="line">    if ($request_filename ~* ^.*?\.(json)$) &#123;</span><br><span class="line">        add_header Content-Disposition attachment;  # 添加响应头，配置文件作为附件下载</span><br><span class="line">        add_header Content-Type application/octet-stream;</span><br><span class="line">         add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27; always;</span><br><span class="line">        add_header &#x27;Access-Control-Allow-Methods&#x27; &#x27;GET, OPTIONS&#x27; always;</span><br><span class="line">        add_header &#x27;Access-Control-Allow-Headers&#x27; &#x27;Origin, X-Requested-With, Content-Type, Accept&#x27; always;</span><br><span class="line">    &#125;</span><br><span class="line">    #默认为预览，这个都可以不配</span><br><span class="line">    location ~* \.(jpg|png)$ &#123;</span><br><span class="line">        add_header &#x27;Access-Control-Allow-Origin&#x27; &#x27;*&#x27;;</span><br><span class="line">        add_header &#x27;Access-Control-Allow-Methods&#x27; &#x27;GET, OPTIONS&#x27; always;</span><br><span class="line">        add_header &#x27;Access-Control-Allow-Headers&#x27; &#x27;Origin, X-Requested-With, Content-Type, Accept&#x27; always;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/nginx%E9%85%8D%E7%BD%AE%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/nginx%E9%85%8D%E7%BD%AE%E8%AE%BF%E9%97%AE%E5%AF%86%E7%A0%81/" class="post-title-link" itemprop="url">nginx配置访问密码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:52:07 / 修改时间：15:52:25" itemprop="dateCreated datePublished" datetime="2024-09-29T15:52:07+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="安装htpassed工具"><a href="#安装htpassed工具" class="headerlink" title="安装htpassed工具"></a>安装htpassed工具</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum -y install httpd-tools</span><br><span class="line">或者</span><br><span class="line">apt install apache2-utils</span><br></pre></td></tr></table></figure>
+<h3 id="创建用户名和密码"><a href="#创建用户名和密码" class="headerlink" title="创建用户名和密码"></a>创建用户名和密码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -c /etc/nginx/.htpasswd username</span><br></pre></td></tr></table></figure>
+<h3 id="修改nginx配置文件"><a href="#修改nginx配置文件" class="headerlink" title="修改nginx配置文件"></a>修改nginx配置文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">   listen ;</span><br><span class="line">   server_name  localhost;</span><br><span class="line">   .......</span><br><span class="line">   #新增下面两行</span><br><span class="line">   auth_basic &quot;Please input password&quot;; #这里是验证时的提示信息</span><br><span class="line">   auth_basic_user_file  /etc/nginx/.htpasswd;</span><br><span class="line">   location /&#123;</span><br><span class="line">   .......</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/nginx%E4%BB%A3%E7%90%86mysql/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/nginx%E4%BB%A3%E7%90%86mysql/" class="post-title-link" itemprop="url">nginx代理mysql</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:50:24 / 修改时间：15:51:05" itemprop="dateCreated datePublished" datetime="2024-09-29T15:50:24+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/nginx/" itemprop="url" rel="index"><span itemprop="name">nginx</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="之前服务器单体架构mysql是直接安装在服务器的，没有买托管，这就造成一个问题，如果想要远程连接mysql就要开启3306防火墙端口，全是恶意ip进行攻击。。。。"><a href="#之前服务器单体架构mysql是直接安装在服务器的，没有买托管，这就造成一个问题，如果想要远程连接mysql就要开启3306防火墙端口，全是恶意ip进行攻击。。。。" class="headerlink" title="之前服务器单体架构mysql是直接安装在服务器的，没有买托管，这就造成一个问题，如果想要远程连接mysql就要开启3306防火墙端口，全是恶意ip进行攻击。。。。"></a>之前服务器单体架构mysql是直接安装在服务器的，没有买托管，这就造成一个问题，如果想要远程连接mysql就要开启3306防火墙端口，全是恶意ip进行攻击。。。。</h3><h3 id="nginx的stream模块可以有效限制远程ip访问"><a href="#nginx的stream模块可以有效限制远程ip访问" class="headerlink" title="nginx的stream模块可以有效限制远程ip访问"></a>nginx的stream模块可以有效限制远程ip访问</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">stream &#123;</span><br><span class="line">    server &#123;</span><br><span class="line">       listen 13306; # 需要开启云服务器防火墙</span><br><span class="line">       #allow 123.149.112.119; # 允许这个ip访问</span><br><span class="line">       # 允许192.168.110.1到192.168.255.254 虚拟机适用</span><br><span class="line">       #allow 192.168.110.0/16;</span><br><span class="line">       # deny all; # 除了allow的ip都禁止</span><br><span class="line">      # 禁止192.168.110.1访问</span><br><span class="line">       deny 192.168.110.1;</span><br><span class="line">       # 禁止192.168.110.1到192.168.255.254</span><br><span class="line">       deny 192.168.110.0/16; </span><br><span class="line">       # allow all; 允许所有 </span><br><span class="line">       proxy_connect_timeout 1s;</span><br><span class="line">       proxy_timeout 3s;</span><br><span class="line">       proxy_pass 127.0.0.1:3306;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/kafka%E5%8D%95%E6%9C%BA%E5%AE%89%E8%A3%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/kafka%E5%8D%95%E6%9C%BA%E5%AE%89%E8%A3%85/" class="post-title-link" itemprop="url">kafka单机安装</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:48:27 / 修改时间：15:49:14" itemprop="dateCreated datePublished" datetime="2024-09-29T15:48:27+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mq/" itemprop="url" rel="index"><span itemprop="name">mq</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="新版本支持kraft，并且在后面会彻底抛弃zookeeper"><a href="#新版本支持kraft，并且在后面会彻底抛弃zookeeper" class="headerlink" title="新版本支持kraft，并且在后面会彻底抛弃zookeeper"></a>新版本支持kraft，并且在后面会彻底抛弃zookeeper</h3><h3 id="二进制包地址-https-downloads-apache-org-kafka"><a href="#二进制包地址-https-downloads-apache-org-kafka" class="headerlink" title="二进制包地址 https://downloads.apache.org/kafka/"></a>二进制包地址 <a target="_blank" rel="noopener" href="https://downloads.apache.org/kafka/">https://downloads.apache.org/kafka/</a></h3><p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/"></p>
+<h3 id="解压之后，编辑config-kraft-server-properties文件，改成自己的ip"><a href="#解压之后，编辑config-kraft-server-properties文件，改成自己的ip" class="headerlink" title="解压之后，编辑config&#x2F;kraft&#x2F;server.properties文件，改成自己的ip"></a>解压之后，编辑config&#x2F;kraft&#x2F;server.properties文件，改成自己的ip</h3><h3 id="在Kafka安装目录的bin文件夹下执行以下命令生成一个新的集群ID，如果只有1个机器也没关系-windows的命令在windows文件夹"><a href="#在Kafka安装目录的bin文件夹下执行以下命令生成一个新的集群ID，如果只有1个机器也没关系-windows的命令在windows文件夹" class="headerlink" title="在Kafka安装目录的bin文件夹下执行以下命令生成一个新的集群ID，如果只有1个机器也没关系,windows的命令在windows文件夹"></a>在Kafka安装目录的bin文件夹下执行以下命令生成一个新的集群ID，如果只有1个机器也没关系,windows的命令在windows文件夹</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kafka-storage.sh random-uuid</span><br><span class="line">或者</span><br><span class="line">kafka-storage.bat random-uuid</span><br></pre></td></tr></table></figure>
+<h3 id="用上一步生成的UUID格式化Kafka的存储目录："><a href="#用上一步生成的UUID格式化Kafka的存储目录：" class="headerlink" title="用上一步生成的UUID格式化Kafka的存储目录："></a>用上一步生成的UUID格式化Kafka的存储目录：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kafka-storage.bat format -t &lt;uuid&gt; -c ..\..\config\kraft\server.properties</span><br><span class="line">或者</span><br><span class="line">kafka-storage.sh  format -t &lt;uuid&gt; -c ../../config/kraft/server.properties</span><br></pre></td></tr></table></figure>
+<h3 id="启动Kafka服务器-这里用的是Kraft的目录下的配置"><a href="#启动Kafka服务器-这里用的是Kraft的目录下的配置" class="headerlink" title="启动Kafka服务器,这里用的是Kraft的目录下的配置"></a>启动Kafka服务器,这里用的是Kraft的目录下的配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">kafka-server-start.bat ..\..\config\kraft\server.properties</span><br><span class="line">或者</span><br><span class="line">kafka-server-start.sh ../../config/kraft/server.properties</span><br></pre></td></tr></table></figure>
+<h3 id="docker安装单机版的kafka"><a href="#docker安装单机版的kafka" class="headerlink" title="docker安装单机版的kafka"></a>docker安装单机版的kafka</h3><h3 id="文件夹下有-env和docker-compose-yml两个文件"><a href="#文件夹下有-env和docker-compose-yml两个文件" class="headerlink" title="文件夹下有.env和docker-compose.yml两个文件"></a>文件夹下有.env和docker-compose.yml两个文件</h3><h4 id="env文件内容如下："><a href="#env文件内容如下：" class="headerlink" title=".env文件内容如下："></a>.env文件内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 把下面的 192.168.252.1 改为你的ip地址</span><br><span class="line">ACCESS_ADDR=192.168.252.1:9092</span><br></pre></td></tr></table></figure>
+<h4 id="docker-compose-yml内容如下"><a href="#docker-compose-yml内容如下" class="headerlink" title="docker-compose.yml内容如下"></a>docker-compose.yml内容如下</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3.8&#x27;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  broker:</span><br><span class="line">    image: apache/kafka:3.7.0</span><br><span class="line">    container_name: broker</span><br><span class="line">    ports:</span><br><span class="line">      - &#x27;9092:9092&#x27;</span><br><span class="line">    environment:</span><br><span class="line">      kafka_NODE_ID: 1</span><br><span class="line">      kafka_LISTENER_SECURITY_PROTOCOL_MAP: &#x27;CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT&#x27;</span><br><span class="line">      kafka_ADVERTISED_LISTENERS: &#x27;PLAINTEXT_HOST://$&#123;ACCESS_ADDR&#125;,PLAINTEXT://broker:19092&#x27;</span><br><span class="line">      kafka_PROCESS_ROLES: &#x27;broker,controller&#x27;</span><br><span class="line">      kafka_CONTROLLER_QUORUM_VOTERS: &#x27;1@broker:29093&#x27;</span><br><span class="line">      kafka_LISTENERS: &#x27;CONTROLLER://:29093,PLAINTEXT_HOST://:9092,PLAINTEXT://:19092&#x27;</span><br><span class="line">      kafka_INTER_BROKER_LISTENER_NAME: &#x27;PLAINTEXT&#x27;</span><br><span class="line">      kafka_CONTROLLER_LISTENER_NAMES: &#x27;CONTROLLER&#x27;</span><br><span class="line">      CLUSTER_ID: &#x27;4L6g3nShT-eMCtK--X86sw&#x27;</span><br><span class="line">      kafka_OFFSETS_TOPIC_REPLICATION_FACTOR: 1</span><br><span class="line">      kafka_GROUP_INITIAL_REBALANCE_DELAY_MS: 0</span><br><span class="line">      kafka_TRANSACTION_STATE_LOG_MIN_ISR: 1</span><br><span class="line">      kafka_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1</span><br><span class="line">      kafka_LOG_DIRS: &#x27;/var/lib/kafka/data&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">      - $PWD/data/:/var/lib/kafka/data</span><br><span class="line"></span><br><span class="line">  kafka-ui:</span><br><span class="line">    image: provectuslabs/kafka-ui:v0.7.2</span><br><span class="line">    container_name: kafka-ui</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;18080:8080&quot;</span><br><span class="line">    environment:</span><br><span class="line">      kafka_CLUSTERS_0_NAME: &#x27;Local kafka Cluster&#x27;</span><br><span class="line">      kafka_CLUSTERS_0_BOOTSTRAPSERVERS: &#x27;broker:19092&#x27;</span><br><span class="line">      DYNAMIC_CONFIG_ENABLED: &quot;true&quot;</span><br><span class="line">    depends_on:</span><br><span class="line">      - broker</span><br></pre></td></tr></table></figure>
+<h3 id="安装-kafka-集群"><a href="#安装-kafka-集群" class="headerlink" title="安装 kafka 集群"></a>安装 kafka 集群</h3><h4 id="env文件内容如下：-1"><a href="#env文件内容如下：-1" class="headerlink" title=".env文件内容如下："></a>.env文件内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 把下面的 192.168.251.1 改为你的ip地址</span><br><span class="line">kafka_1_ACCESS_ADDR=192.168.251.1:33001</span><br><span class="line">kafka_2_ACCESS_ADDR=192.168.251.1:33002</span><br><span class="line">kafka_3_ACCESS_ADDR=192.168.251.1:33003</span><br></pre></td></tr></table></figure>
+<h4 id="docker-compose-yml内容如下："><a href="#docker-compose-yml内容如下：" class="headerlink" title="docker-compose.yml内容如下："></a>docker-compose.yml内容如下：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line">  kafka-1:</span><br><span class="line">    image: docker.io/bitnami/kafka:3.7</span><br><span class="line">    container_name: kafka-1</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;33001:9092&quot;</span><br><span class="line">    environment:</span><br><span class="line">      # KRaft settings</span><br><span class="line">      - kafka_CFG_NODE_ID=0</span><br><span class="line">      - kafka_CFG_PROCESS_ROLES=controller,broker</span><br><span class="line">      - kafka_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka-1:9093,1@kafka-2:9093,2@kafka-3:9093</span><br><span class="line">      - kafka_KRAFT_CLUSTER_ID=abcdefghijklmnopqrstuv</span><br><span class="line">      # Listeners</span><br><span class="line">      - kafka_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093</span><br><span class="line">      #- kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092</span><br><span class="line">      - kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://$&#123;kafka_1_ACCESS_ADDR&#125;</span><br><span class="line">      - kafka_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT</span><br><span class="line">      - kafka_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER</span><br><span class="line">      - kafka_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT</span><br><span class="line">      # Clustering</span><br><span class="line">      - kafka_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2</span><br><span class="line">    volumes:</span><br><span class="line">      - $PWD/data/kafka-1:/bitnami/kafka</span><br><span class="line">    networks:</span><br><span class="line">      - kafka-net</span><br><span class="line"></span><br><span class="line">  kafka-2:</span><br><span class="line">    image: docker.io/bitnami/kafka:3.7</span><br><span class="line">    container_name: kafka-2</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;33002:9092&quot;</span><br><span class="line">    environment:</span><br><span class="line">      # KRaft settings</span><br><span class="line">      - kafka_CFG_NODE_ID=1</span><br><span class="line">      - kafka_CFG_PROCESS_ROLES=controller,broker</span><br><span class="line">      - kafka_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka-1:9093,1@kafka-2:9093,2@kafka-3:9093</span><br><span class="line">      - kafka_KRAFT_CLUSTER_ID=abcdefghijklmnopqrstuv</span><br><span class="line">      # Listeners</span><br><span class="line">      - kafka_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093</span><br><span class="line">      #- kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092</span><br><span class="line">      - kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://$&#123;kafka_2_ACCESS_ADDR&#125;</span><br><span class="line">      - kafka_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT</span><br><span class="line">      - kafka_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER</span><br><span class="line">      - kafka_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT</span><br><span class="line">      # Clustering</span><br><span class="line">      - kafka_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2</span><br><span class="line">    volumes:</span><br><span class="line">      - $PWD/data/kafka-2:/bitnami/kafka</span><br><span class="line">    networks:</span><br><span class="line">      - kafka-net</span><br><span class="line"></span><br><span class="line">  kafka-3:</span><br><span class="line">    image: docker.io/bitnami/kafka:3.7</span><br><span class="line">    container_name: kafka-3</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;33003:9092&quot;</span><br><span class="line">    environment:</span><br><span class="line">      # KRaft settings</span><br><span class="line">      - kafka_CFG_NODE_ID=2</span><br><span class="line">      - kafka_CFG_PROCESS_ROLES=controller,broker</span><br><span class="line">      - kafka_CFG_CONTROLLER_QUORUM_VOTERS=0@kafka-1:9093,1@kafka-2:9093,2@kafka-3:9093</span><br><span class="line">      - kafka_KRAFT_CLUSTER_ID=abcdefghijklmnopqrstuv</span><br><span class="line">      # Listeners</span><br><span class="line">      - kafka_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093</span><br><span class="line">      #- kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://:9092</span><br><span class="line">      - kafka_CFG_ADVERTISED_LISTENERS=PLAINTEXT://$&#123;kafka_3_ACCESS_ADDR&#125;</span><br><span class="line">      - kafka_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT</span><br><span class="line">      - kafka_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER</span><br><span class="line">      - kafka_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT</span><br><span class="line">      # Clustering</span><br><span class="line">      - kafka_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=3</span><br><span class="line">      - kafka_CFG_TRANSACTION_STATE_LOG_MIN_ISR=2</span><br><span class="line">    volumes:</span><br><span class="line">      - $PWD/data/kafka-3:/bitnami/kafka</span><br><span class="line">    networks:</span><br><span class="line">      - kafka-net</span><br><span class="line"></span><br><span class="line">  kafka-ui:</span><br><span class="line">    image: provectuslabs/kafka-ui:v0.7.2</span><br><span class="line">    restart: always</span><br><span class="line">    container_name: kafka-ui</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;18080:8080&quot;</span><br><span class="line">    environment:</span><br><span class="line">      - kafka_CLUSTERS_0_NAME=Local-Kraft-Cluster</span><br><span class="line">      - kafka_CLUSTERS_0_BOOTSTRAPSERVERS=kafka-1:9092,kafka-2:9092,kafka-3:9092</span><br><span class="line">      - DYNAMIC_CONFIG_ENABLED=true</span><br><span class="line">      - kafka_CLUSTERS_0_AUDIT_TOPICAUDITENABLED=true</span><br><span class="line">      - kafka_CLUSTERS_0_AUDIT_CONSOLEAUDITENABLED=true</span><br><span class="line">    depends_on:</span><br><span class="line">      - kafka-1</span><br><span class="line">      - kafka-2</span><br><span class="line">      - kafka-3</span><br><span class="line">    networks:</span><br><span class="line">      - kafka-net</span><br><span class="line"></span><br><span class="line">networks:</span><br><span class="line">  kafka-net:</span><br></pre></td></tr></table></figure>
+<h4 id="第一次使用时，创建一个data文件夹作为数据持久化，并且修改目录data权限："><a href="#第一次使用时，创建一个data文件夹作为数据持久化，并且修改目录data权限：" class="headerlink" title="第一次使用时，创建一个data文件夹作为数据持久化，并且修改目录data权限："></a>第一次使用时，创建一个data文件夹作为数据持久化，并且修改目录data权限：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir data/kafka-1 data/kafka-2 data/kafka-3</span><br><span class="line">chmod -R 0777 data</span><br></pre></td></tr></table></figure>
+<h4 id="docker-compose-up-d-启动服务成功后，可以在浏览器打开-http-localhost-18080-查看kafka信息。"><a href="#docker-compose-up-d-启动服务成功后，可以在浏览器打开-http-localhost-18080-查看kafka信息。" class="headerlink" title="docker-compose up -d ,启动服务成功后，可以在浏览器打开 http://localhost:18080 查看kafka信息。"></a>docker-compose up -d ,启动服务成功后，可以在浏览器打开 <a target="_blank" rel="noopener" href="http://localhost:18080/">http://localhost:18080</a> 查看kafka信息。</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">技术栈</p>
+  <div class="site-description" itemprop="description">PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">技术栈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

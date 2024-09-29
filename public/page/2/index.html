@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta property="og:type" content="website">
+<meta property="og:title" content="齐朝阳的博客">
+<meta property="og:url" content="http://example.com/page/2/index.html">
+<meta property="og:site_name" content="齐朝阳的博客">
+<meta property="og:description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="技术栈">
+<meta property="article:tag" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>齐朝阳的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">齐朝阳的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/php%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/php%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F/" class="post-title-link" itemprop="url">php实现一个简单的安装程序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:20:05 / 修改时间：16:20:27" itemprop="dateCreated datePublished" datetime="2024-09-29T16:20:05+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="只是为了测试，具体可以参考其他开源软件的写法"><a href="#只是为了测试，具体可以参考其他开源软件的写法" class="headerlink" title="只是为了测试，具体可以参考其他开源软件的写法"></a>只是为了测试，具体可以参考其他开源软件的写法</h3><h3 id="原理都是动态创建数据库，导入基础sql，包含管理员信息。然后生成一个install-lock的文件，下次进来判断有这个文件，证明是安装过了"><a href="#原理都是动态创建数据库，导入基础sql，包含管理员信息。然后生成一个install-lock的文件，下次进来判断有这个文件，证明是安装过了" class="headerlink" title="原理都是动态创建数据库，导入基础sql，包含管理员信息。然后生成一个install.lock的文件，下次进来判断有这个文件，证明是安装过了"></a>原理都是动态创建数据库，导入基础sql，包含管理员信息。然后生成一个install.lock的文件，下次进来判断有这个文件，证明是安装过了</h3><h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;安装程序&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h1&gt;安装程序&lt;/h1&gt;</span><br><span class="line">    &lt;form action=&quot;install.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">        &lt;label for=&quot;dbHost&quot;&gt;数据库主机:&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; id=&quot;dbHost&quot; name=&quot;dbHost&quot; required&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">        &lt;label for=&quot;dbHost&quot;&gt;数据库端口:&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;number&quot; id=&quot;dbPort&quot; name=&quot;dbPort&quot; required&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">        &lt;label for=&quot;dbName&quot;&gt;数据库名:&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; id=&quot;dbName&quot; name=&quot;dbName&quot; required&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">        &lt;label for=&quot;dbUser&quot;&gt;数据库用户:&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; id=&quot;dbUser&quot; name=&quot;dbUser&quot; required&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line">        &lt;label for=&quot;dbPassword&quot;&gt;数据库密码:&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;password&quot; id=&quot;dbPassword&quot; name=&quot;dbPassword&quot;&gt;&lt;br&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;安装&quot;&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="php代码"><a href="#php代码" class="headerlink" title="php代码"></a>php代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$hostname = $_POST[&#x27;dbHost&#x27;] ?? &#x27;localhost&#x27;;</span><br><span class="line">$dbPort  =  $_POST[&#x27;dbPort&#x27;] ?? 3306;</span><br><span class="line">$username = $_POST[&#x27;dbUser&#x27;] ?? &#x27;&#x27;;</span><br><span class="line">$password = $_POST[&#x27;dbPassword&#x27;] ?? &#x27;&#x27;;</span><br><span class="line">$dbName = $dbName ?? &#x27;&#x27;;</span><br><span class="line"></span><br><span class="line">// 数据库连接 DSN</span><br><span class="line">$dsn = &quot;mysql:host=$hostname;port=$dbPort&quot;;</span><br><span class="line"></span><br><span class="line">try &#123;</span><br><span class="line">    // 创建一个新的 PDO 实例</span><br><span class="line">    $db = new PDO($dsn, $username, $password);</span><br><span class="line">    $db-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);</span><br><span class="line"></span><br><span class="line">    // 动态创建数据库</span><br><span class="line">    $createDbSql = &quot;CREATE DATABASE IF NOT EXISTS `$dbName` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci&quot;;</span><br><span class="line">    $db-&gt;exec($createDbSql);</span><br><span class="line"></span><br><span class="line">    // 选择数据库</span><br><span class="line">    $db-&gt;exec(&quot;USE `$dbName`&quot;);</span><br><span class="line"></span><br><span class="line">    // 创建管理员表，根据需要插入数据，或者直接导入sql</span><br><span class="line">    $createTableSql = &quot;CREATE TABLE IF NOT EXISTS users (</span><br><span class="line">        id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,</span><br><span class="line">        username VARCHAR(30) NOT NULL,</span><br><span class="line">        password VARCHAR(255) NOT NULL,</span><br><span class="line">        email VARCHAR(50),</span><br><span class="line">        reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span><br><span class="line">    )&quot;;</span><br><span class="line">    $db-&gt;exec($createTableSql);</span><br><span class="line"></span><br><span class="line">    echo &quot;安装成功，数据库和表已创建。&quot;;</span><br><span class="line">&#125; catch (PDOException $e) &#123;</span><br><span class="line">    $err = &quot;安装失败: &quot; . $e-&gt;getMessage();</span><br><span class="line">    echo $err;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/php%E9%99%A4%E6%95%B0%E4%B8%BA0%E6%97%A0%E6%B3%95%E6%8D%95%E8%8E%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/php%E9%99%A4%E6%95%B0%E4%B8%BA0%E6%97%A0%E6%B3%95%E6%8D%95%E8%8E%B7/" class="post-title-link" itemprop="url">php除数为0无法捕获</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:18:24 / 修改时间：16:19:23" itemprop="dateCreated datePublished" datetime="2024-09-29T16:18:24+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="先看一个代码"><a href="#先看一个代码" class="headerlink" title="先看一个代码"></a>先看一个代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$num = 0;</span><br><span class="line"></span><br><span class="line">try &#123;</span><br><span class="line">    echo 1 / $num;</span><br><span class="line">&#125; catch (Exception $e) &#123;</span><br><span class="line">    echo $e-&gt;getMessage(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="这时候得catch是无法捕获除数为0得错误"><a href="#这时候得catch是无法捕获除数为0得错误" class="headerlink" title="这时候得catch是无法捕获除数为0得错误"></a>这时候得catch是无法捕获除数为0得错误</h3><h3 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">function errorHandler($errno, $errstr, $errfile, $errline) &#123;</span><br><span class="line">    // 检查错误类型是否为除以零</span><br><span class="line">    if ($errno == E_WARNING &amp;&amp; strpos($errstr, &#x27;Division by zero&#x27;) !== false) &#123;</span><br><span class="line">        throw new Exception(&#x27;Division by zero error&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line">    // 可以在这里处理其他类型的错误</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 设置自定义错误处理函数</span><br><span class="line">set_error_handler(&#x27;errorHandler&#x27;);</span><br><span class="line"></span><br><span class="line">$num = 0;</span><br><span class="line"></span><br><span class="line">try &#123;</span><br><span class="line">    echo 1 / $num;</span><br><span class="line">&#125; catch (Exception $e) &#123;</span><br><span class="line">    echo $e-&gt;getMessage(); // 这将输出 &quot;Division by zero error&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/php%E7%94%9F%E6%88%90%E7%9F%AD%E9%93%BE%E5%8A%9F%E8%83%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/php%E7%94%9F%E6%88%90%E7%9F%AD%E9%93%BE%E5%8A%9F%E8%83%BD/" class="post-title-link" itemprop="url">php生成短链功能</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:17:26 / 修改时间：16:17:46" itemprop="dateCreated datePublished" datetime="2024-09-29T16:17:26+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="这种是市面上比较常用的，但是需要数据库存储。或者自己写一套加解密的方法，根据code进行解密，效率更高"><a href="#这种是市面上比较常用的，但是需要数据库存储。或者自己写一套加解密的方法，根据code进行解密，效率更高" class="headerlink" title="这种是市面上比较常用的，但是需要数据库存储。或者自己写一套加解密的方法，根据code进行解密，效率更高"></a>这种是市面上比较常用的，但是需要数据库存储。或者自己写一套加解密的方法，根据code进行解密，效率更高</h3><h3 id="直接上代码"><a href="#直接上代码" class="headerlink" title="直接上代码"></a>直接上代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">function shortUrl($url)</span><br><span class="line">&#123;</span><br><span class="line">    $charset = &quot;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz&quot;;</span><br><span class="line">    $key = &#x27;this-is-salt&#x27;; // 加盐</span><br><span class="line">    $timestamp = time(); // 时间戳</span><br><span class="line">    $random = mt_rand(); // 随机数</span><br><span class="line">    $urlHash = md5($key . $url . $random . $url);</span><br><span class="line">    // 只使用哈希值的一部分来生成短链接</span><br><span class="line">    $shortUrl = &#x27;&#x27;;</span><br><span class="line">    for ($i = 0; $i &lt; 6; $i++) &#123;</span><br><span class="line">        // 取哈希值的某一部分并进行模运算，然后转换为字符</span><br><span class="line">        $index = hexdec(substr($urlHash, $i, 1)) % strlen($charset);</span><br><span class="line">        $shortUrl .= $charset[$index];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return $shortUrl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">$input = &#x27;https://detail.tmall.com/item.htm?spm=a21bo.jianhua/a.201876.d2.5af92a89Ifuxtc&amp;id=749045568815&amp;xxc=ad_ct&amp;priceTId=2147802817238772080956563e4b72&amp;pisk=fsCEs5qKrWFedmXkbhOy7kLPS-RphIEjY_tWrabkRHxnOXilQZIyAzepOO-PjG-h4aUpr3jl436QCS_dJQducQPbGwQLY3l1YUvkIzYDz2fj0wncJQdu49XRseQd0bjKJuJu7CYyz0AkKpVMjhLWqDjkxdmMuEdkqgAu7hYW-DDkE3DMjEhcIwbo_E93unLdbjE6vp-c7-hoaacXKnj2jbqc_ervmwxZZbxLlPQF7wZEMNOdgi8fA5cF0ZCObFj0alRRXTjkzGVxVBBfvspNA-cGSCKMnTva-WbwTHJ25KuSpBWlv_JdL4UASBjOHnp3BlLNOs9yDdogxN_wxKWPAlhkAt7GbK1sfjORXTjkzGmF4ciJSadcw9ooUpY97naaS5VTcqbw5jfoeYpMMF-bReM-epY97naa7YHJIELwcyTC.&#x27;; // 长链</span><br><span class="line">$output = shortUrl($input);</span><br><span class="line">var_dump($output);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="存数据库-字段id-short-url-long-url这些字段就够了"><a href="#存数据库-字段id-short-url-long-url这些字段就够了" class="headerlink" title="存数据库,字段id,short_url,long_url这些字段就够了"></a>存数据库,字段id,short_url,long_url这些字段就够了</h3><h3 id="处理短连的接口逻辑"><a href="#处理短连的接口逻辑" class="headerlink" title="处理短连的接口逻辑"></a>处理短连的接口逻辑</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public function longUrl()&#123;</span><br><span class="line">		    $short_url = $_GET[&#x27;code&#x27;];</span><br><span class="line">		    $data = 查数据库;</span><br><span class="line">            //查不到就跳指定url</span><br><span class="line">            if(empty($data))&#123;</span><br><span class="line">               header(&quot;location:https://www.taobao.com/&quot;);</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">		       $url = $data[&#x27;long_url&#x27;];</span><br><span class="line">		       header(&quot;location:$url&quot;);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/PHP%E5%92%8CGo%E4%B9%8BAES%E7%9A%84CBC%E6%A8%A1%E5%BC%8F%E5%8A%A0%E8%A7%A3%E5%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/PHP%E5%92%8CGo%E4%B9%8BAES%E7%9A%84CBC%E6%A8%A1%E5%BC%8F%E5%8A%A0%E8%A7%A3%E5%AF%86/" class="post-title-link" itemprop="url">PHP和Go之AES的CBC模式加解密</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:15:52 / 修改时间：16:16:41" itemprop="dateCreated datePublished" datetime="2024-09-29T16:15:52+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="padding的填充方式可以根据自己需要修改"><a href="#padding的填充方式可以根据自己需要修改" class="headerlink" title="padding的填充方式可以根据自己需要修改"></a>padding的填充方式可以根据自己需要修改</h3><h3 id="php"><a href="#php" class="headerlink" title="php"></a>php</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$key       = &#x27;a7gE3fH9jKmN1pQ2rS4tU6vY8zW9xL0&#x27;;</span><br><span class="line">$iv        = &#x27;7hJ3kQxZW45mNpR&#x27;;</span><br><span class="line">$data      = &#x27;123456&#x27;;</span><br><span class="line">$encrypted = openssl_encrypt($data, &#x27;AES-256-CBC&#x27;, $key, OPENSSL_RAW_DATA, $iv);</span><br><span class="line">echo base64_encode($encrypted), PHP_EOL;</span><br><span class="line">$decrypted = openssl_decrypt($encrypted, &#x27;AES-256-CBC&#x27;, $key, OPENSSL_RAW_DATA, $iv);</span><br><span class="line">echo $decrypted;</span><br></pre></td></tr></table></figure>
+<h3 id="go"><a href="#go" class="headerlink" title="go"></a>go</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">import (</span><br><span class="line">	&quot;bytes&quot;</span><br><span class="line">	&quot;crypto/aes&quot;</span><br><span class="line">	&quot;crypto/cipher&quot;</span><br><span class="line">	&quot;crypto/md5&quot;</span><br><span class="line">	&quot;encoding/base64&quot;</span><br><span class="line">	&quot;encoding/json&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func PKCS7Padding(ciphertext []byte, blockSize int) []byte &#123;</span><br><span class="line">	padding := blockSize - len(ciphertext)%blockSize</span><br><span class="line">	padText := bytes.Repeat([]byte&#123;byte(padding)&#125;, padding)</span><br><span class="line">	return append(ciphertext, padText...)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func PKCS7UnPadding(origData []byte) []byte &#123;</span><br><span class="line">	length := len(origData)</span><br><span class="line">	unpadding := int(origData[length-1])</span><br><span class="line">	return origData[:(length - unpadding)]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func AesEncryptCBC(orig string, key, iv string) string &#123;</span><br><span class="line">	origData := []byte(orig)</span><br><span class="line">	k := []byte(key)</span><br><span class="line"></span><br><span class="line">	block, _ := aes.NewCipher(k)</span><br><span class="line"></span><br><span class="line">	blockSize := block.BlockSize()</span><br><span class="line"></span><br><span class="line">	origData = PKCS7Padding(origData, blockSize)</span><br><span class="line"></span><br><span class="line">	ivCopy := []byte(iv)</span><br><span class="line">	blockMode := cipher.NewCBCEncrypter(block, ivCopy[:blockSize])</span><br><span class="line"></span><br><span class="line">	cryted := make([]byte, len(origData))</span><br><span class="line"></span><br><span class="line">	blockMode.CryptBlocks(cryted, origData)</span><br><span class="line">	return base64.StdEncoding.EncodeToString(cryted)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func AesDecryptCBC(cryted string, key, iv string) string &#123;</span><br><span class="line">	crytedByte, _ := base64.StdEncoding.DecodeString(cryted)</span><br><span class="line">	k := []byte(key)</span><br><span class="line"></span><br><span class="line">	block, _ := aes.NewCipher(k)</span><br><span class="line"></span><br><span class="line">	blockSize := block.BlockSize()</span><br><span class="line"></span><br><span class="line">	ivCopy := []byte(iv)</span><br><span class="line">	blockMode := cipher.NewCBCDecrypter(block, ivCopy[:blockSize])</span><br><span class="line"></span><br><span class="line">	orig := make([]byte, len(crytedByte))</span><br><span class="line"></span><br><span class="line">	blockMode.CryptBlocks(orig, crytedByte)</span><br><span class="line"></span><br><span class="line">	orig = PKCS7UnPadding(orig)</span><br><span class="line">	return string(orig)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	key := &quot;a7gE3fH9jKmN1pQ2rS4tU6vY8zW9xL0&quot;</span><br><span class="line">	iv := &quot;7hJ3kQxZW45mNpR&quot;</span><br><span class="line">	data := &quot;123456&quot;</span><br><span class="line">	encrypted := AesEncryptCBC(data, key, iv)</span><br><span class="line">	fmt.Println(encrypted)</span><br><span class="line">	decrypted := AesDecryptCBC(encrypted, key, iv)</span><br><span class="line">	fmt.Println(decrypted)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/PHP%E4%BD%BF%E7%94%A8ipc%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/PHP%E4%BD%BF%E7%94%A8ipc%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/" class="post-title-link" itemprop="url">PHP使用ipc进程间通信</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:14:18 / 修改时间：16:16:41" itemprop="dateCreated datePublished" datetime="2024-09-29T16:14:18+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="que-php"><a href="#que-php" class="headerlink" title="que.php"></a>que.php</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">class MsgQueue</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">    public $queue;</span><br><span class="line"></span><br><span class="line">    public function __construct($queue)</span><br><span class="line">    &#123;</span><br><span class="line">        $this-&gt;queue = $queue;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function push($data, $type = 1)</span><br><span class="line">    &#123;</span><br><span class="line">        $result = msg_send($this-&gt;queue, $type, $data);</span><br><span class="line">        return $result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function pop($type = 0,$flags = MSG_IPC_NOWAIT)</span><br><span class="line">    &#123;</span><br><span class="line">        msg_receive($this-&gt;queue, $type, $message_type, 1024, $message,true,$flags);</span><br><span class="line">//        var_dump($message_type);</span><br><span class="line">        return $message;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public function close()</span><br><span class="line">    &#123;</span><br><span class="line">        return msg_remove_queue($this-&gt;queue);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static function getQueue($path_name = __FILE__, $prop = &#x27;1&#x27;, $perms = &#x27;0666&#x27;)</span><br><span class="line">    &#123;</span><br><span class="line">        $data              = array();</span><br><span class="line">        $data[&#x27;queue＿key&#x27;] = ftok($path_name, $prop);</span><br><span class="line">        $data[&#x27;queue&#x27;]     = msg_get_queue($data[&#x27;queue＿key&#x27;], $perms);</span><br><span class="line">        return $data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="父子通信"><a href="#父子通信" class="headerlink" title="父子通信"></a>父子通信</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include_once &#x27;que.php&#x27;;</span><br><span class="line">$message_queue_key= ftok(__FILE__, &#x27;a&#x27;);</span><br><span class="line">$message_queue= msg_get_queue($message_queue_key, 0666);</span><br><span class="line">$queue_obj = new MsgQueue($message_queue);</span><br><span class="line">$pid = pcntl_fork();</span><br><span class="line">if($pid&gt;0)&#123;//主进程入列</span><br><span class="line">	    while(1)&#123;</span><br><span class="line">		            $msg = $queue_obj-&gt;push((array(&#x27;a&#x27;=&gt;321312,&#x27;v&#x27;=&gt;&#x27;casd&#x27;)));</span><br><span class="line">			            sleep(2);</span><br><span class="line">			        &#125;</span><br><span class="line">					</span><br><span class="line">&#125;else&#123;//子进程出列</span><br><span class="line">	</span><br><span class="line">            while (1) &#123;</span><br><span class="line">                $message = $queue_obj-&gt;pop();</span><br><span class="line">                if ($message !== false) &#123;</span><br><span class="line">                    var_dump($message);</span><br><span class="line">                &#125;</span><br><span class="line">                sleep(1);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="跨进程通信A和B。这个时候ipc仅仅相当于一个普通队列"><a href="#跨进程通信A和B。这个时候ipc仅仅相当于一个普通队列" class="headerlink" title="跨进程通信A和B。这个时候ipc仅仅相当于一个普通队列"></a>跨进程通信A和B。这个时候ipc仅仅相当于一个普通队列</h2><h3 id="生产者"><a href="#生产者" class="headerlink" title="生产者"></a>生产者</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include_once &#x27;que.php&#x27;;</span><br><span class="line"></span><br><span class="line">$message_queue_key = ftok(__FILE__, &#x27;a&#x27;);</span><br><span class="line">$message_queue = msg_get_queue($message_queue_key, 0666);</span><br><span class="line">$queue_obj = new MsgQueue($message_queue);</span><br><span class="line"></span><br><span class="line">while (true) &#123;</span><br><span class="line">    $msg = array(&#x27;a&#x27; =&gt; 321312, &#x27;v&#x27; =&gt; &#x27;casd&#x27;);</span><br><span class="line">    $queue_obj-&gt;push($msg);</span><br><span class="line">    echo &quot;Sent message: &quot; . print_r($msg, true) . &quot;\n&quot;;</span><br><span class="line">    sleep(1); // 等待一段时间再发送下一条消息</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="消费者"><a href="#消费者" class="headerlink" title="消费者"></a>消费者</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">include_once &#x27;que.php&#x27;;</span><br><span class="line"></span><br><span class="line">$message_queue_key = ftok(__FILE__, &#x27;a&#x27;);</span><br><span class="line">$message_queue = msg_get_queue($message_queue_key, 0666);</span><br><span class="line">$queue_obj = new MsgQueue($message_queue);</span><br><span class="line"></span><br><span class="line">while (true) &#123;</span><br><span class="line">    $message = $queue_obj-&gt;pop();</span><br><span class="line">    if ($message !== false) &#123;</span><br><span class="line">        echo &quot;Received message: &quot; . print_r($message, true) . &quot;\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">    sleep(2); // 等待一段时间再处理下一条消息</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/PHP%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%84%9A%E6%9C%AC%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/PHP%E5%91%BD%E4%BB%A4%E8%A1%8C%E8%84%9A%E6%9C%AC%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0/" class="post-title-link" itemprop="url">PHP命令行脚本接收参数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:12:53 / 修改时间：16:16:41" itemprop="dateCreated datePublished" datetime="2024-09-29T16:12:53+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="使用-argv-or-argc参数接收"><a href="#使用-argv-or-argc参数接收" class="headerlink" title="使用$argv or $argc参数接收"></a>使用$argv or $argc参数接收</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">echo &quot;接收到&#123;$argc&#125;个参数&quot;;</span><br><span class="line">print_r($argv);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">php test.php</span><br><span class="line"></span><br><span class="line">接收到1个参数Array</span><br><span class="line">(</span><br><span class="line"></span><br><span class="line">    [0] =&gt; test.php</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line">php test.php a b c d</span><br><span class="line">接收到5个参数Array</span><br><span class="line">(</span><br><span class="line"></span><br><span class="line">    [0] =&gt; test.php</span><br><span class="line"></span><br><span class="line">    [1] =&gt; a</span><br><span class="line"></span><br><span class="line">    [2] =&gt; b</span><br><span class="line"></span><br><span class="line">    [3] =&gt; c</span><br><span class="line"></span><br><span class="line">    [4] =&gt; d</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="getopt"><a href="#getopt" class="headerlink" title="getopt"></a>getopt</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$param_arr = getopt(&#x27;a:b:&#x27;);</span><br><span class="line">print_r($param_arr);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">php test.php -a 345</span><br><span class="line"></span><br><span class="line">Array</span><br><span class="line"></span><br><span class="line">(</span><br><span class="line"></span><br><span class="line">    [a] =&gt; 345</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">php test.php -a 345 -b 12q3</span><br><span class="line"></span><br><span class="line">Array</span><br><span class="line"></span><br><span class="line">(</span><br><span class="line"></span><br><span class="line">    [a] =&gt; 345</span><br><span class="line"></span><br><span class="line">    [b] =&gt; 12q3</span><br><span class="line"></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">php test.php -a 345 -b 12q3 -e 3322ff</span><br><span class="line">Array</span><br><span class="line"></span><br><span class="line">(</span><br><span class="line"></span><br><span class="line">    [a] =&gt; 345</span><br><span class="line"></span><br><span class="line">    [b] =&gt; 12q3</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="fwrite"><a href="#fwrite" class="headerlink" title="fwrite"></a>fwrite</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">fwrite(STDOUT,&#x27;请输入您的信息：&#x27;);</span><br><span class="line"></span><br><span class="line">echo &#x27;您输入的信息是：&#x27;.fgets(STDIN);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/array-reduce%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/array-reduce%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E4%B8%AD%E9%97%B4%E4%BB%B6/" class="post-title-link" itemprop="url">array_reduce实现路由中间件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:11:15 / 修改时间：16:12:04" itemprop="dateCreated datePublished" datetime="2024-09-29T16:11:15+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/php/" itemprop="url" rel="index"><span itemprop="name">php</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">interface Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle(Closure $next);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Middleware1 implements Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle(Closure $next)</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Middleware1 before\n&quot;;</span><br><span class="line">        $next();</span><br><span class="line">        echo &quot;Middleware1 after\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Middleware2 implements Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle(Closure $next)</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Middleware2 before\n&quot;;</span><br><span class="line">        $next();</span><br><span class="line">        echo &quot;Middleware2 after\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Middleware3 implements Middleware</span><br><span class="line">&#123;</span><br><span class="line">    public static function handle(Closure $next)</span><br><span class="line">    &#123;</span><br><span class="line">        echo &quot;Middleware3 before\n&quot;;</span><br><span class="line">        $next();</span><br><span class="line">        echo &quot;Middleware3 after\n&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function getSlice() // 返回一个函数，与上文的f一致</span><br><span class="line">&#123;</span><br><span class="line">    return function ($stack, $pipe) &#123;</span><br><span class="line">        return function () use ($stack, $pipe) &#123;</span><br><span class="line">            return $pipe::handle($stack);</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function then()</span><br><span class="line">&#123;</span><br><span class="line">    $pipes = [</span><br><span class="line">        &quot;Middleware1&quot;,</span><br><span class="line">        &quot;Middleware2&quot;,</span><br><span class="line">        &quot;Middleware3&quot;,</span><br><span class="line">    ];</span><br><span class="line"></span><br><span class="line">    $firstSlice = function () &#123; // 上文的目标函数 target</span><br><span class="line">        echo &quot;请求向路由器传递，返回响应.\n&quot;;</span><br><span class="line">    &#125;;</span><br><span class="line">    //嵌套闭包的解包方式是先从外到内，然后从内回归到外面,所以要根据注册顺序进行逆序</span><br><span class="line">    $pipes = array_reverse($pipes);</span><br><span class="line">    $closure = array_reduce($pipes, getSlice(), $firstSlice);</span><br><span class="line">    var_dump($closure);//打印下该闭包</span><br><span class="line">    // 因为最终返回了一个函数，所以需要call_user_func</span><br><span class="line">    call_user_func(array_reduce($pipes, getSlice(), $firstSlice));</span><br><span class="line">&#125;</span><br><span class="line">then();</span><br><span class="line">echo &quot;\n&quot;;</span><br><span class="line">//array_reduce($pipes, getSlice(), $firstSlice)，执行完成后相当于生成了f嵌套闭包</span><br><span class="line">//function f()</span><br><span class="line">//&#123;</span><br><span class="line">//    return Middleware1::handle(</span><br><span class="line">//        function () &#123;</span><br><span class="line">//            return Middleware2::handle(</span><br><span class="line">//                function () &#123;</span><br><span class="line">//                    return Middleware3::handle(function () &#123;</span><br><span class="line">//                        echo &quot;请求向路由器传递，返回响应.\n&quot;;</span><br><span class="line">//                    &#125;);</span><br><span class="line">//                &#125;</span><br><span class="line">//            );</span><br><span class="line">//        &#125;</span><br><span class="line">//    );</span><br><span class="line">//&#125;</span><br><span class="line">//call_user_func(&#x27;f&#x27;);</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/%E4%BB%B6/3302358-20240923164950137-837763612.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Go-seata%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1-ta-xa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Go-seata%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1-ta-xa/" class="post-title-link" itemprop="url">Go+seata实现分布式事务-ta-xa</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:05:40 / 修改时间：16:06:44" itemprop="dateCreated datePublished" datetime="2024-09-29T16:05:40+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" itemprop="url" rel="index"><span itemprop="name">分布式事务</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="docker安装seata"><a href="#docker安装seata" class="headerlink" title="docker安装seata"></a>docker安装seata</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  seata-server:</span><br><span class="line">    image: seataio/seata-server:latest</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8091:8091&quot;</span><br><span class="line">      - &quot;7091:7091&quot;</span><br><span class="line">    environment:</span><br><span class="line">      - SEATA_PORT=8091</span><br><span class="line">      - STORE_MODE=file</span><br><span class="line"></span><br><span class="line">  mysql:</span><br><span class="line">    image: mysql:8.0.32</span><br><span class="line">    container_name: mysql</span><br><span class="line">    environment:</span><br><span class="line">      - MYSQL_ROOT_PASSWORD=12345678</span><br><span class="line">    command: --default-authentication-plugin=mysql_native_password --default-time-zone=&#x27;+08:00&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./mysql:/docker-entrypoint-initdb.d</span><br><span class="line">      - ./mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;3306:3306&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="mysql数据库文件和mysql配置-可选不一定非要docker，只需要大于8-0就行"><a href="#mysql数据库文件和mysql配置-可选不一定非要docker，只需要大于8-0就行" class="headerlink" title="mysql数据库文件和mysql配置(可选不一定非要docker，只需要大于8.0就行)"></a>mysql数据库文件和mysql配置(可选不一定非要docker，只需要大于8.0就行)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">CREATE database if NOT EXISTS seata_client default character set utf8mb4 collate utf8mb4_unicode_ci;</span><br><span class="line">USE seata_client;</span><br><span class="line"></span><br><span class="line">SET NAMES utf8mb4;</span><br><span class="line">SET FOREIGN_KEY_CHECKS = 0;</span><br><span class="line"></span><br><span class="line">CREATE TABLE IF NOT EXISTS  order_tbl (</span><br><span class="line">  id int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  user_id varchar(255) DEFAULT NULL,</span><br><span class="line">  commodity_code varchar(255) DEFAULT NULL,</span><br><span class="line">  count int(11) DEFAULT &#x27;0&#x27;,</span><br><span class="line">  money int(11) DEFAULT &#x27;0&#x27;,</span><br><span class="line">  descs varchar(255) DEFAULT &#x27;&#x27;,</span><br><span class="line">  PRIMARY KEY (id)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;</span><br><span class="line"></span><br><span class="line">INSERT INTO seata_client.order_tbl (id, user_id, commodity_code, count, money, descs) VALUES (1, &#x27;NO-100001&#x27;, &#x27;C100000&#x27;, 100, 10, &#x27;init desc&#x27;);</span><br><span class="line"></span><br><span class="line">DROP TABLE IF EXISTS undo_log;</span><br><span class="line"></span><br><span class="line">CREATE TABLE undo_log (</span><br><span class="line">                            id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">                            branch_id bigint NOT NULL,</span><br><span class="line">                            xid varchar(100) NOT NULL,</span><br><span class="line">                            context varchar(128) NOT NULL,</span><br><span class="line">                            rollback_info longblob NOT NULL,</span><br><span class="line">                            log_status int NOT NULL,</span><br><span class="line">                            log_created datetime NOT NULL,</span><br><span class="line">                            log_modified datetime NOT NULL,</span><br><span class="line">                            ext varchar(100) DEFAULT NULL,</span><br><span class="line">                            PRIMARY KEY (id),</span><br><span class="line">                            KEY idx_unionkey (xid,branch_id)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="本次主要测试at跟xa模式，at模式跟xa模式差距不大-at是seata特有的模式，需要本地一个undo-log记录数据"><a href="#本次主要测试at跟xa模式，at模式跟xa模式差距不大-at是seata特有的模式，需要本地一个undo-log记录数据" class="headerlink" title="本次主要测试at跟xa模式，at模式跟xa模式差距不大,at是seata特有的模式，需要本地一个undo_log记录数据"></a>本次主要测试at跟xa模式，at模式跟xa模式差距不大,at是seata特有的模式，需要本地一个undo_log记录数据</h3><h4 id="连接seata的配置文件"><a href="#连接seata的配置文件" class="headerlink" title="连接seata的配置文件"></a>连接seata的配置文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"># time 时间单位对应的是 time.Duration(1)</span><br><span class="line">seata:</span><br><span class="line">  enabled: true</span><br><span class="line">  # application id</span><br><span class="line">  application-id: applicationName</span><br><span class="line">  # service group</span><br><span class="line">  tx-service-group: default_tx_group</span><br><span class="line">  access-key: aliyunAccessKey</span><br><span class="line">  secret-key: aliyunSecretKey</span><br><span class="line">  enable-auto-data-source-proxy: true</span><br><span class="line">  data-source-proxy-mode: AT</span><br><span class="line">  client:</span><br><span class="line">    rm:</span><br><span class="line">      # Maximum cache length of asynchronous queue</span><br><span class="line">      async-commit-buffer-limit: 10000</span><br><span class="line">      # The maximum number of retries when report reports the status</span><br><span class="line">      report-retry-count: 5</span><br><span class="line">      # The interval for regularly checking the metadata of the db（AT）</span><br><span class="line">      table-meta-check-enable: false</span><br><span class="line">      # Whether to report the status if the transaction is successfully executed（AT）</span><br><span class="line">      report-success-enable: false</span><br><span class="line">      # Whether to allow regular check of db metadata（AT）</span><br><span class="line">      saga-branch-register-enable: false</span><br><span class="line">      saga-json-parser: fastjson</span><br><span class="line">      saga-retry-persist-mode-update: false</span><br><span class="line">      saga-compensate-persist-mode-update: false</span><br><span class="line">      #Ordered.HIGHEST_PRECEDENCE + 1000  #</span><br><span class="line">      tcc-action-interceptor-order: -2147482648</span><br><span class="line">      # Parse SQL parser selection</span><br><span class="line">      sql-parser-type: druid</span><br><span class="line">      lock:</span><br><span class="line">        retry-interval: 30</span><br><span class="line">        retry-times: 10</span><br><span class="line">        retry-policy-branch-rollback-on-conflict: true</span><br><span class="line">    tm:</span><br><span class="line">      commit-retry-count: 5</span><br><span class="line">      rollback-retry-count: 5</span><br><span class="line">      default-global-transaction-timeout: 60s</span><br><span class="line">      degrade-check: false</span><br><span class="line">      degrade-check-period: 2000</span><br><span class="line">      degrade-check-allow-times: 10s</span><br><span class="line">      interceptor-order: -2147482648</span><br><span class="line">    undo:</span><br><span class="line">      # Judge whether the before image and after image are the same，If it is the same, undo will not be recorded</span><br><span class="line">      data-validation: false</span><br><span class="line">      # Serialization method</span><br><span class="line">      log-serialization: json</span><br><span class="line">      # undo log table name</span><br><span class="line">      log-table: undo_log</span><br><span class="line">      # Only store modified fields</span><br><span class="line">      only-care-update-columns: true</span><br><span class="line">      compress:</span><br><span class="line">        # Compression type. Allowed Options: None, Gzip, Zip, Sevenz, Bzip2, Lz4, Zstd, Deflate</span><br><span class="line">        type: None</span><br><span class="line">        #  Compression threshold Unit: k</span><br><span class="line">        threshold: 64k</span><br><span class="line">    load-balance:</span><br><span class="line">      type: RandomLoadBalance</span><br><span class="line">      virtual-nodes: 10</span><br><span class="line">  service:</span><br><span class="line">    vgroup-mapping:</span><br><span class="line">      # Prefix for Print Log</span><br><span class="line">      default_tx_group: default</span><br><span class="line">    grouplist:</span><br><span class="line">      default: 127.0.0.1:8091</span><br><span class="line">    enable-degrade: false</span><br><span class="line">    # close the transaction</span><br><span class="line">    disable-global-transaction: false</span><br><span class="line">  transport:</span><br><span class="line">    shutdown:</span><br><span class="line">      wait: 3s</span><br><span class="line">    # Netty related configurations</span><br><span class="line">    # type</span><br><span class="line">    type: TCP</span><br><span class="line">    server: NIO</span><br><span class="line">    heartbeat: true</span><br><span class="line">    # Encoding and decoding mode</span><br><span class="line">    serialization: seata</span><br><span class="line">    # Message compression mode</span><br><span class="line">    compressor: none</span><br><span class="line">    # Allow batch sending of requests (TM)</span><br><span class="line">    enable-tm-client-batch-send-request: false</span><br><span class="line">    # Allow batch sending of requests (RM)</span><br><span class="line">    enable-rm-client-batch-send-request: true</span><br><span class="line">    # RM send request timeout</span><br><span class="line">    rpc-rm-request-timeout: 30s</span><br><span class="line">    # TM send request timeout</span><br><span class="line">    rpc-tm-request-timeout: 30s</span><br><span class="line">  # Configuration Center</span><br><span class="line">  config:</span><br><span class="line">    type: file</span><br><span class="line">    file:</span><br><span class="line">      name: config.conf</span><br><span class="line">    nacos:</span><br><span class="line">      namespace: &quot;&quot;</span><br><span class="line">      server-addr: 127.0.0.1:8848</span><br><span class="line">      group: SEATA_GROUP</span><br><span class="line">      username: &quot;&quot;</span><br><span class="line">      password: &quot;&quot;</span><br><span class="line">      ##if use MSE Nacos with auth, mutex with username/password attribute</span><br><span class="line">      #access-key: &quot;&quot;</span><br><span class="line">      #secret-key: &quot;&quot;</span><br><span class="line">      data-id: seata.properties</span><br><span class="line">  # Registration Center</span><br><span class="line">  registry:</span><br><span class="line">    type: file</span><br><span class="line">    file:</span><br><span class="line">      name: registry.conf</span><br><span class="line">    nacos:</span><br><span class="line">      application: seata-server</span><br><span class="line">      server-addr: 127.0.0.1:8848</span><br><span class="line">      group: &quot;SEATA_GROUP&quot;</span><br><span class="line">      namespace: &quot;&quot;</span><br><span class="line">      username: &quot;&quot;</span><br><span class="line">      password: &quot;&quot;</span><br><span class="line">      ##if use MSE Nacos with auth, mutex with username/password attribute  #</span><br><span class="line">      #access-key: &quot;&quot;  #</span><br><span class="line">      #secret-key: &quot;&quot;  #</span><br><span class="line">  log:</span><br><span class="line">    exception-rate: 100</span><br><span class="line">  tcc:</span><br><span class="line">    fence:</span><br><span class="line">      # Anti suspension table name</span><br><span class="line">      log-table-name: tcc_fence_log_test</span><br><span class="line">      clean-period: 60s</span><br><span class="line">  # getty configuration</span><br><span class="line">  getty:</span><br><span class="line">    reconnect-interval: 0</span><br><span class="line">    # temporary not supported connection-num</span><br><span class="line">    connection-num: 1</span><br><span class="line">    session:</span><br><span class="line">      compress-encoding: false</span><br><span class="line">      tcp-no-delay: true</span><br><span class="line">      tcp-keep-alive: true</span><br><span class="line">      keep-alive-period: 120s</span><br><span class="line">      tcp-r-buf-size: 262144</span><br><span class="line">      tcp-w-buf-size: 65536</span><br><span class="line">      tcp-read-timeout: 1s</span><br><span class="line">      tcp-write-timeout: 5s</span><br><span class="line">      wait-timeout: 1s</span><br><span class="line">      max-msg-len: 16498688</span><br><span class="line">      session-name: client_test</span><br><span class="line">      cron-period: 1s</span><br></pre></td></tr></table></figure>
+<h3 id="utils-go"><a href="#utils-go" class="headerlink" title="utils.go"></a>utils.go</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package util</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;database/sql&quot;</span><br><span class="line">	&quot;os&quot;</span><br><span class="line"></span><br><span class="line">	sql2 &quot;github.com/seata/seata-go/pkg/datasource/sql&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func GetAtMySqlDb() *sql.DB &#123;</span><br><span class="line">	dsn := &quot;root:root@tcp(192.168.252.1:3306)/seata_client?multiStatements=true&amp;interpolateParams=true&quot;</span><br><span class="line">	dbAt, err := sql.Open(sql2.SeataATMySQLDriver, dsn)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		panic(&quot;init seata at mysql driver error&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	return dbAt</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func GetXAMySqlDb() *sql.DB &#123;</span><br><span class="line">	dsn := &quot;root:root@tcp(192.168.252.1:3306)/seata_client?multiStatements=true&amp;interpolateParams=true&quot;</span><br><span class="line">	dbAt, err := sql.Open(sql2.SeataXAMySQLDriver, dsn)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		panic(&quot;init seata at mysql driver error&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	return dbAt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="客户端，模拟用户请求"><a href="#客户端，模拟用户请求" class="headerlink" title="客户端，模拟用户请求"></a>客户端，模拟用户请求</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;context&quot;</span><br><span class="line">	&quot;flag&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;github.com/parnurzeal/gorequest&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/constant&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/tm&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/util/log&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line"></span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/client&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var serverIpPort = &quot;http://127.0.0.1:8080&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	flag.Parse()</span><br><span class="line">	client.InitPath(&quot;../../../conf/seatago.yml&quot;)</span><br><span class="line"></span><br><span class="line">	bgCtx, cancel := context.WithTimeout(context.Background(), time.Minute*10)</span><br><span class="line">	defer cancel()</span><br><span class="line">	sampleUpdate(bgCtx)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">func updateData(ctx context.Context) (re error) &#123;</span><br><span class="line">	request := gorequest.New()</span><br><span class="line">	log.Infof(&quot;branch transaction begin&quot;)</span><br><span class="line">	request.Post(serverIpPort+&quot;/updateDataSuccess&quot;).</span><br><span class="line">		Set(constant.XidKey, tm.GetXID(ctx)).</span><br><span class="line">		End(func(response gorequest.Response, body string, errs []error) &#123;</span><br><span class="line">			if response.StatusCode != http.StatusOK &#123;</span><br><span class="line">				re = fmt.Errorf(&quot;update data fail&quot;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	return</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func sampleUpdate(ctx context.Context) &#123;</span><br><span class="line">	if err := tm.WithGlobalTx(ctx, &amp;tm.GtxConfig&#123;</span><br><span class="line">		Name:    &quot;ATSampleLocalGlobalTx_Update&quot;,</span><br><span class="line">		Timeout: time.Second * 30,</span><br><span class="line">	&#125;, updateData); err != nil &#123;</span><br><span class="line">		log.Info(err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="服务端，模拟api网关，往不同的微服务发请求"><a href="#服务端，模拟api网关，往不同的微服务发请求" class="headerlink" title="服务端，模拟api网关，往不同的微服务发请求"></a>服务端，模拟api网关，往不同的微服务发请求</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;context&quot;</span><br><span class="line">	&quot;database/sql&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;github.com/gin-gonic/gin&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go-samples/util&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/client&quot;</span><br><span class="line">	ginmiddleware &quot;github.com/seata/seata-go/pkg/integration/gin&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/util/log&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var db *sql.DB</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	client.InitPath(&quot;../../../conf/seatago.yml&quot;)</span><br><span class="line">    //TODO 这里是不同模式</span><br><span class="line">    // db = util.GetXAMySqlDb() //xa</span><br><span class="line">	db = util.GetAtMySqlDb()   //at</span><br><span class="line">	r := gin.Default()</span><br><span class="line">	r.Use(ginmiddleware.TransactionMiddleware())</span><br><span class="line">	r.POST(&quot;/updateDataSuccess&quot;, updateDataSuccessHandler)</span><br><span class="line">	if err := r.Run(&quot;:8080&quot;); err != nil &#123;</span><br><span class="line">		log.Fatalf(&quot;start tcc server fatal: %v&quot;, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func updateDataSuccessHandler(c *gin.Context) &#123;</span><br><span class="line">	log.Infof(&quot;get tm updateData&quot;)</span><br><span class="line">	if err := updateDataSuccess(c); err != nil &#123;</span><br><span class="line">		c.JSON(http.StatusBadRequest, &quot;updateData failure&quot;)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	if err := updateDataSuccess2(c); err != nil &#123;</span><br><span class="line">		c.JSON(http.StatusBadRequest, &quot;updateData2 failure&quot;)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	//c.JSON(http.StatusOK, &quot;updateData ok&quot;) //成功</span><br><span class="line">	c.JSON(http.StatusBadRequest, &quot;updateData failure&quot;) //TODO 测试fail,回滚</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func updateDataSuccess(ctx context.Context) error &#123;</span><br><span class="line">	sql := &quot;update order_tbl set count=? where id=?&quot;</span><br><span class="line">	ret, err := db.ExecContext(ctx, sql, 10, 1)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Printf(&quot;update failed, err:%v\n&quot;, err)</span><br><span class="line">		return nil</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	rows, err := ret.RowsAffected()</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Printf(&quot;update failed, err:%v\n&quot;, err)</span><br><span class="line">		return nil</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Printf(&quot;更新成功 success： %d.\n&quot;, rows)</span><br><span class="line">	return nil</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func updateDataSuccess2(ctx context.Context) error &#123;</span><br><span class="line">	sql := &quot;update order_tbl set count=? where id=?&quot;</span><br><span class="line">	ret, err := db.ExecContext(ctx, sql, 101, 1)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Printf(&quot;update failed, err:%v\n&quot;, err)</span><br><span class="line">		return nil</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	rows, err := ret.RowsAffected()</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Printf(&quot;update failed, err:%v\n&quot;, err)</span><br><span class="line">		return nil</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Printf(&quot;更新成功 success： %d.\n&quot;, rows)</span><br><span class="line">	return nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="把原生sql连接改成gorm连接"><a href="#把原生sql连接改成gorm连接" class="headerlink" title="把原生sql连接改成gorm连接"></a>把原生sql连接改成gorm连接</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;context&quot;</span><br><span class="line">	&quot;database/sql&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line"></span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/client&quot;</span><br><span class="line">	sql2 &quot;github.com/seata/seata-go/pkg/datasource/sql&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/tm&quot;</span><br><span class="line">	&quot;gorm.io/driver/mysql&quot;</span><br><span class="line">	&quot;gorm.io/gorm&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">type OrderTblModel struct &#123;</span><br><span class="line">	Id            int64  `gorm:&quot;column:id&quot; json:&quot;id&quot;`</span><br><span class="line">	UserId        string `gorm:&quot;column:user_id&quot; json:&quot;user_id&quot;`</span><br><span class="line">	CommodityCode string `gorm:&quot;commodity_code&quot; json:&quot;commodity_code&quot;`</span><br><span class="line">	Count         int64  `gorm:&quot;count&quot; json:&quot;count&quot;`</span><br><span class="line">	Money         int64  `gorm:&quot;money&quot; json:&quot;money&quot;`</span><br><span class="line">	Descs         string `gorm:&quot;descs&quot; json:&quot;descs&quot;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	initConfig()</span><br><span class="line">	// insert</span><br><span class="line">	tm.WithGlobalTx(context.Background(), &amp;tm.GtxConfig&#123;</span><br><span class="line">		Name:    &quot;ATSampleLocalGlobalTx&quot;,</span><br><span class="line">		Timeout: time.Second * 30,</span><br><span class="line">	&#125;, insertData)</span><br><span class="line">	&lt;-make(chan struct&#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func initConfig() &#123;</span><br><span class="line">	// init seata client config</span><br><span class="line">	client.InitPath(&quot;../../conf/seatago.yml&quot;)</span><br><span class="line">	// init db object</span><br><span class="line">	initDB()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var gormDB *gorm.DB</span><br><span class="line"></span><br><span class="line">func initDB() &#123;</span><br><span class="line">	sqlDB, err := sql.Open(sql2.SeataATMySQLDriver, &quot;root:12345678@tcp(127.0.0.1:3306)/seata_client?multiStatements=true&amp;interpolateParams=true&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		panic(&quot;init service error&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	gormDB, err = gorm.Open(mysql.New(mysql.Config&#123;</span><br><span class="line">		Conn: sqlDB,</span><br><span class="line">	&#125;), &amp;gorm.Config&#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// insertData insert one data</span><br><span class="line">func insertData(ctx context.Context) error &#123;</span><br><span class="line">	data := OrderTblModel&#123;</span><br><span class="line">		UserId:        &quot;NO-100003&quot;,</span><br><span class="line">		CommodityCode: &quot;C100001&quot;,</span><br><span class="line">		Count:         101,</span><br><span class="line">		Money:         11,</span><br><span class="line">		Descs:         &quot;insert desc&quot;,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return gormDB.WithContext(ctx).Table(&quot;order_tbl&quot;).Create(&amp;data).Error</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// deleteData delete one data</span><br><span class="line">func deleteData(ctx context.Context) error &#123;</span><br><span class="line">	return gormDB.WithContext(ctx).Where(&quot;id = ?&quot;, &quot;1&quot;).Delete(&amp;OrderTblModel&#123;&#125;).Error</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// updateDate update one data</span><br><span class="line">func updateData(ctx context.Context) error &#123;</span><br><span class="line">	return gormDB.WithContext(ctx).Model(&amp;OrderTblModel&#123;&#125;).Where(&quot;id = ?&quot;, &quot;1&quot;).Update(&quot;commodity_code&quot;, &quot;C100002&quot;).Error</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="最后，如果报错-first-phase-error-undo-log-parser-type-jackson-not-found-那么请修改"><a href="#最后，如果报错-first-phase-error-undo-log-parser-type-jackson-not-found-那么请修改" class="headerlink" title="最后，如果报错 first phase error: undo log parser type jackson not found 那么请修改"></a>最后，如果报错 first phase error: undo log parser type jackson not found 那么请修改</h3><h4 id="这句是写死的，没有走配置"><a href="#这句是写死的，没有走配置" class="headerlink" title="这句是写死的，没有走配置"></a>这句是写死的，没有走配置</h4><p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/-xa/1.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Go-seata%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1-tcc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Go-seata%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1-tcc/" class="post-title-link" itemprop="url">Go+seata实现分布式事务-tcc</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:04:28 / 修改时间：16:05:02" itemprop="dateCreated datePublished" datetime="2024-09-29T16:04:28+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" itemprop="url" rel="index"><span itemprop="name">分布式事务</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="上篇用的ta跟xa。这次试试tcc"><a href="#上篇用的ta跟xa。这次试试tcc" class="headerlink" title="上篇用的ta跟xa。这次试试tcc"></a>上篇用的ta跟xa。这次试试tcc</h3><h4 id="client"><a href="#client" class="headerlink" title="client"></a>client</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;context&quot;</span><br><span class="line">	&quot;flag&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line"></span><br><span class="line">	&quot;github.com/parnurzeal/gorequest&quot;</span><br><span class="line"></span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/client&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/constant&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/tm&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/util/log&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	flag.Parse()</span><br><span class="line">	client.InitPath(&quot;../../../conf/seatago.yml&quot;)</span><br><span class="line">	bgCtx, cancel := context.WithTimeout(context.Background(), time.Minute*10)</span><br><span class="line">	defer cancel()</span><br><span class="line">	serverIpPort := &quot;http://127.0.0.1:8080&quot;</span><br><span class="line">	var jsonData = map[string]interface&#123;&#125;&#123;</span><br><span class="line">		&quot;name&quot;: &quot;xxJohn&quot;,</span><br><span class="line">		&quot;age&quot;:  6000,</span><br><span class="line">	&#125;</span><br><span class="line">	tm.WithGlobalTx(</span><br><span class="line">		bgCtx,</span><br><span class="line">		&amp;tm.GtxConfig&#123;</span><br><span class="line">			Name: &quot;TccSampleLocalGlobalTx&quot;,</span><br><span class="line">		&#125;,</span><br><span class="line">		func(ctx context.Context) (re error) &#123;</span><br><span class="line">			request := gorequest.New()</span><br><span class="line">			log.Infof(&quot;branch transaction begin&quot;)</span><br><span class="line">			request.Post(serverIpPort+&quot;/prepare&quot;).Send(jsonData).</span><br><span class="line">				Set(&quot;Content-Type&quot;, &quot;application/json&quot;).</span><br><span class="line">				Set(constant.XidKey, tm.GetXID(ctx)).</span><br><span class="line">				End(func(response gorequest.Response, body string, errs []error) &#123;</span><br><span class="line">					if response.StatusCode != http.StatusOK &#123;</span><br><span class="line">						re = fmt.Errorf(&quot;update data fail&quot;)</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;)</span><br><span class="line">			return</span><br><span class="line">		&#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="server"><a href="#server" class="headerlink" title="server"></a>server</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line"></span><br><span class="line">	&quot;github.com/gin-gonic/gin&quot;</span><br><span class="line">    &quot;github.com/seata/seata-go/pkg/tm&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/client&quot;</span><br><span class="line">	ginmiddleware &quot;github.com/seata/seata-go/pkg/integration/gin&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/rm/tcc&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/util/log&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	client.InitPath(&quot;../../../conf/seatago.yml&quot;)</span><br><span class="line"></span><br><span class="line">	r := gin.Default()</span><br><span class="line"></span><br><span class="line">	r.Use(ginmiddleware.TransactionMiddleware())</span><br><span class="line"></span><br><span class="line">	userProviderProxy, err := tcc.NewTCCServiceProxy(&amp;RMService&#123;&#125;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		log.Errorf(&quot;get userProviderProxy tcc service proxy error, %v&quot;, err.Error())</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	// 定义 JSON 数据的结构体</span><br><span class="line">	type Person struct &#123;</span><br><span class="line">		Name string `json:&quot;name&quot;`</span><br><span class="line">		Age  int    `json:&quot;age&quot;`</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	r.POST(&quot;/prepare&quot;, func(c *gin.Context) &#123;</span><br><span class="line">		var person Person</span><br><span class="line">		// 绑定请求体到 person 结构体</span><br><span class="line">		if err := c.BindJSON(&amp;person); err != nil &#123;</span><br><span class="line">			fmt.Println(&quot;请求json错误&quot;, err)</span><br><span class="line">			c.JSON(http.StatusBadRequest, gin.H&#123;&quot;error&quot;: err.Error()&#125;)</span><br><span class="line">			return</span><br><span class="line">		&#125;</span><br><span class="line">		c.Set(&quot;rollbackData&quot;, person)</span><br><span class="line">		if _, err := userProviderProxy.Prepare(c, person); err != nil &#123;</span><br><span class="line">			c.JSON(http.StatusBadRequest, &quot;prepare failure&quot;)</span><br><span class="line">			return</span><br><span class="line">		&#125;</span><br><span class="line">		c.JSON(http.StatusOK, &quot;prepare ok&quot;)</span><br><span class="line">		//c.JSON(http.StatusBadRequest, &quot;prepare error&quot;) // 模拟错误</span><br><span class="line">	&#125;)</span><br><span class="line"></span><br><span class="line">	if err := r.Run(&quot;:8080&quot;); err != nil &#123;</span><br><span class="line">		log.Fatalf(&quot;start tcc server fatal: %v&quot;, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">type RMService struct &#123;</span><br><span class="line">	Param interface&#123;&#125; //参数保存，防止rollback找不到</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 预提交事务，把参数保存起来</span><br><span class="line">func (b *RMService) Prepare(ctx context.Context, params interface&#123;&#125;) (bool, error) &#123;</span><br><span class="line">	b.Param = params</span><br><span class="line">	log.Infof(&quot;TRMService Prepare, param %v&quot;, params)</span><br><span class="line">	return true, nil</span><br><span class="line">&#125;</span><br><span class="line">// 提交</span><br><span class="line">func (b *RMService) Commit(ctx context.Context, businessActionContext *tm.BusinessActionContext) (bool, error) &#123;</span><br><span class="line">	log.Infof(&quot;RMService Commit, param %v&quot;, businessActionContext)</span><br><span class="line">	return true, nil</span><br><span class="line">&#125;</span><br><span class="line">// 回滚</span><br><span class="line">func (b *RMService) Rollback(ctx context.Context, businessActionContext *tm.BusinessActionContext) (bool, error) &#123;</span><br><span class="line">	log.Infof(&quot;RMService Rollback, param %v&quot;, b.Param)</span><br><span class="line">	return true, nil</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func (b *RMService) GetActionName() string &#123;</span><br><span class="line">	return &quot;ginTccRMService&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Redis%E5%86%85%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Redis%E5%86%85%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5/" class="post-title-link" itemprop="url">Redis内存淘汰策略</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:02:51 / 修改时间：16:03:24" itemprop="dateCreated datePublished" datetime="2024-09-29T16:02:51+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">内存淘汰策略分类</span><br><span class="line">早期版本的 Redis 有以下 6 种淘汰策略：</span><br><span class="line">noeviction：不淘汰任何数据，当内存不足时，新增操作会报错，Redis 默认内存淘汰策略；</span><br><span class="line">allkeys-lru：淘汰整个键值中最久未使用的键值；</span><br><span class="line">allkeys-random：随机淘汰任意键值;</span><br><span class="line">volatile-lru：淘汰所有设置了过期时间的键值中最久未使用的键值；</span><br><span class="line">volatile-random：随机淘汰设置了过期时间的任意键值；</span><br><span class="line">volatile-ttl：优先淘汰更早过期的键值。</span><br><span class="line">在 Redis 4.0 版本中又新增了 2 种淘汰策略：</span><br><span class="line">volatile-lfu：淘汰所有设置了过期时间的键值中，最少使用的键值；</span><br><span class="line">allkeys-lfu：淘汰整个键值中最少使用的键值。</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">技术栈</p>
+  <div class="site-description" itemprop="description">PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">技术栈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

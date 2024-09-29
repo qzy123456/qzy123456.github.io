@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="定时删除；惰性删除；定期删除；定时删除策略是怎么样的？1234567891011121314151617定时删除策略的做法是，在设置 key 的过期时间时，同时创建一个定时事件，当时间到达时，由事件处理器自动执行 key 的删除操作。# By default &quot;hz&quot; is set to 10. Raising the value will use more CPU when#">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis过期删除策略">
+<meta property="og:url" content="http://example.com/2024/09/29/Redis%E8%BF%87%E6%9C%9F%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/index.html">
+<meta property="og:site_name" content="齐朝阳的博客">
+<meta property="og:description" content="定时删除；惰性删除；定期删除；定时删除策略是怎么样的？1234567891011121314151617定时删除策略的做法是，在设置 key 的过期时间时，同时创建一个定时事件，当时间到达时，由事件处理器自动执行 key 的删除操作。# By default &quot;hz&quot; is set to 10. Raising the value will use more CPU when#">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-29T08:00:30.000Z">
+<meta property="article:modified_time" content="2024-09-29T08:00:48.217Z">
+<meta property="article:author" content="技术栈">
+<meta property="article:tag" content="Redis">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/09/29/Redis%E8%BF%87%E6%9C%9F%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Redis过期删除策略 | 齐朝阳的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">齐朝阳的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Redis%E8%BF%87%E6%9C%9F%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Redis过期删除策略
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:00:30 / 修改时间：16:00:48" itemprop="dateCreated datePublished" datetime="2024-09-29T16:00:30+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="定时删除；"><a href="#定时删除；" class="headerlink" title="定时删除；"></a>定时删除；</h2><h2 id="惰性删除；"><a href="#惰性删除；" class="headerlink" title="惰性删除；"></a>惰性删除；</h2><h2 id="定期删除；"><a href="#定期删除；" class="headerlink" title="定期删除；"></a>定期删除；</h2><h3 id="定时删除策略是怎么样的？"><a href="#定时删除策略是怎么样的？" class="headerlink" title="定时删除策略是怎么样的？"></a>定时删除策略是怎么样的？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">定时删除策略的做法是，在设置 key 的过期时间时，同时创建一个定时事件，当时间到达时，由事件处理器自动执行 key 的删除操作。</span><br><span class="line"># By default &quot;hz&quot; is set to 10. Raising the value will use more CPU when</span><br><span class="line"># Redis is idle, but at the same time will make Redis more responsive when</span><br><span class="line"># there are many keys expiring at the same time, and timeouts may be</span><br><span class="line"># handled with more precision.</span><br><span class="line">#</span><br><span class="line"># The range is between 1 and 500, however a value over 100 is usually not</span><br><span class="line"># a good idea. Most users should use the default of 10 and raise this up to</span><br><span class="line"># 100 only in environments where very low latency is required.</span><br><span class="line">hz 10</span><br><span class="line">定时删除策略的优点：</span><br><span class="line"></span><br><span class="line">可以保证过期 key 会被尽快删除，也就是内存可以被尽快地释放。因此，定时删除对内存是最友好的。</span><br><span class="line">定时删除策略的缺点：</span><br><span class="line"></span><br><span class="line">在过期 key 比较多的情况下，删除过期 key 可能会占用相当一部分 CPU 时间，在内存不紧张但 CPU 时间紧张的情况下，将 CPU 时间用于删除和当前任务无关的过期键上，</span><br><span class="line">无疑会对服务器的响应时间和吞吐量造成影响。所以，定时删除策略对 CPU 不友好。</span><br></pre></td></tr></table></figure>
+<h3 id="惰性删除策略是怎么样的？"><a href="#惰性删除策略是怎么样的？" class="headerlink" title="惰性删除策略是怎么样的？"></a>惰性删除策略是怎么样的？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">惰性删除策略的做法是，不主动删除过期键，每次从数据库访问 key 时，都检测 key 是否过期，如果过期则删除该 key。</span><br><span class="line"></span><br><span class="line">惰性删除策略的优点：</span><br><span class="line"></span><br><span class="line">因为每次访问时，才会检查 key 是否过期，所以此策略只会使用很少的系统资源，因此，惰性删除策略对 CPU 时间最友好。</span><br><span class="line">惰性删除策略的缺点：</span><br><span class="line"></span><br><span class="line">如果一个 key 已经过期，而这个 key 又仍然保留在数据库中，那么只要这个过期 key 一直没有被访问，它所占用的内存就不会释放，造成了一定的内存空间浪费。</span><br><span class="line">所以，惰性删除策略对内存不友好。</span><br></pre></td></tr></table></figure>
+<h3 id="定期删除策略是怎么样的？"><a href="#定期删除策略是怎么样的？" class="headerlink" title="定期删除策略是怎么样的？"></a>定期删除策略是怎么样的？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">定期删除策略的做法是，每隔一段时间「随机」从数据库中取出一定数量的 key 进行检查，并删除其中的过期key。</span><br><span class="line">定期删除策略的优点：</span><br><span class="line"></span><br><span class="line">通过限制删除操作执行的时长和频率，来减少删除操作对 CPU 的影响，同时也能删除一部分过期的数据减少了过期键对空间的无效占用。</span><br><span class="line">定期删除策略的缺点：</span><br><span class="line"></span><br><span class="line">内存清理方面没有定时删除效果好，同时没有惰性删除使用的系统资源少。</span><br><span class="line">难以确定删除操作执行的时长和频率。如果执行的太频繁，定期删除策略变得和定时删除策略一样，对CPU不友好；如果执行的太少，那又和惰性删除一样了，</span><br><span class="line">过期 key 占用的内存不会及时得到释放。</span><br><span class="line">#Redis 过期删除策略是什么？</span><br><span class="line">前面介绍了三种过期删除策略，每一种都有优缺点，仅使用某一个策略都不能满足实际需求。</span><br></pre></td></tr></table></figure>
+<h2 id="所以，-Redis-选择「惰性删除-定期删除」这两种策略配和使用，以求在合理使用-CPU-时间和避免内存浪费之间取得平衡。"><a href="#所以，-Redis-选择「惰性删除-定期删除」这两种策略配和使用，以求在合理使用-CPU-时间和避免内存浪费之间取得平衡。" class="headerlink" title="所以， Redis 选择「惰性删除+定期删除」这两种策略配和使用，以求在合理使用 CPU 时间和避免内存浪费之间取得平衡。"></a>所以， Redis 选择「惰性删除+定期删除」这两种策略配和使用，以求在合理使用 CPU 时间和避免内存浪费之间取得平衡。</h2><h2 id="Redis-是怎么实现定期删除的？"><a href="#Redis-是怎么实现定期删除的？" class="headerlink" title="Redis 是怎么实现定期删除的？"></a>Redis 是怎么实现定期删除的？</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">定期删除策略的做法：每隔一段时间「随机」从数据库中取出一定数量的 key 进行检查，并删除其中的过期key。</span><br><span class="line"></span><br><span class="line">1、这个间隔检查的时间是多长呢？</span><br><span class="line"></span><br><span class="line">在 Redis 中，默认每秒进行 10 次过期检查一次数据库，此配置可通过 Redis 的配置文件 redis.conf 进行配置，配置键为 hz 它的默认值是 hz 10。</span><br><span class="line"></span><br><span class="line">特别强调下，每次检查数据库并不是遍历过期字典中的所有 key，而是从数据库中随机抽取一定数量的 key 进行过期检查。</span><br><span class="line"></span><br><span class="line">2、随机抽查的数量是多少呢？</span><br><span class="line"></span><br><span class="line">我查了下源码，定期删除的实现在 expire.c 文件下的 activeExpireCycle 函数中，其中随机抽查的数量由 ACTIVE_EXPIRE_CYCLE_LOOKUPS_PER_LOOP 定义的，它是写死在代码中的，数值是 20。</span><br><span class="line"></span><br><span class="line">也就是说，数据库每轮抽查时，会随机选择 20 个 key 判断是否过期。</span><br><span class="line"></span><br><span class="line">接下来，详细说说 Redis 的定期删除的流程：</span><br><span class="line"></span><br><span class="line">从过期字典中随机抽取 20 个 key；</span><br><span class="line">检查这 20 个 key 是否过期，并删除已过期的 key；</span><br><span class="line">如果本轮检查的已过期 key 的数量，超过 5 个（20/4），也就是「已过期 key 的数量」占比「随机抽取 key 的数量」大于 25%，则继续重复步骤 1；如果已过期的 key 比例小于 25%，</span><br><span class="line">则停止继续删除过期 key，然后等待下一轮再检查。</span><br><span class="line">可以看到，定期删除是一个循环的流程。</span><br><span class="line"></span><br><span class="line">那 Redis 为了保证定期删除不会出现循环过度，导致线程卡死现象，为此增加了定期删除循环流程的时间上限，默认不会超过 25ms。</span><br></pre></td></tr></table></figure>
+<h3 id="针对定期删除的流程伪代码："><a href="#针对定期删除的流程伪代码：" class="headerlink" title="针对定期删除的流程伪代码："></a>针对定期删除的流程伪代码：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">do &#123;</span><br><span class="line">    //已过期的数量</span><br><span class="line">    expired = 0；</span><br><span class="line">    //随机抽取的数量</span><br><span class="line">    num = 20;</span><br><span class="line">    while (num--) &#123;</span><br><span class="line">        //1. 从过期字典中随机抽取 1 个 key</span><br><span class="line">        //2. 判断该 key 是否过期，如果已过期则进行删除，同时对 expired++</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    // 超过时间限制则退出</span><br><span class="line">    if (timelimit_exit) return;</span><br><span class="line"></span><br><span class="line">  /* 如果本轮检查的已过期 key 的数量，超过 25%，则继续随机抽查，否则退出本轮检查 */</span><br><span class="line">&#125; while (expired &gt; 20/4); </span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Redis/" rel="tag"># Redis</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/09/29/%E6%9F%A5%E6%89%BEredis%E6%B0%B8%E4%B8%8D%E8%BF%87%E6%9C%9F%E7%9A%84key/" rel="prev" title="查找redis永不过期的key">
+      <i class="fa fa-chevron-left"></i> 查找redis永不过期的key
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/09/29/Redis%E4%BA%8B%E5%8A%A1/" rel="next" title="Redis事务">
+      Redis事务 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E5%88%A0%E9%99%A4%EF%BC%9B"><span class="nav-number">1.</span> <span class="nav-text">定时删除；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%B0%E6%80%A7%E5%88%A0%E9%99%A4%EF%BC%9B"><span class="nav-number">2.</span> <span class="nav-text">惰性删除；</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%9C%9F%E5%88%A0%E9%99%A4%EF%BC%9B"><span class="nav-number">3.</span> <span class="nav-text">定期删除；</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">定时删除策略是怎么样的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%B0%E6%80%A7%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">惰性删除策略是怎么样的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E6%9C%9F%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="nav-number">3.3.</span> <span class="nav-text">定期删除策略是怎么样的？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%80%E4%BB%A5%EF%BC%8C-Redis-%E9%80%89%E6%8B%A9%E3%80%8C%E6%83%B0%E6%80%A7%E5%88%A0%E9%99%A4-%E5%AE%9A%E6%9C%9F%E5%88%A0%E9%99%A4%E3%80%8D%E8%BF%99%E4%B8%A4%E7%A7%8D%E7%AD%96%E7%95%A5%E9%85%8D%E5%92%8C%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%BB%A5%E6%B1%82%E5%9C%A8%E5%90%88%E7%90%86%E4%BD%BF%E7%94%A8-CPU-%E6%97%B6%E9%97%B4%E5%92%8C%E9%81%BF%E5%85%8D%E5%86%85%E5%AD%98%E6%B5%AA%E8%B4%B9%E4%B9%8B%E9%97%B4%E5%8F%96%E5%BE%97%E5%B9%B3%E8%A1%A1%E3%80%82"><span class="nav-number">4.</span> <span class="nav-text">所以， Redis 选择「惰性删除+定期删除」这两种策略配和使用，以求在合理使用 CPU 时间和避免内存浪费之间取得平衡。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%9C%9F%E5%88%A0%E9%99%A4%E7%9A%84%EF%BC%9F"><span class="nav-number">5.</span> <span class="nav-text">Redis 是怎么实现定期删除的？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E5%AE%9A%E6%9C%9F%E5%88%A0%E9%99%A4%E7%9A%84%E6%B5%81%E7%A8%8B%E4%BC%AA%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">5.1.</span> <span class="nav-text">针对定期删除的流程伪代码：</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">技术栈</p>
+  <div class="site-description" itemprop="description">PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">技术栈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

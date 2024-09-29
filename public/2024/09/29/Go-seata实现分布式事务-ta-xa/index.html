@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="docker安装seata12345678910111213141516171819202122version: &#x27;3&#x27;services:  seata-server:    image: seataio&#x2F;seata-server:latest    ports:      - &quot;8091:8091&quot;      - &quot;7091:7091&quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go+seata实现分布式事务-ta-xa">
+<meta property="og:url" content="http://example.com/2024/09/29/Go-seata%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1-ta-xa/index.html">
+<meta property="og:site_name" content="齐朝阳的博客">
+<meta property="og:description" content="docker安装seata12345678910111213141516171819202122version: &#x27;3&#x27;services:  seata-server:    image: seataio&#x2F;seata-server:latest    ports:      - &quot;8091:8091&quot;      - &quot;7091:7091&quot;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/-xa/1.png">
+<meta property="article:published_time" content="2024-09-29T08:05:40.000Z">
+<meta property="article:modified_time" content="2024-09-29T08:06:44.421Z">
+<meta property="article:author" content="技术栈">
+<meta property="article:tag" content="分布式事务">
+<meta property="article:tag" content="Go">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/-xa/1.png">
+
+<link rel="canonical" href="http://example.com/2024/09/29/Go-seata%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1-ta-xa/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Go+seata实现分布式事务-ta-xa | 齐朝阳的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">齐朝阳的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Go-seata%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1-ta-xa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Go+seata实现分布式事务-ta-xa
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 16:05:40 / 修改时间：16:06:44" itemprop="dateCreated datePublished" datetime="2024-09-29T16:05:40+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" itemprop="url" rel="index"><span itemprop="name">分布式事务</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/Go/" itemprop="url" rel="index"><span itemprop="name">Go</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="docker安装seata"><a href="#docker安装seata" class="headerlink" title="docker安装seata"></a>docker安装seata</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">version: &#x27;3&#x27;</span><br><span class="line">services:</span><br><span class="line">  seata-server:</span><br><span class="line">    image: seataio/seata-server:latest</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;8091:8091&quot;</span><br><span class="line">      - &quot;7091:7091&quot;</span><br><span class="line">    environment:</span><br><span class="line">      - SEATA_PORT=8091</span><br><span class="line">      - STORE_MODE=file</span><br><span class="line"></span><br><span class="line">  mysql:</span><br><span class="line">    image: mysql:8.0.32</span><br><span class="line">    container_name: mysql</span><br><span class="line">    environment:</span><br><span class="line">      - MYSQL_ROOT_PASSWORD=12345678</span><br><span class="line">    command: --default-authentication-plugin=mysql_native_password --default-time-zone=&#x27;+08:00&#x27;</span><br><span class="line">    volumes:</span><br><span class="line">      - ./mysql:/docker-entrypoint-initdb.d</span><br><span class="line">      - ./mysql/mysqld.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf</span><br><span class="line">    ports:</span><br><span class="line">      - &quot;3306:3306&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="mysql数据库文件和mysql配置-可选不一定非要docker，只需要大于8-0就行"><a href="#mysql数据库文件和mysql配置-可选不一定非要docker，只需要大于8-0就行" class="headerlink" title="mysql数据库文件和mysql配置(可选不一定非要docker，只需要大于8.0就行)"></a>mysql数据库文件和mysql配置(可选不一定非要docker，只需要大于8.0就行)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">CREATE database if NOT EXISTS seata_client default character set utf8mb4 collate utf8mb4_unicode_ci;</span><br><span class="line">USE seata_client;</span><br><span class="line"></span><br><span class="line">SET NAMES utf8mb4;</span><br><span class="line">SET FOREIGN_KEY_CHECKS = 0;</span><br><span class="line"></span><br><span class="line">CREATE TABLE IF NOT EXISTS  order_tbl (</span><br><span class="line">  id int(11) NOT NULL AUTO_INCREMENT,</span><br><span class="line">  user_id varchar(255) DEFAULT NULL,</span><br><span class="line">  commodity_code varchar(255) DEFAULT NULL,</span><br><span class="line">  count int(11) DEFAULT &#x27;0&#x27;,</span><br><span class="line">  money int(11) DEFAULT &#x27;0&#x27;,</span><br><span class="line">  descs varchar(255) DEFAULT &#x27;&#x27;,</span><br><span class="line">  PRIMARY KEY (id)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;</span><br><span class="line"></span><br><span class="line">INSERT INTO seata_client.order_tbl (id, user_id, commodity_code, count, money, descs) VALUES (1, &#x27;NO-100001&#x27;, &#x27;C100000&#x27;, 100, 10, &#x27;init desc&#x27;);</span><br><span class="line"></span><br><span class="line">DROP TABLE IF EXISTS undo_log;</span><br><span class="line"></span><br><span class="line">CREATE TABLE undo_log (</span><br><span class="line">                            id bigint NOT NULL AUTO_INCREMENT,</span><br><span class="line">                            branch_id bigint NOT NULL,</span><br><span class="line">                            xid varchar(100) NOT NULL,</span><br><span class="line">                            context varchar(128) NOT NULL,</span><br><span class="line">                            rollback_info longblob NOT NULL,</span><br><span class="line">                            log_status int NOT NULL,</span><br><span class="line">                            log_created datetime NOT NULL,</span><br><span class="line">                            log_modified datetime NOT NULL,</span><br><span class="line">                            ext varchar(100) DEFAULT NULL,</span><br><span class="line">                            PRIMARY KEY (id),</span><br><span class="line">                            KEY idx_unionkey (xid,branch_id)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="本次主要测试at跟xa模式，at模式跟xa模式差距不大-at是seata特有的模式，需要本地一个undo-log记录数据"><a href="#本次主要测试at跟xa模式，at模式跟xa模式差距不大-at是seata特有的模式，需要本地一个undo-log记录数据" class="headerlink" title="本次主要测试at跟xa模式，at模式跟xa模式差距不大,at是seata特有的模式，需要本地一个undo_log记录数据"></a>本次主要测试at跟xa模式，at模式跟xa模式差距不大,at是seata特有的模式，需要本地一个undo_log记录数据</h3><h4 id="连接seata的配置文件"><a href="#连接seata的配置文件" class="headerlink" title="连接seata的配置文件"></a>连接seata的配置文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"># time 时间单位对应的是 time.Duration(1)</span><br><span class="line">seata:</span><br><span class="line">  enabled: true</span><br><span class="line">  # application id</span><br><span class="line">  application-id: applicationName</span><br><span class="line">  # service group</span><br><span class="line">  tx-service-group: default_tx_group</span><br><span class="line">  access-key: aliyunAccessKey</span><br><span class="line">  secret-key: aliyunSecretKey</span><br><span class="line">  enable-auto-data-source-proxy: true</span><br><span class="line">  data-source-proxy-mode: AT</span><br><span class="line">  client:</span><br><span class="line">    rm:</span><br><span class="line">      # Maximum cache length of asynchronous queue</span><br><span class="line">      async-commit-buffer-limit: 10000</span><br><span class="line">      # The maximum number of retries when report reports the status</span><br><span class="line">      report-retry-count: 5</span><br><span class="line">      # The interval for regularly checking the metadata of the db（AT）</span><br><span class="line">      table-meta-check-enable: false</span><br><span class="line">      # Whether to report the status if the transaction is successfully executed（AT）</span><br><span class="line">      report-success-enable: false</span><br><span class="line">      # Whether to allow regular check of db metadata（AT）</span><br><span class="line">      saga-branch-register-enable: false</span><br><span class="line">      saga-json-parser: fastjson</span><br><span class="line">      saga-retry-persist-mode-update: false</span><br><span class="line">      saga-compensate-persist-mode-update: false</span><br><span class="line">      #Ordered.HIGHEST_PRECEDENCE + 1000  #</span><br><span class="line">      tcc-action-interceptor-order: -2147482648</span><br><span class="line">      # Parse SQL parser selection</span><br><span class="line">      sql-parser-type: druid</span><br><span class="line">      lock:</span><br><span class="line">        retry-interval: 30</span><br><span class="line">        retry-times: 10</span><br><span class="line">        retry-policy-branch-rollback-on-conflict: true</span><br><span class="line">    tm:</span><br><span class="line">      commit-retry-count: 5</span><br><span class="line">      rollback-retry-count: 5</span><br><span class="line">      default-global-transaction-timeout: 60s</span><br><span class="line">      degrade-check: false</span><br><span class="line">      degrade-check-period: 2000</span><br><span class="line">      degrade-check-allow-times: 10s</span><br><span class="line">      interceptor-order: -2147482648</span><br><span class="line">    undo:</span><br><span class="line">      # Judge whether the before image and after image are the same，If it is the same, undo will not be recorded</span><br><span class="line">      data-validation: false</span><br><span class="line">      # Serialization method</span><br><span class="line">      log-serialization: json</span><br><span class="line">      # undo log table name</span><br><span class="line">      log-table: undo_log</span><br><span class="line">      # Only store modified fields</span><br><span class="line">      only-care-update-columns: true</span><br><span class="line">      compress:</span><br><span class="line">        # Compression type. Allowed Options: None, Gzip, Zip, Sevenz, Bzip2, Lz4, Zstd, Deflate</span><br><span class="line">        type: None</span><br><span class="line">        #  Compression threshold Unit: k</span><br><span class="line">        threshold: 64k</span><br><span class="line">    load-balance:</span><br><span class="line">      type: RandomLoadBalance</span><br><span class="line">      virtual-nodes: 10</span><br><span class="line">  service:</span><br><span class="line">    vgroup-mapping:</span><br><span class="line">      # Prefix for Print Log</span><br><span class="line">      default_tx_group: default</span><br><span class="line">    grouplist:</span><br><span class="line">      default: 127.0.0.1:8091</span><br><span class="line">    enable-degrade: false</span><br><span class="line">    # close the transaction</span><br><span class="line">    disable-global-transaction: false</span><br><span class="line">  transport:</span><br><span class="line">    shutdown:</span><br><span class="line">      wait: 3s</span><br><span class="line">    # Netty related configurations</span><br><span class="line">    # type</span><br><span class="line">    type: TCP</span><br><span class="line">    server: NIO</span><br><span class="line">    heartbeat: true</span><br><span class="line">    # Encoding and decoding mode</span><br><span class="line">    serialization: seata</span><br><span class="line">    # Message compression mode</span><br><span class="line">    compressor: none</span><br><span class="line">    # Allow batch sending of requests (TM)</span><br><span class="line">    enable-tm-client-batch-send-request: false</span><br><span class="line">    # Allow batch sending of requests (RM)</span><br><span class="line">    enable-rm-client-batch-send-request: true</span><br><span class="line">    # RM send request timeout</span><br><span class="line">    rpc-rm-request-timeout: 30s</span><br><span class="line">    # TM send request timeout</span><br><span class="line">    rpc-tm-request-timeout: 30s</span><br><span class="line">  # Configuration Center</span><br><span class="line">  config:</span><br><span class="line">    type: file</span><br><span class="line">    file:</span><br><span class="line">      name: config.conf</span><br><span class="line">    nacos:</span><br><span class="line">      namespace: &quot;&quot;</span><br><span class="line">      server-addr: 127.0.0.1:8848</span><br><span class="line">      group: SEATA_GROUP</span><br><span class="line">      username: &quot;&quot;</span><br><span class="line">      password: &quot;&quot;</span><br><span class="line">      ##if use MSE Nacos with auth, mutex with username/password attribute</span><br><span class="line">      #access-key: &quot;&quot;</span><br><span class="line">      #secret-key: &quot;&quot;</span><br><span class="line">      data-id: seata.properties</span><br><span class="line">  # Registration Center</span><br><span class="line">  registry:</span><br><span class="line">    type: file</span><br><span class="line">    file:</span><br><span class="line">      name: registry.conf</span><br><span class="line">    nacos:</span><br><span class="line">      application: seata-server</span><br><span class="line">      server-addr: 127.0.0.1:8848</span><br><span class="line">      group: &quot;SEATA_GROUP&quot;</span><br><span class="line">      namespace: &quot;&quot;</span><br><span class="line">      username: &quot;&quot;</span><br><span class="line">      password: &quot;&quot;</span><br><span class="line">      ##if use MSE Nacos with auth, mutex with username/password attribute  #</span><br><span class="line">      #access-key: &quot;&quot;  #</span><br><span class="line">      #secret-key: &quot;&quot;  #</span><br><span class="line">  log:</span><br><span class="line">    exception-rate: 100</span><br><span class="line">  tcc:</span><br><span class="line">    fence:</span><br><span class="line">      # Anti suspension table name</span><br><span class="line">      log-table-name: tcc_fence_log_test</span><br><span class="line">      clean-period: 60s</span><br><span class="line">  # getty configuration</span><br><span class="line">  getty:</span><br><span class="line">    reconnect-interval: 0</span><br><span class="line">    # temporary not supported connection-num</span><br><span class="line">    connection-num: 1</span><br><span class="line">    session:</span><br><span class="line">      compress-encoding: false</span><br><span class="line">      tcp-no-delay: true</span><br><span class="line">      tcp-keep-alive: true</span><br><span class="line">      keep-alive-period: 120s</span><br><span class="line">      tcp-r-buf-size: 262144</span><br><span class="line">      tcp-w-buf-size: 65536</span><br><span class="line">      tcp-read-timeout: 1s</span><br><span class="line">      tcp-write-timeout: 5s</span><br><span class="line">      wait-timeout: 1s</span><br><span class="line">      max-msg-len: 16498688</span><br><span class="line">      session-name: client_test</span><br><span class="line">      cron-period: 1s</span><br></pre></td></tr></table></figure>
+<h3 id="utils-go"><a href="#utils-go" class="headerlink" title="utils.go"></a>utils.go</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package util</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;database/sql&quot;</span><br><span class="line">	&quot;os&quot;</span><br><span class="line"></span><br><span class="line">	sql2 &quot;github.com/seata/seata-go/pkg/datasource/sql&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func GetAtMySqlDb() *sql.DB &#123;</span><br><span class="line">	dsn := &quot;root:root@tcp(192.168.252.1:3306)/seata_client?multiStatements=true&amp;interpolateParams=true&quot;</span><br><span class="line">	dbAt, err := sql.Open(sql2.SeataATMySQLDriver, dsn)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		panic(&quot;init seata at mysql driver error&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	return dbAt</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func GetXAMySqlDb() *sql.DB &#123;</span><br><span class="line">	dsn := &quot;root:root@tcp(192.168.252.1:3306)/seata_client?multiStatements=true&amp;interpolateParams=true&quot;</span><br><span class="line">	dbAt, err := sql.Open(sql2.SeataXAMySQLDriver, dsn)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		panic(&quot;init seata at mysql driver error&quot;)</span><br><span class="line">	&#125;</span><br><span class="line">	return dbAt</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="客户端，模拟用户请求"><a href="#客户端，模拟用户请求" class="headerlink" title="客户端，模拟用户请求"></a>客户端，模拟用户请求</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;context&quot;</span><br><span class="line">	&quot;flag&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;github.com/parnurzeal/gorequest&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/constant&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/tm&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/util/log&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line"></span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/client&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var serverIpPort = &quot;http://127.0.0.1:8080&quot;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	flag.Parse()</span><br><span class="line">	client.InitPath(&quot;../../../conf/seatago.yml&quot;)</span><br><span class="line"></span><br><span class="line">	bgCtx, cancel := context.WithTimeout(context.Background(), time.Minute*10)</span><br><span class="line">	defer cancel()</span><br><span class="line">	sampleUpdate(bgCtx)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">func updateData(ctx context.Context) (re error) &#123;</span><br><span class="line">	request := gorequest.New()</span><br><span class="line">	log.Infof(&quot;branch transaction begin&quot;)</span><br><span class="line">	request.Post(serverIpPort+&quot;/updateDataSuccess&quot;).</span><br><span class="line">		Set(constant.XidKey, tm.GetXID(ctx)).</span><br><span class="line">		End(func(response gorequest.Response, body string, errs []error) &#123;</span><br><span class="line">			if response.StatusCode != http.StatusOK &#123;</span><br><span class="line">				re = fmt.Errorf(&quot;update data fail&quot;)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;)</span><br><span class="line">	return</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func sampleUpdate(ctx context.Context) &#123;</span><br><span class="line">	if err := tm.WithGlobalTx(ctx, &amp;tm.GtxConfig&#123;</span><br><span class="line">		Name:    &quot;ATSampleLocalGlobalTx_Update&quot;,</span><br><span class="line">		Timeout: time.Second * 30,</span><br><span class="line">	&#125;, updateData); err != nil &#123;</span><br><span class="line">		log.Info(err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="服务端，模拟api网关，往不同的微服务发请求"><a href="#服务端，模拟api网关，往不同的微服务发请求" class="headerlink" title="服务端，模拟api网关，往不同的微服务发请求"></a>服务端，模拟api网关，往不同的微服务发请求</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;context&quot;</span><br><span class="line">	&quot;database/sql&quot;</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;github.com/gin-gonic/gin&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go-samples/util&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/client&quot;</span><br><span class="line">	ginmiddleware &quot;github.com/seata/seata-go/pkg/integration/gin&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/util/log&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">var db *sql.DB</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	client.InitPath(&quot;../../../conf/seatago.yml&quot;)</span><br><span class="line">    //TODO 这里是不同模式</span><br><span class="line">    // db = util.GetXAMySqlDb() //xa</span><br><span class="line">	db = util.GetAtMySqlDb()   //at</span><br><span class="line">	r := gin.Default()</span><br><span class="line">	r.Use(ginmiddleware.TransactionMiddleware())</span><br><span class="line">	r.POST(&quot;/updateDataSuccess&quot;, updateDataSuccessHandler)</span><br><span class="line">	if err := r.Run(&quot;:8080&quot;); err != nil &#123;</span><br><span class="line">		log.Fatalf(&quot;start tcc server fatal: %v&quot;, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func updateDataSuccessHandler(c *gin.Context) &#123;</span><br><span class="line">	log.Infof(&quot;get tm updateData&quot;)</span><br><span class="line">	if err := updateDataSuccess(c); err != nil &#123;</span><br><span class="line">		c.JSON(http.StatusBadRequest, &quot;updateData failure&quot;)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	if err := updateDataSuccess2(c); err != nil &#123;</span><br><span class="line">		c.JSON(http.StatusBadRequest, &quot;updateData2 failure&quot;)</span><br><span class="line">		return</span><br><span class="line">	&#125;</span><br><span class="line">	//c.JSON(http.StatusOK, &quot;updateData ok&quot;) //成功</span><br><span class="line">	c.JSON(http.StatusBadRequest, &quot;updateData failure&quot;) //TODO 测试fail,回滚</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func updateDataSuccess(ctx context.Context) error &#123;</span><br><span class="line">	sql := &quot;update order_tbl set count=? where id=?&quot;</span><br><span class="line">	ret, err := db.ExecContext(ctx, sql, 10, 1)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Printf(&quot;update failed, err:%v\n&quot;, err)</span><br><span class="line">		return nil</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	rows, err := ret.RowsAffected()</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Printf(&quot;update failed, err:%v\n&quot;, err)</span><br><span class="line">		return nil</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Printf(&quot;更新成功 success： %d.\n&quot;, rows)</span><br><span class="line">	return nil</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func updateDataSuccess2(ctx context.Context) error &#123;</span><br><span class="line">	sql := &quot;update order_tbl set count=? where id=?&quot;</span><br><span class="line">	ret, err := db.ExecContext(ctx, sql, 101, 1)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Printf(&quot;update failed, err:%v\n&quot;, err)</span><br><span class="line">		return nil</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	rows, err := ret.RowsAffected()</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Printf(&quot;update failed, err:%v\n&quot;, err)</span><br><span class="line">		return nil</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Printf(&quot;更新成功 success： %d.\n&quot;, rows)</span><br><span class="line">	return nil</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="把原生sql连接改成gorm连接"><a href="#把原生sql连接改成gorm连接" class="headerlink" title="把原生sql连接改成gorm连接"></a>把原生sql连接改成gorm连接</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;context&quot;</span><br><span class="line">	&quot;database/sql&quot;</span><br><span class="line">	&quot;time&quot;</span><br><span class="line"></span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/client&quot;</span><br><span class="line">	sql2 &quot;github.com/seata/seata-go/pkg/datasource/sql&quot;</span><br><span class="line">	&quot;github.com/seata/seata-go/pkg/tm&quot;</span><br><span class="line">	&quot;gorm.io/driver/mysql&quot;</span><br><span class="line">	&quot;gorm.io/gorm&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">type OrderTblModel struct &#123;</span><br><span class="line">	Id            int64  `gorm:&quot;column:id&quot; json:&quot;id&quot;`</span><br><span class="line">	UserId        string `gorm:&quot;column:user_id&quot; json:&quot;user_id&quot;`</span><br><span class="line">	CommodityCode string `gorm:&quot;commodity_code&quot; json:&quot;commodity_code&quot;`</span><br><span class="line">	Count         int64  `gorm:&quot;count&quot; json:&quot;count&quot;`</span><br><span class="line">	Money         int64  `gorm:&quot;money&quot; json:&quot;money&quot;`</span><br><span class="line">	Descs         string `gorm:&quot;descs&quot; json:&quot;descs&quot;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	initConfig()</span><br><span class="line">	// insert</span><br><span class="line">	tm.WithGlobalTx(context.Background(), &amp;tm.GtxConfig&#123;</span><br><span class="line">		Name:    &quot;ATSampleLocalGlobalTx&quot;,</span><br><span class="line">		Timeout: time.Second * 30,</span><br><span class="line">	&#125;, insertData)</span><br><span class="line">	&lt;-make(chan struct&#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">func initConfig() &#123;</span><br><span class="line">	// init seata client config</span><br><span class="line">	client.InitPath(&quot;../../conf/seatago.yml&quot;)</span><br><span class="line">	// init db object</span><br><span class="line">	initDB()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var gormDB *gorm.DB</span><br><span class="line"></span><br><span class="line">func initDB() &#123;</span><br><span class="line">	sqlDB, err := sql.Open(sql2.SeataATMySQLDriver, &quot;root:12345678@tcp(127.0.0.1:3306)/seata_client?multiStatements=true&amp;interpolateParams=true&quot;)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		panic(&quot;init service error&quot;)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	gormDB, err = gorm.Open(mysql.New(mysql.Config&#123;</span><br><span class="line">		Conn: sqlDB,</span><br><span class="line">	&#125;), &amp;gorm.Config&#123;&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// insertData insert one data</span><br><span class="line">func insertData(ctx context.Context) error &#123;</span><br><span class="line">	data := OrderTblModel&#123;</span><br><span class="line">		UserId:        &quot;NO-100003&quot;,</span><br><span class="line">		CommodityCode: &quot;C100001&quot;,</span><br><span class="line">		Count:         101,</span><br><span class="line">		Money:         11,</span><br><span class="line">		Descs:         &quot;insert desc&quot;,</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return gormDB.WithContext(ctx).Table(&quot;order_tbl&quot;).Create(&amp;data).Error</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// deleteData delete one data</span><br><span class="line">func deleteData(ctx context.Context) error &#123;</span><br><span class="line">	return gormDB.WithContext(ctx).Where(&quot;id = ?&quot;, &quot;1&quot;).Delete(&amp;OrderTblModel&#123;&#125;).Error</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// updateDate update one data</span><br><span class="line">func updateData(ctx context.Context) error &#123;</span><br><span class="line">	return gormDB.WithContext(ctx).Model(&amp;OrderTblModel&#123;&#125;).Where(&quot;id = ?&quot;, &quot;1&quot;).Update(&quot;commodity_code&quot;, &quot;C100002&quot;).Error</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="最后，如果报错-first-phase-error-undo-log-parser-type-jackson-not-found-那么请修改"><a href="#最后，如果报错-first-phase-error-undo-log-parser-type-jackson-not-found-那么请修改" class="headerlink" title="最后，如果报错 first phase error: undo log parser type jackson not found 那么请修改"></a>最后，如果报错 first phase error: undo log parser type jackson not found 那么请修改</h3><h4 id="这句是写死的，没有走配置"><a href="#这句是写死的，没有走配置" class="headerlink" title="这句是写死的，没有走配置"></a>这句是写死的，没有走配置</h4><p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/-xa/1.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1/" rel="tag"># 分布式事务</a>
+              <a href="/tags/Go/" rel="tag"># Go</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/09/29/Go-seata%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1-tcc/" rel="prev" title="Go+seata实现分布式事务-tcc">
+      <i class="fa fa-chevron-left"></i> Go+seata实现分布式事务-tcc
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/09/29/array-reduce%E5%AE%9E%E7%8E%B0%E8%B7%AF%E7%94%B1%E4%B8%AD%E9%97%B4%E4%BB%B6/" rel="next" title="array_reduce实现路由中间件">
+      array_reduce实现路由中间件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#docker%E5%AE%89%E8%A3%85seata"><span class="nav-number">1.</span> <span class="nav-text">docker安装seata</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mysql%E6%95%B0%E6%8D%AE%E5%BA%93%E6%96%87%E4%BB%B6%E5%92%8Cmysql%E9%85%8D%E7%BD%AE-%E5%8F%AF%E9%80%89%E4%B8%8D%E4%B8%80%E5%AE%9A%E9%9D%9E%E8%A6%81docker%EF%BC%8C%E5%8F%AA%E9%9C%80%E8%A6%81%E5%A4%A7%E4%BA%8E8-0%E5%B0%B1%E8%A1%8C"><span class="nav-number">2.</span> <span class="nav-text">mysql数据库文件和mysql配置(可选不一定非要docker，只需要大于8.0就行)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E6%AC%A1%E4%B8%BB%E8%A6%81%E6%B5%8B%E8%AF%95at%E8%B7%9Fxa%E6%A8%A1%E5%BC%8F%EF%BC%8Cat%E6%A8%A1%E5%BC%8F%E8%B7%9Fxa%E6%A8%A1%E5%BC%8F%E5%B7%AE%E8%B7%9D%E4%B8%8D%E5%A4%A7-at%E6%98%AFseata%E7%89%B9%E6%9C%89%E7%9A%84%E6%A8%A1%E5%BC%8F%EF%BC%8C%E9%9C%80%E8%A6%81%E6%9C%AC%E5%9C%B0%E4%B8%80%E4%B8%AAundo-log%E8%AE%B0%E5%BD%95%E6%95%B0%E6%8D%AE"><span class="nav-number">3.</span> <span class="nav-text">本次主要测试at跟xa模式，at模式跟xa模式差距不大,at是seata特有的模式，需要本地一个undo_log记录数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E6%8E%A5seata%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">连接seata的配置文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#utils-go"><span class="nav-number">4.</span> <span class="nav-text">utils.go</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%8C%E6%A8%A1%E6%8B%9F%E7%94%A8%E6%88%B7%E8%AF%B7%E6%B1%82"><span class="nav-number">5.</span> <span class="nav-text">客户端，模拟用户请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%EF%BC%8C%E6%A8%A1%E6%8B%9Fapi%E7%BD%91%E5%85%B3%EF%BC%8C%E5%BE%80%E4%B8%8D%E5%90%8C%E7%9A%84%E5%BE%AE%E6%9C%8D%E5%8A%A1%E5%8F%91%E8%AF%B7%E6%B1%82"><span class="nav-number">6.</span> <span class="nav-text">服务端，模拟api网关，往不同的微服务发请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%8A%E5%8E%9F%E7%94%9Fsql%E8%BF%9E%E6%8E%A5%E6%94%B9%E6%88%90gorm%E8%BF%9E%E6%8E%A5"><span class="nav-number">7.</span> <span class="nav-text">把原生sql连接改成gorm连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%EF%BC%8C%E5%A6%82%E6%9E%9C%E6%8A%A5%E9%94%99-first-phase-error-undo-log-parser-type-jackson-not-found-%E9%82%A3%E4%B9%88%E8%AF%B7%E4%BF%AE%E6%94%B9"><span class="nav-number">8.</span> <span class="nav-text">最后，如果报错 first phase error: undo log parser type jackson not found 那么请修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%99%E5%8F%A5%E6%98%AF%E5%86%99%E6%AD%BB%E7%9A%84%EF%BC%8C%E6%B2%A1%E6%9C%89%E8%B5%B0%E9%85%8D%E7%BD%AE"><span class="nav-number">8.1.</span> <span class="nav-text">这句是写死的，没有走配置</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">技术栈</p>
+  <div class="site-description" itemprop="description">PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">技术栈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta property="og:type" content="website">
+<meta property="og:title" content="齐朝阳的博客">
+<meta property="og:url" content="http://example.com/page/5/index.html">
+<meta property="og:site_name" content="齐朝阳的博客">
+<meta property="og:description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="技术栈">
+<meta property="article:tag" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>齐朝阳的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">齐朝阳的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="post-title-link" itemprop="url">Hexo搭建个人博客</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:12:20 / 修改时间：15:15:33" itemprop="dateCreated datePublished" datetime="2024-09-29T15:12:20+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="新建git项目"><a href="#新建git项目" class="headerlink" title="新建git项目"></a>新建git项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">首先在 GitHub 新建一个仓库（Repository），名称为 https://username&#125;.github.io，注意这个名比较特殊，</span><br><span class="line">必须要是 github.io 为后缀结尾的。比如我的GitHub用户名就叫qzy123456，那我就新建一个qzy123456.github.io，新建完成之后就可以进行后续操作了。</span><br></pre></td></tr></table></figure>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &#123;name&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安装git推送插件"><a href="#安装git推送插件" class="headerlink" title="安装git推送插件"></a>安装git推送插件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<h3 id="安装图片插件"><a href="#安装图片插件" class="headerlink" title="安装图片插件"></a>安装图片插件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-image-link --save</span><br></pre></td></tr></table></figure>
+<h3 id="修改-config-yml中的post-asset-folder-true-这个修改可以同时在source-posts目录下建立一个同名文件夹，用于放图片"><a href="#修改-config-yml中的post-asset-folder-true-这个修改可以同时在source-posts目录下建立一个同名文件夹，用于放图片" class="headerlink" title="修改_config.yml中的post_asset_folder: true 这个修改可以同时在source&#x2F;_posts目录下建立一个同名文件夹，用于放图片"></a>修改_config.yml中的post_asset_folder: true 这个修改可以同时在source&#x2F;_posts目录下建立一个同名文件夹，用于放图片</h3><h3 id="配置站点信息-config-yml-文件，找到-Site-区域"><a href="#配置站点信息-config-yml-文件，找到-Site-区域" class="headerlink" title="配置站点信息_config.yml 文件，找到 Site 区域"></a>配置站点信息_config.yml 文件，找到 Site 区域</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: 齐朝阳的博客</span><br><span class="line">subtitle: 二级title</span><br><span class="line">description: PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</span><br><span class="line">keywords: &quot;PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...&quot;</span><br><span class="line">author: 技术栈</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia/Shanghai</span><br></pre></td></tr></table></figure>
+<h3 id="安装主题-在项目根目录"><a href="#安装主题-在项目根目录" class="headerlink" title="安装主题,在项目根目录"></a>安装主题,在项目根目录</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<h3 id="修改项目根目录下的-config-yml-文件，找到-theme-字段，修改为-next-即可，修改如下："><a href="#修改项目根目录下的-config-yml-文件，找到-theme-字段，修改为-next-即可，修改如下：" class="headerlink" title="修改项目根目录下的 _config.yml 文件，找到 theme 字段，修改为 next 即可，修改如下："></a>修改项目根目录下的 _config.yml 文件，找到 theme 字段，修改为 next 即可，修改如下：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+<h3 id="主题配置，注意修改的-themes-next-config-yml-文件"><a href="#主题配置，注意修改的-themes-next-config-yml-文件" class="headerlink" title="主题配置，注意修改的 themes&#x2F;next&#x2F;_config.yml 文件"></a>主题配置，注意修改的 themes&#x2F;next&#x2F;_config.yml 文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheme: Pisces</span><br></pre></td></tr></table></figure>
+<h3 id="新建页面"><a href="#新建页面" class="headerlink" title="新建页面"></a>新建页面</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;Page Title&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<h3 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h3 id="删除静态文件缓存"><a href="#删除静态文件缓存" class="headerlink" title="删除静态文件缓存"></a>删除静态文件缓存</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<h3 id="发布到git-需要配置config"><a href="#发布到git-需要配置config" class="headerlink" title="发布到git,需要配置config"></a>发布到git,需要配置config</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  rero: git@github.com:qzy123456/qzy123456.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+<h3 id="新建-标签-和分类-页面"><a href="#新建-标签-和分类-页面" class="headerlink" title="新建 标签 和分类 页面"></a>新建 标签 和分类 页面</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在根目录输入命令 hexo new page categories 会自动新建 categorier 文件夹并生成一个index.md文件，将里面的代码改为：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2020-01-21 12:12:26</span><br><span class="line">type: &quot;categories&quot; </span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="同理，「标签」也一样-hexo-new-page-tags-生成-tags-文件夹，其中会自动生成一个index-md文件，将代码改为："><a href="#同理，「标签」也一样-hexo-new-page-tags-生成-tags-文件夹，其中会自动生成一个index-md文件，将代码改为：" class="headerlink" title="同理，「标签」也一样 hexo new page tags 生成 tags 文件夹，其中会自动生成一个index.md文件，将代码改为："></a>同理，「标签」也一样 hexo new page tags 生成 tags 文件夹，其中会自动生成一个index.md文件，将代码改为：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2020-01-21 12:13:08</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="配置菜单"><a href="#配置菜单" class="headerlink" title="配置菜单"></a>配置菜单</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">在themes\next下的_config.yml中</span><br><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  #about: /about/ || user</span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  archives: /archives/ || archive</span><br><span class="line">  #schedule: /schedule/ || calendar</span><br><span class="line">  #sitemap: /sitemap.xml || sitemap</span><br><span class="line">  #commonweal: /404/ || heartbeat</span><br><span class="line"></span><br><span class="line"># Enable / Disable menu icons / item badges.</span><br><span class="line">menu_settings:</span><br><span class="line">  icons: true</span><br></pre></td></tr></table></figure>
+<h3 id="使用时-如果要对文章使用「tags」「categories」，只需在文章开头添加如下代码："><a href="#使用时-如果要对文章使用「tags」「categories」，只需在文章开头添加如下代码：" class="headerlink" title="使用时,如果要对文章使用「tags」「categories」，只需在文章开头添加如下代码："></a>使用时,如果要对文章使用「tags」「categories」，只需在文章开头添加如下代码：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 摸鱼</span><br><span class="line">date: 2020-01-21 12:04:59</span><br><span class="line">tags: 杂项</span><br><span class="line">categories: 技术</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="为了方便，我们可以修改post模板，修改Hexo-scaffolds-post-md"><a href="#为了方便，我们可以修改post模板，修改Hexo-scaffolds-post-md" class="headerlink" title="为了方便，我们可以修改post模板，修改Hexo\scaffolds\post.md"></a>为了方便，我们可以修改post模板，修改Hexo\scaffolds\post.md</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h4 id="用base编码处理图片"><a href="#用base编码处理图片" class="headerlink" title="用base编码处理图片"></a>用base编码处理图片</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">{% asset_img "png;base64,iVBORw0KGgoAAAANSUhEUgAAA..." "Alt text" %}</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/filebeat%E5%92%8Clogstash%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/filebeat%E5%92%8Clogstash%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">filebeat和logstash的简单配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 10:49:18 / 修改时间：13:52:50" itemprop="dateCreated datePublished" datetime="2024-09-29T10:49:18+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es/" itemprop="url" rel="index"><span itemprop="name">es</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="x20-filebeat基本配置"><a href="#x20-filebeat基本配置" class="headerlink" title="&#x20;filebeat基本配置"></a>&#x20;filebeat基本配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"># 输入</span><br><span class="line">filebeat.<span class="property">inputs</span>:</span><br><span class="line">- <span class="attr">type</span>: log</span><br><span class="line">  <span class="attr">enabled</span>: <span class="literal">true</span></span><br><span class="line">  <span class="attr">paths</span>:</span><br><span class="line">    - <span class="attr">Z</span>:\webman\runtime\logs\ad-*.<span class="property">log</span></span><br><span class="line">  #json.<span class="property">keys_under_root</span>: <span class="literal">true</span></span><br><span class="line">  #json.<span class="property">overwrite_keys</span>: <span class="literal">true</span></span><br><span class="line">  #json.<span class="property">add_error_key</span>: <span class="literal">true</span>  </span><br><span class="line">  <span class="attr">fields_under_root</span>: <span class="literal">true</span></span><br><span class="line">  #这种配置既可以解析json，又支持原日志</span><br><span class="line">  <span class="attr">processors</span>:</span><br><span class="line">    - <span class="attr">decode_json_fields</span>:</span><br><span class="line">        <span class="attr">fields</span>: [<span class="string">&#x27;message&#x27;</span>]</span><br><span class="line">        <span class="attr">target</span>: <span class="string">&quot;&quot;</span> </span><br><span class="line">        <span class="attr">overwrite_keys</span>: <span class="literal">false</span> </span><br><span class="line">        <span class="attr">process_array</span>: <span class="literal">false</span> </span><br><span class="line">        <span class="attr">max_depth</span>: <span class="number">1</span></span><br><span class="line">    #过滤系统自带的字段,有几个内置的<span class="number">8.9</span>删不掉，低版本貌似可以.或者用logstash删除</span><br><span class="line">    - <span class="attr">drop_fields</span>:</span><br><span class="line">        <span class="attr">fields</span>: [<span class="string">&quot;log&quot;</span>,<span class="string">&quot;host&quot;</span>,<span class="string">&quot;input&quot;</span>,<span class="string">&quot;agent&quot;</span>,<span class="string">&quot;ecs&quot;</span>,<span class="string">&quot;host&quot;</span>]</span><br><span class="line">    #把日志的时间当成es的时间</span><br><span class="line">    - <span class="attr">date</span>:</span><br><span class="line">        <span class="attr">field</span>: log.<span class="property">time</span> # 日志里的时间字段，</span><br><span class="line">        <span class="attr">formats</span>:</span><br><span class="line">          - <span class="string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span> #时间字段的格式</span><br><span class="line">        <span class="attr">timezone</span>: <span class="title class_">Asia</span>/<span class="title class_">Shanghai</span></span><br><span class="line">        <span class="attr">target_field</span>: <span class="string">&quot;@timestamp&quot;</span> #要替换的字段，或者可以新增</span><br><span class="line"></span><br><span class="line"># 指定索引的分区数</span><br><span class="line">setup.<span class="property">template</span>.<span class="property">settings</span>:</span><br><span class="line">  index.<span class="property">number_of_shards</span>: <span class="number">3</span></span><br><span class="line"># 输出到指定<span class="variable constant_">ES</span>的配置</span><br><span class="line">output.<span class="property">elasticsearch</span>:</span><br><span class="line">  <span class="attr">hosts</span>: [<span class="string">&quot;localhost:9200&quot;</span>]</span><br><span class="line">  <span class="attr">index</span>: <span class="string">&quot;emps-ad-log-%&#123;+yyyy.MM.dd&#125;&quot;</span></span><br><span class="line">setup.<span class="property">template</span>.<span class="property">name</span>: <span class="string">&quot;emps-ad-log&quot;</span></span><br><span class="line">setup.<span class="property">template</span>.<span class="property">pattern</span>: <span class="string">&quot;emps-ad-log-*&quot;</span>  </span><br></pre></td></tr></table></figure>
+
+<h3 id="logstash的简单配置"><a href="#logstash的简单配置" class="headerlink" title="logstash的简单配置"></a>logstash的简单配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">input &#123;</span><br><span class="line"> file &#123;</span><br><span class="line">    path =&gt; [ &quot;/home/ubuntu/php/webman/runtime/logs/ad-*.log&quot; ]</span><br><span class="line">   #从头开始读，sincedb_path 文件存在时，会从记录的开始读</span><br><span class="line">   start_position =&gt; &quot;beginning&quot;</span><br><span class="line">   #不记录读取文件的位置，测试时候用</span><br><span class="line">   sincedb_path =&gt; &quot;/dev/null&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">filter &#123;</span><br><span class="line">  json &#123;</span><br><span class="line">    source =&gt; &quot;message&quot;</span><br><span class="line">  &#125;</span><br><span class="line"> </span><br><span class="line">  mutate &#123;</span><br><span class="line">    remove_field =&gt; [&quot;event&quot;,&#x27;file&#x27;,&#x27;log&#x27;, &quot;path&quot;, &quot;host&quot;, &quot;@version&quot;]</span><br><span class="line">  &#125;</span><br><span class="line">  #把日志时间作为es的时间</span><br><span class="line">  date &#123;</span><br><span class="line">     match =&gt;[&quot;time&quot;,&quot;yyyy-MM-dd HH:mm:ss&quot;] #把日志的time解析成对应的格式</span><br><span class="line">	 timezone =&gt; &quot;Asia/Shanghai&quot;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">output &#123;</span><br><span class="line">  #stdout &#123;</span><br><span class="line">  #  codec =&gt; rubydebug</span><br><span class="line">  #&#125;</span><br><span class="line">  elasticsearch &#123;</span><br><span class="line">    hosts =&gt; [&quot;localhost:9200&quot;]  # Elasticsearch 服务器的地址和端口</span><br><span class="line">    index =&gt; &quot;your_custom_index&quot;  # 自定义索引名称，替换为你想要的索引名</span><br><span class="line"> 	template_name =&gt; &quot;your_custom_template&quot;</span><br><span class="line">    #template_overwrite =&gt; true</span><br><span class="line">    template_pattern =&gt; &quot;your_pattern*&quot;  # 指定匹配索引名称的模式</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2024/09/29/filebeat%E5%92%8Clogstash%E7%9A%84%E7%AE%80%E5%8D%95%E9%85%8D%E7%BD%AE/3302358-20231108173702655-1012356458.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/" class="post-title-link" itemprop="url">docker安装es+kibana</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 10:41:05 / 修改时间：13:52:35" itemprop="dateCreated datePublished" datetime="2024-09-29T10:41:05+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es/" itemprop="url" rel="index"><span itemprop="name">es</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="es，可以选择自己想要的版本"><a href="#es，可以选择自己想要的版本" class="headerlink" title="es，可以选择自己想要的版本"></a>es，可以选择自己想要的版本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -e &quot;discovery.type=single-node&quot; -e ES_JAVA_OPTS=&quot;-Xms512m -Xmx512m&quot; -d elasticsearch:7.16.2</span><br></pre></td></tr></table></figure>
+<h3 id="kibana"><a href="#kibana" class="headerlink" title="kibana"></a>kibana</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run --name kibana -e ELASTICSEARCH_HOSTS=http://192.168.252.128:9200 -p 5601:5601 -d kibana:7.16.2</span><br><span class="line">或者</span><br><span class="line">docker run -d --name kibana -p 5601:5601 \</span><br><span class="line">-e ELASTICSEARCH_HOSTS=http://192.168.252.128:9200 \ #Es Url</span><br><span class="line">-e ELASTICSEARCH_USERNAME=root \  #Es 账号，Es不开启认证可不设置</span><br><span class="line">-e ELASTICSEARCH_PASSWORD=123456  \ #Es 密码 ，Es不开启认证可不设置</span><br><span class="line">-e I18N_LOCALE=zh-CN \ #汉化</span><br><span class="line">kibana:7.16.2</span><br></pre></td></tr></table></figure>
+<h3 id="修改kibana的配置"><a href="#修改kibana的配置" class="headerlink" title="修改kibana的配置"></a>修改kibana的配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker exec -it kibana  /bin/sh</span><br></pre></td></tr></table></figure>
+<h3 id="修改kibana-yml，然后保存退出：-wq"><a href="#修改kibana-yml，然后保存退出：-wq" class="headerlink" title="修改kibana.yml，然后保存退出：:wq"></a>修改kibana.yml，然后保存退出：:wq</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server.name: kibana</span><br><span class="line">server.host: &quot;0&quot;</span><br><span class="line">#注意这里的ip不能是localhost，是本地的ip地址</span><br><span class="line">elasticsearch.hosts: [ &quot;http://192.168.252.128:9200&quot; ]  </span><br><span class="line">xpack.monitoring.ui.container.elasticsearch.enabled: true</span><br><span class="line">#设置kibana中文显示</span><br><span class="line">i18n.locale: zh-CN</span><br></pre></td></tr></table></figure>
+<h3 id="访问-http-192-168-1-1-5601-和-http-192-168-1-1-9200"><a href="#访问-http-192-168-1-1-5601-和-http-192-168-1-1-9200" class="headerlink" title="访问 http://192.168.1.1:5601 和 http://192.168.1.1:9200"></a>访问 <a target="_blank" rel="noopener" href="http://192.168.1.1:5601/">http://192.168.1.1:5601</a> 和 <a target="_blank" rel="noopener" href="http://192.168.1.1:9200/">http://192.168.1.1:9200</a></h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/%E5%AE%89%E8%A3%85clickhouse-%E5%BB%BA%E8%A1%A8-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/%E5%AE%89%E8%A3%85clickhouse-%E5%BB%BA%E8%A1%A8-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/" class="post-title-link" itemprop="url">安装clickhouse+建表+增删改查</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 10:36:36 / 修改时间：13:53:15" itemprop="dateCreated datePublished" datetime="2024-09-29T10:36:36+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/es/" itemprop="url" rel="index"><span itemprop="name">es</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><h4 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run --name clickhouse-server --ulimit nofile=262144:262144 --volume=$HOME/clickhouse:/var/lib/clickhouse -p 8123:8123 -p 9000:9000 -p 9004:9004 clickhouse/clickhouse-server</span><br></pre></td></tr></table></figure>
+<h3 id="apt"><a href="#apt" class="headerlink" title="apt"></a>apt</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 8919F6BD2B48D754</span><br></pre></td></tr></table></figure>
+<h4 id="向-etc-apt-sources-list-d-目录添加-ClickHouse-存储库："><a href="#向-etc-apt-sources-list-d-目录添加-ClickHouse-存储库：" class="headerlink" title="向 &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F; 目录添加 ClickHouse 存储库："></a>向 &#x2F;etc&#x2F;apt&#x2F;sources.list.d&#x2F; 目录添加 ClickHouse 存储库：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;deb https://packages.clickhouse.com/deb stable main&quot; | sudo tee /etc/apt/sources.list.d/clickhouse.list</span><br></pre></td></tr></table></figure>
+<h4 id="更新-apt-包索引："><a href="#更新-apt-包索引：" class="headerlink" title="更新 apt 包索引："></a>更新 apt 包索引：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h4 id="安装-ClickHouse-服务器和客户端："><a href="#安装-ClickHouse-服务器和客户端：" class="headerlink" title="安装 ClickHouse 服务器和客户端："></a>安装 ClickHouse 服务器和客户端：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y clickhouse-server clickhouse-client</span><br></pre></td></tr></table></figure>
+<h4 id="启动-ClickHouse-服务："><a href="#启动-ClickHouse-服务：" class="headerlink" title="启动 ClickHouse 服务："></a>启动 ClickHouse 服务：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service clickhouse-server start</span><br></pre></td></tr></table></figure>
+<h4 id="连接到-ClickHouse-服务器："><a href="#连接到-ClickHouse-服务器：" class="headerlink" title="连接到 ClickHouse 服务器："></a>连接到 ClickHouse 服务器：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clickhouse-client</span><br></pre></td></tr></table></figure>
+<h3 id="apt安装的中间会让你输入密码。下面是如何修改密码"><a href="#apt安装的中间会让你输入密码。下面是如何修改密码" class="headerlink" title="apt安装的中间会让你输入密码。下面是如何修改密码"></a>apt安装的中间会让你输入密码。下面是如何修改密码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo -n 密码 | openssl dgst -sha256</span><br></pre></td></tr></table></figure>
+<h3 id="修改对应的xml文件，apt的在-etc-clickhouse-server-users-d-。docker的在刚才的-HOME-clickhouse"><a href="#修改对应的xml文件，apt的在-etc-clickhouse-server-users-d-。docker的在刚才的-HOME-clickhouse" class="headerlink" title="修改对应的xml文件，apt的在&#x2F;etc&#x2F;clickhouse-server&#x2F;users.d&#x2F;。docker的在刚才的$HOME&#x2F;clickhouse"></a>修改对应的xml文件，apt的在&#x2F;etc&#x2F;clickhouse-server&#x2F;users.d&#x2F;。docker的在刚才的$HOME&#x2F;clickhouse</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;clickhouse&gt;</span><br><span class="line">    &lt;users&gt;</span><br><span class="line">        &lt;default&gt;</span><br><span class="line">            &lt;password remove=&#x27;1&#x27; /&gt;</span><br><span class="line">            #### 修改这个</span><br><span class="line">            &lt;password_sha256_hex&gt;86250f09bcf44ec7efb5864e12201a8e63f04e9d377f6a66470e2604325523c7&lt;/password_sha256_hex&gt;</span><br><span class="line">        &lt;/default&gt;</span><br><span class="line">    &lt;/users&gt;</span><br><span class="line">&lt;/clickhouse&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="使用默认账号，登陆。PS：docker需要进入到容器内-docker-exec-it"><a href="#使用默认账号，登陆。PS：docker需要进入到容器内-docker-exec-it" class="headerlink" title="使用默认账号，登陆。PS：docker需要进入到容器内 docker exec -it"></a>使用默认账号，登陆。PS：docker需要进入到容器内 docker exec -it</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clickhouse-client </span><br><span class="line">#输入密码</span><br></pre></td></tr></table></figure>
+<h3 id="剩下的基本跟mysql一样了"><a href="#剩下的基本跟mysql一样了" class="headerlink" title="剩下的基本跟mysql一样了"></a>剩下的基本跟mysql一样了</h3><h3 id="建库"><a href="#建库" class="headerlink" title="建库"></a>建库</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CREATE DATABASE IF NOT EXISTS my_database;</span><br></pre></td></tr></table></figure>
+<h3 id="显示所有库-show-database；"><a href="#显示所有库-show-database；" class="headerlink" title="显示所有库 show database；"></a>显示所有库 show database；</h3><p><img src="/2024/09/29/%E5%AE%89%E8%A3%85clickhouse-%E5%BB%BA%E8%A1%A8-%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/3302358-20240919095852116-1495472751.png"></p>
+<h3 id="使用某个库-use-my-database；"><a href="#使用某个库-use-my-database；" class="headerlink" title="使用某个库 use my_database；"></a>使用某个库 use my_database；</h3><h3 id="建表略有不同，引擎常用的是MergeTree-ORDER-BY是定义主键"><a href="#建表略有不同，引擎常用的是MergeTree-ORDER-BY是定义主键" class="headerlink" title="建表略有不同，引擎常用的是MergeTree,ORDER BY是定义主键"></a>建表略有不同，引擎常用的是MergeTree,ORDER BY是定义主键</h3><h3 id="注意，不支持主键自增，需要自己维护主键，或者使用uuid。例如-id-UUID-DEFAULT-generateUUIDv4"><a href="#注意，不支持主键自增，需要自己维护主键，或者使用uuid。例如-id-UUID-DEFAULT-generateUUIDv4" class="headerlink" title="注意，不支持主键自增，需要自己维护主键，或者使用uuid。例如 id UUID DEFAULT generateUUIDv4(),"></a>注意，不支持主键自增，需要自己维护主键，或者使用uuid。例如 <code>id</code> UUID DEFAULT generateUUIDv4(),</h3><h4 id="partition-by-id-分区，可选"><a href="#partition-by-id-分区，可选" class="headerlink" title="partition by (id) 分区，可选"></a>partition by (id) 分区，可选</h4><h4 id="PRIMARY-KEY-id-主键，可选"><a href="#PRIMARY-KEY-id-主键，可选" class="headerlink" title="PRIMARY KEY (id) 主键，可选"></a>PRIMARY KEY (id) 主键，可选</h4><h4 id="ORDER-BY-必选"><a href="#ORDER-BY-必选" class="headerlink" title="ORDER BY 必选"></a>ORDER BY 必选</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE my_database.my_table</span><br><span class="line">(</span><br><span class="line">    `id` UInt32,</span><br><span class="line">    `name` String,</span><br><span class="line">    `timestamp` DateTime,</span><br><span class="line">    `value` Float32</span><br><span class="line">)</span><br><span class="line">ENGINE = MergeTree()</span><br><span class="line">partition by (id)</span><br><span class="line">PRIMARY KEY (id)</span><br><span class="line">ORDER BY id;</span><br></pre></td></tr></table></figure>
+<h3 id="插入数据，插入多行数据"><a href="#插入数据，插入多行数据" class="headerlink" title="插入数据，插入多行数据"></a>插入数据，插入多行数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO my_database.my_table (id, name, timestamp, value) VALUES (1, &#x27;John Doe&#x27;, &#x27;2021-01-01 00:00:00&#x27;, 1.0);</span><br><span class="line">INSERT INTO my_database.my_table (id, name, timestamp, value) VALUES (2, &#x27;Jane Doe&#x27;, &#x27;2021-01-02 00:00:00&#x27;, 2.0), (3, &#x27;Mike Smith&#x27;, &#x27;2021-01-03 00:00:00&#x27;, 3.0);</span><br></pre></td></tr></table></figure>
+<h3 id="查询数据-查询特定列-条件查询-范围查询-排序查询结果-限制查询结果数量"><a href="#查询数据-查询特定列-条件查询-范围查询-排序查询结果-限制查询结果数量" class="headerlink" title="查询数据,查询特定列,条件查询,范围查询,排序查询结果,限制查询结果数量"></a>查询数据,查询特定列,条件查询,范围查询,排序查询结果,限制查询结果数量</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM my_database.my_table;</span><br><span class="line">SELECT name, value FROM my_database.my_table;</span><br><span class="line">SELECT * FROM my_database.my_table WHERE id = 1;</span><br><span class="line">SELECT * FROM my_database.my_table WHERE timestamp &gt;= &#x27;2021-01-01 00:00:00&#x27; AND timestamp &lt;= &#x27;2021-01-31 23:59:59&#x27;;</span><br><span class="line">SELECT * FROM my_database.my_table ORDER BY timestamp DESC;</span><br><span class="line">SELECT * FROM my_database.my_table LIMIT 10;</span><br></pre></td></tr></table></figure>
+<h3 id="更新数据-ClickHouse-支持-ALTER-TABLE-来修改表结构，例如添加或删除列，但不支持传统意义上的-UPDATE-语句来修改现有数据。需要使用-ALTER-TABLE。"><a href="#更新数据-ClickHouse-支持-ALTER-TABLE-来修改表结构，例如添加或删除列，但不支持传统意义上的-UPDATE-语句来修改现有数据。需要使用-ALTER-TABLE。" class="headerlink" title="更新数据,ClickHouse 支持 ALTER TABLE 来修改表结构，例如添加或删除列，但不支持传统意义上的 UPDATE 语句来修改现有数据。需要使用 ALTER TABLE。"></a>更新数据,ClickHouse 支持 ALTER TABLE 来修改表结构，例如添加或删除列，但不支持传统意义上的 UPDATE 语句来修改现有数据。需要使用 ALTER TABLE。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE my_database.my_table UPDATE name = &#x27;new_value&#x27; WHERE id = 2;</span><br></pre></td></tr></table></figure>
+<h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DELETE FROM my_database.my_table WHERE id = 1</span><br><span class="line">或</span><br><span class="line">ALTER TABLE my_database.my_table DELETE WHERE id = 1;</span><br></pre></td></tr></table></figure>
+<h3 id="使用python操作"><a href="#使用python操作" class="headerlink" title="使用python操作"></a>使用python操作</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">from clickhouse_driver import Client</span><br><span class="line"> </span><br><span class="line"># 连接到ClickHouse服务器</span><br><span class="line">client = Client(host=&#x27;127.0.0.1&#x27;, user=&#x27;default&#x27;, password=&#x27;123456&#x27;)</span><br><span class="line"> </span><br><span class="line"># 创建数据库</span><br><span class="line">#client.execute(&#x27;CREATE DATABASE IF NOT EXISTS test_db&#x27;)</span><br><span class="line"> </span><br><span class="line"># 使用特定数据库</span><br><span class="line">client.execute(&#x27;USE my_database&#x27;)</span><br><span class="line"> </span><br><span class="line"># 创建表</span><br><span class="line">#client.execute(&quot;CREATE TABLE my_table(`id` UInt32,`name` String,`timestamp` DateTime,`value` Float32)ENGINE = MergeTree() ORDER BY id;&quot;)</span><br><span class="line"> </span><br><span class="line"># 插入数据</span><br><span class="line">#client.execute(&quot;INSERT INTO my_database.my_table (id, name, timestamp, value) VALUES (2, &#x27;Jane Doe&#x27;, &#x27;2021-01-02 00:00:00&#x27;, 2.0), (3, &#x27;Mike Smith&#x27;, &#x27;2021-01-03 00:00:00&#x27;, 3.0);&quot;)</span><br><span class="line"> </span><br><span class="line"># 查询数据</span><br><span class="line">result = client.execute(&#x27;SELECT * FROM my_table&#x27;)</span><br><span class="line">for row in result:</span><br><span class="line">    print(row)</span><br><span class="line"> </span><br><span class="line"># 关闭客户端连接</span><br><span class="line">client.disconnect()</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Swoole%E4%B9%8BHyperf%E6%A1%86%E6%9E%B6%E7%9A%84%E8%BF%81%E7%A7%BB%E5%92%8C%E5%A1%AB%E5%85%85/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Swoole%E4%B9%8BHyperf%E6%A1%86%E6%9E%B6%E7%9A%84%E8%BF%81%E7%A7%BB%E5%92%8C%E5%A1%AB%E5%85%85/" class="post-title-link" itemprop="url">Swoole之Hyperf框架的迁移和填充</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 10:28:03 / 修改时间：13:53:08" itemprop="dateCreated datePublished" datetime="2024-09-29T10:28:03+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。"><a href="#hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。" class="headerlink" title="hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。"></a>hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。</h3><h3 id="生成迁移文件-这点文档有，具体可以参考文档-https-hyperf-wiki-3-1-zh-cn-db-migration"><a href="#生成迁移文件-这点文档有，具体可以参考文档-https-hyperf-wiki-3-1-zh-cn-db-migration" class="headerlink" title="生成迁移文件,这点文档有，具体可以参考文档 https://hyperf.wiki/3.1/#/zh-cn/db/migration"></a>生成迁移文件,这点文档有，具体可以参考文档 <a target="_blank" rel="noopener" href="https://hyperf.wiki/3.1/#/zh-cn/db/migration">https://hyperf.wiki/3.1/#/zh-cn/db/migration</a></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php gen:migration create_users_table</span><br></pre></td></tr></table></figure>
+<h3 id="修改migrations文件夹下的对应文件-驼峰命名修改了create-users-table-为了测试，数据库只有2个字段"><a href="#修改migrations文件夹下的对应文件-驼峰命名修改了create-users-table-为了测试，数据库只有2个字段" class="headerlink" title="修改migrations文件夹下的对应文件(驼峰命名修改了create_users_table),为了测试，数据库只有2个字段"></a>修改migrations文件夹下的对应文件(驼峰命名修改了create_users_table),为了测试，数据库只有2个字段</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public function up(): void</span><br><span class="line">    &#123;</span><br><span class="line">        Schema::create(&#x27;users&#x27;, function (Blueprint $table) &#123;</span><br><span class="line">            $table-&gt;bigIncrements(&#x27;id&#x27;);</span><br><span class="line">            $table-&gt;string(&#x27;name&#x27;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="开始迁移"><a href="#开始迁移" class="headerlink" title="开始迁移"></a>开始迁移</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php migrate</span><br></pre></td></tr></table></figure>
+<h3 id="迁移-填充，得有填充文件"><a href="#迁移-填充，得有填充文件" class="headerlink" title="迁移+填充，得有填充文件"></a>迁移+填充，得有填充文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php migrate --seed</span><br></pre></td></tr></table></figure>
+<h3 id="迁移单个"><a href="#迁移单个" class="headerlink" title="迁移单个"></a>迁移单个</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php migrate --path=migrations/xx.php</span><br></pre></td></tr></table></figure>
+<h3 id="生成填充文件。PS：这点详细的可以参考laravel的文档。"><a href="#生成填充文件。PS：这点详细的可以参考laravel的文档。" class="headerlink" title="生成填充文件。PS：这点详细的可以参考laravel的文档。"></a>生成填充文件。PS：这点详细的可以参考laravel的文档。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/hyperf.php gen:seeder UserSeeder</span><br></pre></td></tr></table></figure>
+<h3 id="修改seeders文件夹下的对应文件，如果有表关系映射，跟laravel的写法一样"><a href="#修改seeders文件夹下的对应文件，如果有表关系映射，跟laravel的写法一样" class="headerlink" title="修改seeders文件夹下的对应文件，如果有表关系映射，跟laravel的写法一样"></a>修改seeders文件夹下的对应文件，如果有表关系映射，跟laravel的写法一样</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">declare(strict_types=1);</span><br><span class="line"></span><br><span class="line">use Hyperf\Database\Seeders\Seeder;</span><br><span class="line">use Hyperf\DbConnection\Db;</span><br><span class="line"></span><br><span class="line">class UserSeeder extends Seeder</span><br><span class="line">&#123;</span><br><span class="line">    public function run()</span><br><span class="line">    &#123;</span><br><span class="line">        DB::table(&#x27;users&#x27;)-&gt;insert([</span><br><span class="line">            [&#x27;name&#x27; =&gt; &quot;hello1&quot;],</span><br><span class="line">            [&#x27;name&#x27; =&gt; &quot;hello2&quot;]</span><br><span class="line">        ]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="执行填充，单个填充跟laravel有区别，要指定路径-文件名"><a href="#执行填充，单个填充跟laravel有区别，要指定路径-文件名" class="headerlink" title="执行填充，单个填充跟laravel有区别，要指定路径+文件名"></a>执行填充，单个填充跟laravel有区别，要指定路径+文件名</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> //全部填充</span><br><span class="line"> php bin/hyperf.php db:seed </span><br><span class="line">//根据绝对路径进行单个填充</span><br><span class="line">php bin/hyperf.php db:seed --path=seeder/user_seeder.php</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">技术栈</p>
+  <div class="site-description" itemprop="description">PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">技术栈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
