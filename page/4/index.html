@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta property="og:type" content="website">
+<meta property="og:title" content="齐朝阳的博客">
+<meta property="og:url" content="http://example.com/page/4/index.html">
+<meta property="og:site_name" content="齐朝阳的博客">
+<meta property="og:description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="技术栈">
+<meta property="article:tag" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/page/4/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>齐朝阳的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">齐朝阳的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/kafka%E7%94%9F%E4%BA%A7%E8%80%85%E3%80%81%E6%B6%88%E8%B4%B9%E8%80%85-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%A8%A1%E6%8B%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/kafka%E7%94%9F%E4%BA%A7%E8%80%85%E3%80%81%E6%B6%88%E8%B4%B9%E8%80%85-%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%E6%A8%A1%E6%8B%9F/" class="post-title-link" itemprop="url">kafka生产者、消费者-命令行模式模拟</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:47:05 / 修改时间：15:47:25" itemprop="dateCreated datePublished" datetime="2024-09-29T15:47:05+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/mq/" itemprop="url" rel="index"><span itemprop="name">mq</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="win环境下，如果是linux，切换目录，用sh脚本就行"><a href="#win环境下，如果是linux，切换目录，用sh脚本就行" class="headerlink" title="win环境下，如果是linux，切换目录，用sh脚本就行"></a>win环境下，如果是linux，切换目录，用sh脚本就行</h3><h3 id="kafka安装在上一篇"><a href="#kafka安装在上一篇" class="headerlink" title="kafka安装在上一篇"></a>kafka安装在上一篇</h3><h3 id="Kraft启动kafka"><a href="#Kraft启动kafka" class="headerlink" title="Kraft启动kafka"></a>Kraft启动kafka</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-server-start.bat ..\..\config\kraft\server.properties</span><br></pre></td></tr></table></figure>
+<h3 id="生产者，启动之后，命令行输入要生产的消息"><a href="#生产者，启动之后，命令行输入要生产的消息" class="headerlink" title="生产者，启动之后，命令行输入要生产的消息"></a>生产者，启动之后，命令行输入要生产的消息</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-console-producer.bat --topic test-topic --bootstrap-server 192.168.252.1:9092</span><br></pre></td></tr></table></figure>
+<h3 id="kafka的消费者是分组的，也就是相同的group认为是一组，同一组下，多个消费者，只能有一个消费者能消费到消息。"><a href="#kafka的消费者是分组的，也就是相同的group认为是一组，同一组下，多个消费者，只能有一个消费者能消费到消息。" class="headerlink" title="kafka的消费者是分组的，也就是相同的group认为是一组，同一组下，多个消费者，只能有一个消费者能消费到消息。"></a>kafka的消费者是分组的，也就是相同的group认为是一组，同一组下，多个消费者，只能有一个消费者能消费到消息。</h3><h3 id="想要做成发布订阅模式，就做成group名字不一样"><a href="#想要做成发布订阅模式，就做成group名字不一样" class="headerlink" title="想要做成发布订阅模式，就做成group名字不一样"></a>想要做成发布订阅模式，就做成group名字不一样</h3><h3 id="消费者1"><a href="#消费者1" class="headerlink" title="消费者1"></a>消费者1</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-console-consumer.bat --topic test-topic --bootstrap-server 192.168.252.1:9092 --group group1</span><br></pre></td></tr></table></figure>
+<h3 id="消费者2"><a href="#消费者2" class="headerlink" title="消费者2"></a>消费者2</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kafka-console-consumer.bat --topic test-topic --bootstrap-server 192.168.252.1:9092 --group group2</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/%E5%88%9D%E8%AF%86actix/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/%E5%88%9D%E8%AF%86actix/" class="post-title-link" itemprop="url">初识actix</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:45:24 / 修改时间：15:45:49" itemprop="dateCreated datePublished" datetime="2024-09-29T15:45:24+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/rust/" itemprop="url" rel="index"><span itemprop="name">rust</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="新建cargo项目"><a href="#新建cargo项目" class="headerlink" title="新建cargo项目"></a>新建cargo项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo new rust-web</span><br></pre></td></tr></table></figure>
+<h3 id="编辑Cargo-toml"><a href="#编辑Cargo-toml" class="headerlink" title="编辑Cargo.toml"></a>编辑Cargo.toml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[dependencies]</span><br><span class="line">actix-web = &quot;4&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="编写main-rs"><a href="#编写main-rs" class="headerlink" title="编写main.rs"></a>编写main.rs</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">use actix_web::&#123;get,web, App, HttpServer, Responder,HttpResponse&#125;;</span><br><span class="line"></span><br><span class="line">#[actix_web::main]</span><br><span class="line">async fn main() -&gt; std::io::Result&lt;()&gt; &#123;</span><br><span class="line">    HttpServer::new(|| &#123;</span><br><span class="line">        App::new()</span><br><span class="line">        .service(hello) //如果定义了get，post，直接用service</span><br><span class="line">        .route(&quot;/index&quot;, web::get().to(indexs)) //如果没有定义，需要用route方法</span><br><span class="line">    &#125;)</span><br><span class="line">    .workers(8) // 设置工作线程数量</span><br><span class="line">    .bind((&quot;127.0.0.1&quot;, 8080))?</span><br><span class="line">    .run()</span><br><span class="line">    .await</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async fn indexs() -&gt; impl Responder &#123;</span><br><span class="line">    HttpResponse::Ok().body(&quot;index&quot;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#[get(&quot;/&quot;)]</span><br><span class="line">async fn hello() -&gt; impl Responder &#123;</span><br><span class="line">    HttpResponse::Ok().body(&quot;Hello world!&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cargo run</span><br><span class="line">或者</span><br><span class="line">cargo build</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Rust%E7%BC%96%E5%86%99wasm%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Rust%E7%BC%96%E5%86%99wasm%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">Rust编写wasm入门</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:42:39 / 修改时间：15:44:28" itemprop="dateCreated datePublished" datetime="2024-09-29T15:42:39+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/rust/" itemprop="url" rel="index"><span itemprop="name">rust</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cargo new --lib my-wasm</span><br></pre></td></tr></table></figure>
+<h3 id="添加依赖Cargo-toml"><a href="#添加依赖Cargo-toml" class="headerlink" title="添加依赖Cargo.toml"></a>添加依赖Cargo.toml</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[dependencies]</span><br><span class="line">wasm-bindgen = &quot;0.2&quot;</span><br><span class="line"></span><br><span class="line">[lib]</span><br><span class="line">crate-type = [&quot;cdylib&quot;]</span><br></pre></td></tr></table></figure>
+<h3 id="编写代码-src-lib-rs"><a href="#编写代码-src-lib-rs" class="headerlink" title="编写代码 src&#x2F;lib.rs"></a>编写代码 src&#x2F;lib.rs</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">use wasm_bindgen::prelude::*;</span><br><span class="line"></span><br><span class="line">#[wasm_bindgen]</span><br><span class="line">pub fn add(a: i32, b: i32) -&gt; i32 &#123;</span><br><span class="line">       a + b</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="安装扩展，构建wasm"><a href="#安装扩展，构建wasm" class="headerlink" title="安装扩展，构建wasm"></a>安装扩展，构建wasm</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">## 添加 wasm-pack </span><br><span class="line">cargo install wasm-pack</span><br><span class="line">## 构建</span><br><span class="line">wasm-pack build --target web</span><br></pre></td></tr></table></figure>
+<h3 id="pkg文件夹"><a href="#pkg文件夹" class="headerlink" title="pkg文件夹"></a>pkg文件夹</h3><p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/"></p>
+<h3 id="编写html测试页面"><a href="#编写html测试页面" class="headerlink" title="编写html测试页面"></a>编写html测试页面</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;Rust Wasm Example&lt;/title&gt;</span><br><span class="line">    &lt;script type=&quot;module&quot;&gt;</span><br><span class="line">        import init, &#123; add &#125; from &#x27;./pkg/my_wasm.js&#x27;;</span><br><span class="line">            async function run() &#123;</span><br><span class="line">                await init();</span><br><span class="line">                console.log(add(2, 3));</span><br><span class="line">            &#125;</span><br><span class="line">           run();</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">    &lt;body&gt;</span><br><span class="line">        &lt;h1&gt;Rust Wasm Example&lt;/h1&gt;</span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/"></p>
+<h3 id="html需要在服务器环境下打开，如果以文件方式打开，会报错跨域-我这里直接用go做文件服务器了"><a href="#html需要在服务器环境下打开，如果以文件方式打开，会报错跨域-我这里直接用go做文件服务器了" class="headerlink" title="html需要在服务器环境下打开，如果以文件方式打开，会报错跨域,我这里直接用go做文件服务器了"></a>html需要在服务器环境下打开，如果以文件方式打开，会报错跨域,我这里直接用go做文件服务器了</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package main</span><br><span class="line"></span><br><span class="line">import (</span><br><span class="line">	&quot;fmt&quot;</span><br><span class="line">	&quot;net/http&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">func main() &#123;</span><br><span class="line">	// 设置文件服务器的根目录</span><br><span class="line">	http.Handle(&quot;/&quot;, http.FileServer(http.Dir(&quot;.&quot;)))</span><br><span class="line">	// 定义服务器监听的端口</span><br><span class="line">	port := &quot;8080&quot;</span><br><span class="line">	// 启动服务器</span><br><span class="line">	fmt.Printf(&quot;Starting file server on http://localhost:%s/\n&quot;, port)</span><br><span class="line">	err := http.ListenAndServe(&quot;:&quot;+port, nil)</span><br><span class="line">	if err != nil &#123;</span><br><span class="line">		fmt.Println(&quot;Error starting file server: &quot;, err)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Gitlab-GitlabRunner-CI-CD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Gitlab-GitlabRunner-CI-CD/" class="post-title-link" itemprop="url">Gitlab+GitlabRunner CI/CD</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:37:00 / 修改时间：15:39:41" itemprop="dateCreated datePublished" datetime="2024-09-29T15:37:00+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="注意-gitlab跟runner版本要一致，不然会出问题"><a href="#注意-gitlab跟runner版本要一致，不然会出问题" class="headerlink" title="注意 gitlab跟runner版本要一致，不然会出问题"></a>注意 gitlab跟runner版本要一致，不然会出问题</h2><h3 id="docker安装gitlab"><a href="#docker安装gitlab" class="headerlink" title="docker安装gitlab"></a>docker安装gitlab</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /opt/</span><br><span class="line">mkdir gitlab</span><br><span class="line">export GITLAB_HOME=/opt/gitlab</span><br></pre></td></tr></table></figure>
+<h3 id="由于官方版本的gitlab-gitlab-ce-latest创建runner老是404，后来装了jh版本的。"><a href="#由于官方版本的gitlab-gitlab-ce-latest创建runner老是404，后来装了jh版本的。" class="headerlink" title="由于官方版本的gitlab&#x2F;gitlab-ce:latest创建runner老是404，后来装了jh版本的。"></a>由于官方版本的gitlab&#x2F;gitlab-ce:latest创建runner老是404，后来装了jh版本的。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">docker run --detach \</span><br><span class="line">  --hostname gitlab.example.com \</span><br><span class="line">  --publish 443:443 --publish 9001:80 --publish 2222:22 \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --restart always \</span><br><span class="line">  --volume $GITLAB_HOME/config:/etc/gitlab \</span><br><span class="line">  --volume $GITLAB_HOME/logs:/var/log/gitlab \</span><br><span class="line">  --volume $GITLAB_HOME/data:/var/opt/gitlab \</span><br><span class="line">  --shm-size 256m \</span><br><span class="line">  registry.gitlab.cn/omnibus/gitlab-jh:latest</span><br></pre></td></tr></table></figure>
+<h3 id="访问极狐-GitLab-URL，http-192-168-252-131-9001-并使用用户名-root-和来自以下命令的密码登录："><a href="#访问极狐-GitLab-URL，http-192-168-252-131-9001-并使用用户名-root-和来自以下命令的密码登录：" class="headerlink" title="访问极狐 GitLab URL，http://192.168.252.131:9001,并使用用户名 root 和来自以下命令的密码登录："></a>访问极狐 GitLab URL，<a href="http://192.168.252.131:9001,并使用用户名">http://192.168.252.131:9001,并使用用户名</a> root 和来自以下命令的密码登录：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@root~]# docker exec -it gitlab grep &#x27;Password:&#x27; /etc/gitlab/initial_root_password</span><br><span class="line">Password: xxzIrC8HPFfuxVmGSyxxxx221Ihu+a2edEySMw=</span><br></pre></td></tr></table></figure>
+<h3 id="登录，然后创建项目，上传公钥，省略。。。"><a href="#登录，然后创建项目，上传公钥，省略。。。" class="headerlink" title="登录，然后创建项目，上传公钥，省略。。。"></a>登录，然后创建项目，上传公钥，省略。。。</h3><h3 id="Docker方式安装注册gitlab-runner"><a href="#Docker方式安装注册gitlab-runner" class="headerlink" title="Docker方式安装注册gitlab-runner"></a>Docker方式安装注册gitlab-runner</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run -d --name gitlab-runner --restart always \</span><br><span class="line">  -v /opt/gitlab-runner/config:/etc/gitlab-runner \</span><br><span class="line">  -v /var/run/docker.sock:/var/run/docker.sock \</span><br><span class="line">  gitlab/gitlab-runner:latest</span><br></pre></td></tr></table></figure>
+<h3 id="创建runner-以及注册runner"><a href="#创建runner-以及注册runner" class="headerlink" title="创建runner,以及注册runner"></a>创建runner,以及注册runner</h3><p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/1.png"><br><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/2.png"><br><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/3.png"><br><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/4.png"></p>
+<h3 id="进入runner容器内-docker-exec-it-gitlab-runner-bin-bash"><a href="#进入runner容器内-docker-exec-it-gitlab-runner-bin-bash" class="headerlink" title="进入runner容器内 docker exec -it gitlab-runner &#x2F;bin&#x2F;bash"></a>进入runner容器内 docker exec -it gitlab-runner &#x2F;bin&#x2F;bash</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gitlab-runner register  --url http://192.168.252.131:9001  --token glrt-Tz6onF8_bUSeNwaqqg8w</span><br><span class="line"># 然后在交互界面，最后选择输入shell</span><br></pre></td></tr></table></figure>
+<h2 id="极狐有个小坑"><a href="#极狐有个小坑" class="headerlink" title="极狐有个小坑"></a>极狐有个小坑</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">没有自带vim命令，要在容器内自行安装，其实也可在宿主机映射的目录修改</span><br><span class="line">[root@249b6b18ffa8]# apt update</span><br><span class="line">[root@249b6b18ffa8]# apt install -y vim</span><br><span class="line"># 修改配置，增加clone_url配置，跟url并列</span><br><span class="line">[root@249b6b18ffa8]# vi /opt/gitlab-runner/config/config.toml</span><br><span class="line">[[runners]]</span><br><span class="line">  name = &quot;9b499a1ad4dc&quot;</span><br><span class="line">  url = &quot;http://192.168.252.131:9001&quot;</span><br><span class="line">  id = 10</span><br><span class="line">  token = &quot;glrt-Tz6onF8_bUSeNwaqqg8w&quot;</span><br><span class="line">  token_obtained_at = 2024-03-07T03:43:37Z</span><br><span class="line">  token_expires_at = 0001-01-01T00:00:00Z</span><br><span class="line">  executor = &quot;shell&quot;</span><br><span class="line">  [runners.cache]</span><br><span class="line">    MaxUploadedArchiveSize = 0</span><br><span class="line"># 重启gitlab-runner所在容器</span><br><span class="line">docker restart gitlab-runner</span><br></pre></td></tr></table></figure>
+<h3 id="开始创建-gitlab-ci-yml-官方示例，只是用来跑通项目"><a href="#开始创建-gitlab-ci-yml-官方示例，只是用来跑通项目" class="headerlink" title="开始创建 .gitlab-ci.yml 官方示例，只是用来跑通项目"></a>开始创建 .gitlab-ci.yml 官方示例，只是用来跑通项目</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">stages:          # List of stages for jobs, and their order of execution</span><br><span class="line">  - build</span><br><span class="line">  - test</span><br><span class="line">  - deploy</span><br><span class="line"></span><br><span class="line">build-job:       # This job runs in the build stage, which runs first.</span><br><span class="line">  stage: build</span><br><span class="line">  script:</span><br><span class="line">    - echo &quot;Compiling the code...&quot;</span><br><span class="line">    - echo &quot;Compile complete.&quot;</span><br><span class="line"></span><br><span class="line">unit-test-job:   # This job runs in the test stage.</span><br><span class="line">  stage: test    # It only starts when the job in the build stage completes successfully.</span><br><span class="line">  script:</span><br><span class="line">    - echo &quot;Running unit tests... This will take about 60 seconds.&quot;</span><br><span class="line">    - echo &quot;Code coverage is 90%&quot;</span><br><span class="line"></span><br><span class="line">lint-test-job:   # This job also runs in the test stage.</span><br><span class="line">  stage: test    # It can run at the same time as unit-test-job (in parallel).</span><br><span class="line">  script:</span><br><span class="line">    - echo &quot;Linting code... This will take about 10 seconds.&quot;</span><br><span class="line">    - echo &quot;No lint issues found.&quot;</span><br><span class="line"></span><br><span class="line">deploy-job:      # This job runs in the deploy stage.</span><br><span class="line">  stage: deploy  # It only runs when *both* jobs in the test stage complete successfully.</span><br><span class="line">  environment: production</span><br><span class="line">  script:</span><br><span class="line">    - echo &quot;Deploying application...&quot;</span><br><span class="line">    - echo &quot;Application successfully deployed.&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/2024/09/29/docker%E5%AE%89%E8%A3%85es-kibana/r-CI-CD/5.png"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/%E8%A7%A3%E5%86%B3git%E6%8F%90%E4%BA%A4%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/%E8%A7%A3%E5%86%B3git%E6%8F%90%E4%BA%A4%E6%AF%8F%E6%AC%A1%E9%83%BD%E8%A6%81%E8%BE%93%E5%85%A5%E5%AF%86%E7%A0%81/" class="post-title-link" itemprop="url">解决git提交每次都要输入密码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:35:26 / 修改时间：15:35:44" itemprop="dateCreated datePublished" datetime="2024-09-29T15:35:26+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="如果您已将公钥添加到GitLab，并且仍然每次都要求输入用户名和密码，这可能是由于使用了HTTPS-URL而非SSH-URL来访问GitLab仓库。"><a href="#如果您已将公钥添加到GitLab，并且仍然每次都要求输入用户名和密码，这可能是由于使用了HTTPS-URL而非SSH-URL来访问GitLab仓库。" class="headerlink" title="如果您已将公钥添加到GitLab，并且仍然每次都要求输入用户名和密码，这可能是由于使用了HTTPS URL而非SSH URL来访问GitLab仓库。"></a>如果您已将公钥添加到GitLab，并且仍然每次都要求输入用户名和密码，这可能是由于使用了HTTPS URL而非SSH URL来访问GitLab仓库。</h3><h3 id="当使用HTTPS-URL时，GitLab将要求输入用户名和密码来进行身份验证，即使您已将SSH公钥添加到GitLab中。要解决这个问题，您需要将仓库的远程URL更改为SSH-URL。"><a href="#当使用HTTPS-URL时，GitLab将要求输入用户名和密码来进行身份验证，即使您已将SSH公钥添加到GitLab中。要解决这个问题，您需要将仓库的远程URL更改为SSH-URL。" class="headerlink" title="当使用HTTPS URL时，GitLab将要求输入用户名和密码来进行身份验证，即使您已将SSH公钥添加到GitLab中。要解决这个问题，您需要将仓库的远程URL更改为SSH URL。"></a>当使用HTTPS URL时，GitLab将要求输入用户名和密码来进行身份验证，即使您已将SSH公钥添加到GitLab中。要解决这个问题，您需要将仓库的远程URL更改为SSH URL。</h3><h3 id="可以使用以下命令来更改Git仓库的远程URL："><a href="#可以使用以下命令来更改Git仓库的远程URL：" class="headerlink" title="可以使用以下命令来更改Git仓库的远程URL："></a>可以使用以下命令来更改Git仓库的远程URL：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote set-url origin git@your-gitlab-domain.com:yourusername/yourrepository.git</span><br></pre></td></tr></table></figure>
+<h3 id="或者在我们的项目目录下打开控制台，输入"><a href="#或者在我们的项目目录下打开控制台，输入" class="headerlink" title="或者在我们的项目目录下打开控制台，输入"></a>或者在我们的项目目录下打开控制台，输入</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
+<h3 id="然后生成一个-git-credentials，上边记录你的账号和密码，只需要输入一次用户名和密码，就会把账户信息保存到这个文件中。下次就不会弹出让你输入用户名和密码的提示啦"><a href="#然后生成一个-git-credentials，上边记录你的账号和密码，只需要输入一次用户名和密码，就会把账户信息保存到这个文件中。下次就不会弹出让你输入用户名和密码的提示啦" class="headerlink" title="然后生成一个.git-credentials，上边记录你的账号和密码，只需要输入一次用户名和密码，就会把账户信息保存到这个文件中。下次就不会弹出让你输入用户名和密码的提示啦"></a>然后生成一个.git-credentials，上边记录你的账号和密码，只需要输入一次用户名和密码，就会把账户信息保存到这个文件中。下次就不会弹出让你输入用户名和密码的提示啦</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/git-%E5%BF%BD%E7%95%A5idea%E6%96%87%E4%BB%B6%E5%A4%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/git-%E5%BF%BD%E7%95%A5idea%E6%96%87%E4%BB%B6%E5%A4%B9/" class="post-title-link" itemprop="url">git 忽略idea文件夹</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:34:24 / 修改时间：15:34:41" itemprop="dateCreated datePublished" datetime="2024-09-29T15:34:24+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="如果-gitignore文件不存在-在项目的根目录下创建一个名为-gitignore的文件，并在该文件中添加以下内容："><a href="#如果-gitignore文件不存在-在项目的根目录下创建一个名为-gitignore的文件，并在该文件中添加以下内容：" class="headerlink" title="如果.gitignore文件不存在,在项目的根目录下创建一个名为.gitignore的文件，并在该文件中添加以下内容："></a>如果.gitignore文件不存在,在项目的根目录下创建一个名为.gitignore的文件，并在该文件中添加以下内容：</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.idea/</span><br></pre></td></tr></table></figure>
+<h3 id="如果-idea文件夹已经被跟踪，运行git-rm-–cached-idea来从Git跟踪中移除它，然后再提交这个更改。"><a href="#如果-idea文件夹已经被跟踪，运行git-rm-–cached-idea来从Git跟踪中移除它，然后再提交这个更改。" class="headerlink" title="如果.idea文件夹已经被跟踪，运行git rm –cached .idea来从Git跟踪中移除它，然后再提交这个更改。"></a>如果.idea文件夹已经被跟踪，运行git rm –cached .idea来从Git跟踪中移除它，然后再提交这个更改。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .idea</span><br><span class="line">git commit -m &quot;xxxxx&quot;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/git%E6%8A%A5%E9%94%99LFS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/git%E6%8A%A5%E9%94%99LFS/" class="post-title-link" itemprop="url">git报错LFS</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:31:37 / 修改时间：15:31:49" itemprop="dateCreated datePublished" datetime="2024-09-29T15:31:37+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="报LFS错"><a href="#报LFS错" class="headerlink" title="报LFS错"></a>报LFS错</h3><h4 id="错误1"><a href="#错误1" class="headerlink" title="错误1"></a>错误1</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WARNING: Authentication error: Authentication required: LFS only supported repository in paid enterprise.</span><br></pre></td></tr></table></figure>
+<h4 id="错误2"><a href="#错误2" class="headerlink" title="错误2"></a>错误2</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">batch response: LFS only supported repository in paid enterprise.</span><br></pre></td></tr></table></figure>
+<h3 id="第一个错误可以执行以下命令：命令中的-your-gitee-your-repo-是你的远程仓库地址，根据自己情况替换。"><a href="#第一个错误可以执行以下命令：命令中的-your-gitee-your-repo-是你的远程仓库地址，根据自己情况替换。" class="headerlink" title="第一个错误可以执行以下命令：命令中的{your_gitee}&#x2F;{your_repo}是你的远程仓库地址，根据自己情况替换。"></a>第一个错误可以执行以下命令：命令中的{your_gitee}&#x2F;{your_repo}是你的远程仓库地址，根据自己情况替换。</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config lfs.https://gitee.com/&#123;your_gitee&#125;/&#123;your_repo&#125;.git/info/lfs.locksverify false</span><br></pre></td></tr></table></figure>
+<h3 id="第二个错误可以尝试删除-git-hooks-pre-push文件-最后重新push一下即可"><a href="#第二个错误可以尝试删除-git-hooks-pre-push文件-最后重新push一下即可" class="headerlink" title="第二个错误可以尝试删除.&#x2F;git&#x2F;hooks&#x2F;pre-push文件,最后重新push一下即可"></a>第二个错误可以尝试删除.&#x2F;git&#x2F;hooks&#x2F;pre-push文件,最后重新push一下即可</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/git%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/git%E7%94%9F%E6%88%90%E5%85%AC%E9%92%A5/" class="post-title-link" itemprop="url">git生成公钥</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:30:29 / 修改时间：15:30:49" itemprop="dateCreated datePublished" datetime="2024-09-29T15:30:29+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="老是忘记-还是做个笔记把"><a href="#老是忘记-还是做个笔记把" class="headerlink" title="老是忘记  还是做个笔记把"></a>老是忘记  还是做个笔记把</h3><h3 id="命令，-x65-x6d-x61-x69-x6c-64-x65-109-x61-x69-x6c-x2e-x63-x6f-x6d-替换成自己的邮箱"><a href="#命令，-x65-x6d-x61-x69-x6c-64-x65-109-x61-x69-x6c-x2e-x63-x6f-x6d-替换成自己的邮箱" class="headerlink" title="命令，&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#x65;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;替换成自己的邮箱"></a>命令，<a href="mailto:&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#x65;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;">&#x65;&#x6d;&#x61;&#x69;&#x6c;&#64;&#x65;&#109;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;</a>替换成自己的邮箱</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;email@email.com&quot;</span><br></pre></td></tr></table></figure>
+<h3 id="生成公钥位置"><a href="#生成公钥位置" class="headerlink" title="生成公钥位置"></a>生成公钥位置</h3><h3 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\[用户名]\.ssh</span><br></pre></td></tr></table></figure>
+<h3 id="linux"><a href="#linux" class="headerlink" title="linux"></a>linux</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/.ssh</span><br></pre></td></tr></table></figure>
+<h3 id="把id-rsa-pub的内容，复制到git的后台"><a href="#把id-rsa-pub的内容，复制到git的后台" class="headerlink" title="把id_rsa.pub的内容，复制到git的后台"></a>把id_rsa.pub的内容，复制到git的后台</h3>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/Git%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E6%9D%83%E9%99%90/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/Git%E5%BF%BD%E7%95%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E6%9D%83%E9%99%90/" class="post-title-link" itemprop="url">Git忽略文件夹权限</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:29:15 / 修改时间：15:33:34" itemprop="dateCreated datePublished" datetime="2024-09-29T15:29:15+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="项目范围"><a href="#项目范围" class="headerlink" title="项目范围"></a>项目范围</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config core.fileMode false</span><br></pre></td></tr></table></figure>
+<h3 id="也可以在git的全局范围内生效"><a href="#也可以在git的全局范围内生效" class="headerlink" title="也可以在git的全局范围内生效"></a>也可以在git的全局范围内生效</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.filemode false</span><br></pre></td></tr></table></figure>
+<h3 id="也可以通过修改-“-gitconfig”-文件，在其中添加下面内容"><a href="#也可以通过修改-“-gitconfig”-文件，在其中添加下面内容" class="headerlink" title="也可以通过修改 “~&#x2F;.gitconfig” 文件，在其中添加下面内容"></a>也可以通过修改 “~&#x2F;.gitconfig” 文件，在其中添加下面内容</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">        filemode = false</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/git-%E9%98%BB%E6%AD%A2%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E4%B8%8A%E9%9D%A2%E6%8F%90%E4%BA%A4commit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/29/git-%E9%98%BB%E6%AD%A2%E5%9C%A8%E6%9F%90%E4%B8%AA%E5%88%86%E6%94%AF%E4%B8%8A%E9%9D%A2%E6%8F%90%E4%BA%A4commit/" class="post-title-link" itemprop="url">git 阻止在某个分支上面提交commit</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 15:29:15 / 修改时间：15:29:45" itemprop="dateCreated datePublished" datetime="2024-09-29T15:29:15+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/git/" itemprop="url" rel="index"><span itemprop="name">git</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="方法1-直接在git后台设置xxx分支为保护分支就可以了，比如master"><a href="#方法1-直接在git后台设置xxx分支为保护分支就可以了，比如master" class="headerlink" title="方法1 直接在git后台设置xxx分支为保护分支就可以了，比如master"></a>方法1 直接在git后台设置xxx分支为保护分支就可以了，比如master</h3><h3 id="方法2，进入到项目文件夹"><a href="#方法2，进入到项目文件夹" class="headerlink" title="方法2，进入到项目文件夹"></a>方法2，进入到项目文件夹</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd .git/hooks/</span><br><span class="line">cp pre-commit.sample pre-commit</span><br></pre></td></tr></table></figure>
+<h3 id="在最前面加上代码-master可以替换对应分支"><a href="#在最前面加上代码-master可以替换对应分支" class="headerlink" title="在最前面加上代码,master可以替换对应分支"></a>在最前面加上代码,master可以替换对应分支</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/sh</span><br><span class="line">branch=&quot;$(git rev-parse --abbrev-ref HEAD)&quot;</span><br><span class="line">if [ &quot;$branch&quot; = &quot;master&quot; ]; then</span><br><span class="line">  echo &quot;You can&#x27;t commit to master!&quot;</span><br><span class="line">  exit 1</span><br><span class="line">fi</span><br><span class="line"># 后面的省略，可以不管，或者都删除了</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">技术栈</p>
+  <div class="site-description" itemprop="description">PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">45</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">技术栈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
