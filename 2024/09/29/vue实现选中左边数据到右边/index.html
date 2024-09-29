@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="vue12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue实现选中左边数据到右边">
+<meta property="og:url" content="http://example.com/2024/09/29/vue%E5%AE%9E%E7%8E%B0%E9%80%89%E4%B8%AD%E5%B7%A6%E8%BE%B9%E6%95%B0%E6%8D%AE%E5%88%B0%E5%8F%B3%E8%BE%B9/index.html">
+<meta property="og:site_name" content="齐朝阳的博客">
+<meta property="og:description" content="vue12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929394959697989910010110">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-09-29T09:34:16.000Z">
+<meta property="article:modified_time" content="2024-09-29T09:35:37.653Z">
+<meta property="article:author" content="技术栈">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/09/29/vue%E5%AE%9E%E7%8E%B0%E9%80%89%E4%B8%AD%E5%B7%A6%E8%BE%B9%E6%95%B0%E6%8D%AE%E5%88%B0%E5%8F%B3%E8%BE%B9/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>vue实现选中左边数据到右边 | 齐朝阳的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">齐朝阳的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/29/vue%E5%AE%9E%E7%8E%B0%E9%80%89%E4%B8%AD%E5%B7%A6%E8%BE%B9%E6%95%B0%E6%8D%AE%E5%88%B0%E5%8F%B3%E8%BE%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="技术栈">
+      <meta itemprop="description" content="PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="齐朝阳的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vue实现选中左边数据到右边
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-29 17:34:16 / 修改时间：17:35:37" itemprop="dateCreated datePublished" datetime="2024-09-29T17:34:16+08:00">2024-09-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;container&quot;&gt;</span><br><span class="line">    &lt;el-row&gt;</span><br><span class="line">      &lt;el-col :span=&quot;4&quot;&gt;</span><br><span class="line">        &lt;!-- 左边列表项 --&gt;</span><br><span class="line">        &lt;div class=&quot;scrollable-menu&quot;&gt;</span><br><span class="line">          &lt;el-menu</span><br><span class="line">              class=&quot;el-menu-vertical-demo&quot;</span><br><span class="line">              background-color=&quot;#304156&quot;</span><br><span class="line">              text-color=&quot;#fff&quot;</span><br><span class="line">              active-text-color=&quot;#ffd04b&quot;</span><br><span class="line">          &gt;</span><br><span class="line">            &lt;el-menu-item</span><br><span class="line">                v-for=&quot;item in items&quot;</span><br><span class="line">                :key=&quot;item.id&quot;</span><br><span class="line">                :index=&quot;item.id.toString()&quot;</span><br><span class="line">                @click=&quot;selectItem(item)&quot;</span><br><span class="line">            &gt;</span><br><span class="line">              &lt;i class=&quot;el-icon-menu&quot;&gt;&lt;/i&gt;</span><br><span class="line">              &#123;&#123; item.name &#125;&#125;</span><br><span class="line">            &lt;/el-menu-item&gt;</span><br><span class="line">          &lt;/el-menu&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">      &lt;/el-col&gt;</span><br><span class="line">      &lt;el-col :span=&quot;12&quot;&gt;</span><br><span class="line">        &lt;!-- 右边选中的数据和数量 --&gt;</span><br><span class="line">        &lt;div</span><br><span class="line">            v-for=&quot;(selectedItem, index) in selectedItems&quot;</span><br><span class="line">            :key=&quot;index&quot;</span><br><span class="line">            class=&quot;item-container&quot;</span><br><span class="line">        &gt;</span><br><span class="line">          &lt;div class=&quot;flex-container&quot;&gt;</span><br><span class="line">            &lt;span class=&quot;item-name&quot;&gt;&#123;&#123; selectedItem.name &#125;&#125;&lt;/span&gt;</span><br><span class="line">            &lt;el-input</span><br><span class="line">                type=&quot;number&quot;</span><br><span class="line">                :min=&quot;1&quot;</span><br><span class="line">                v-model.number=&quot;selectedItem.quantity&quot;</span><br><span class="line">                class=&quot;quantity-input&quot;</span><br><span class="line">                @change=&quot;updateQuantity(selectedItem.id, selectedItem.quantity)&quot;</span><br><span class="line">            &gt;&lt;/el-input&gt;</span><br><span class="line">            &lt;el-button type=&quot;danger&quot; @click=&quot;removeItem(index)&quot;&gt;移除&lt;/el-button&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;el-button type=&quot;primary&quot; @click=&quot;addSelectedItem&quot;&gt;提交&lt;/el-button&gt;</span><br><span class="line">      &lt;/el-col&gt;</span><br><span class="line">    &lt;/el-row&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      items: [</span><br><span class="line">        &#123;id: 1, name: &#x27;数据1&#x27;&#125;,</span><br><span class="line">        &#123;id: 2, name: &#x27;数据2&#x27;&#125;,</span><br><span class="line">        &#123;id: 3, name: &#x27;数据3&#x27;&#125;,</span><br><span class="line">        &#123;id: 4, name: &#x27;数据4&#x27;&#125;,</span><br><span class="line">        &#123;id: 5, name: &#x27;数据5&#x27;&#125;,</span><br><span class="line">        &#123;id: 6, name: &#x27;数据6&#x27;&#125;,</span><br><span class="line">        &#123;id: 7, name: &#x27;数据7&#x27;&#125;,</span><br><span class="line">        &#123;id: 8, name: &#x27;数据8&#x27;&#125;,</span><br><span class="line">        &#123;id: 9, name: &#x27;数据9&#x27;&#125;,</span><br><span class="line">        &#123;id: 10, name: &#x27;数据10&#x27;&#125;,</span><br><span class="line">        // 假设这里有很多数据项...</span><br><span class="line">      ],</span><br><span class="line">      selectedItems: [],</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    selectItem(item) &#123;</span><br><span class="line">      const existingItem = this.selectedItems.find((x) =&gt; x.id === item.id);</span><br><span class="line">      if (existingItem) &#123;</span><br><span class="line">        existingItem.quantity += 1;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        this.selectedItems.push(&#123;...item, quantity: 1&#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    removeItem(index) &#123;</span><br><span class="line">      this.selectedItems.splice(index, 1);</span><br><span class="line">    &#125;,</span><br><span class="line">    updateQuantity(id, quantity) &#123;</span><br><span class="line">      const item = this.selectedItems.find((x) =&gt; x.id === id);</span><br><span class="line">      if (item) &#123;</span><br><span class="line">        item.quantity = quantity;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    addSelectedItem() &#123;</span><br><span class="line">      console.log(this.selectedItems)</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">.container &#123;</span><br><span class="line">//margin: 30px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.scrollable-menu &#123;</span><br><span class="line">  max-height: 400px; /* 可调整为适合的高度 */</span><br><span class="line">  overflow-y: auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.item-container &#123;</span><br><span class="line">  margin-bottom: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.flex-container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  align-items: center;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.quantity-input &#123;</span><br><span class="line">  margin-right: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.item-name &#123;</span><br><span class="line">  margin-right: 10px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.el-input &#123;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.el-button &#123;</span><br><span class="line">  text-align: center;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="html版本"><a href="#html版本" class="headerlink" title="html版本"></a>html版本</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">&lt;title&gt;Bootstrap 美化的数据列表示例&lt;/title&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;col-md-6&quot; style=&quot; height: 500px; overflow-y: scroll;&quot;&gt;</span><br><span class="line">      &lt;!-- 左边列表项 --&gt;</span><br><span class="line">      &lt;ul class=&quot;list-group&quot; id=&quot;list-container&quot;&gt;</span><br><span class="line">        &lt;li class=&quot;list-group-item&quot; data-id=&quot;1&quot;&gt;数据1&lt;/li&gt;</span><br><span class="line">        &lt;li class=&quot;list-group-item&quot; data-id=&quot;2&quot;&gt;数据2&lt;/li&gt;</span><br><span class="line">        &lt;li class=&quot;list-group-item&quot; data-id=&quot;3&quot;&gt;数据3&lt;/li&gt;</span><br><span class="line">      &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;col-md-6&quot;&gt;</span><br><span class="line">      &lt;!-- 右边选中的数据和数量 --&gt;</span><br><span class="line">      &lt;div class=&quot;input-group mb-3&quot;&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">      &lt;ul class=&quot;list-group&quot; id=&quot;selected-list&quot;&gt;</span><br><span class="line">        &lt;!-- 右边选中的数据和数量将显示在这里 --&gt;</span><br><span class="line">      &lt;/ul&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 引入 Bootstrap 的 JavaScript 组件 --&gt;</span><br><span class="line">&lt;script src=&quot;https://code.jquery.com/jquery-3.5.1.slim.min.js&quot;&gt;&lt;/script&gt; </span><br><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js&quot;&gt;&lt;/script&gt; </span><br><span class="line">&lt;script src=&quot;https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js&quot;&gt;&lt;/script&gt; </span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() &#123;</span><br><span class="line">            var listContainer = document.getElementById(&#x27;list-container&#x27;);</span><br><span class="line">            var selectedList = document.getElementById(&#x27;selected-list&#x27;);</span><br><span class="line">            // 监听左边列表项的点击事件</span><br><span class="line">            listContainer.addEventListener(&#x27;click&#x27;, function(e) &#123;</span><br><span class="line">                var item = e.target.closest(&#x27;.list-group-item&#x27;);</span><br><span class="line">                if (item) &#123;</span><br><span class="line">                    var itemId = item.getAttribute(&#x27;data-id&#x27;);</span><br><span class="line">                    updateRightSide(itemId); // 更新右边的数据</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            // 更新或增加右边的数据和数量</span><br><span class="line">            function updateRightSide(itemId) &#123;</span><br><span class="line">                var itemText = &#x27;数据&#x27; + itemId;</span><br><span class="line">                var selectedItem = selectedList.querySelector(&#x27;li[data-id=&quot;&#x27; + itemId + &#x27;&quot;]&#x27;);</span><br><span class="line">                var quantity = 1;</span><br><span class="line"></span><br><span class="line">                if (selectedItem) &#123;</span><br><span class="line">                    // 如果右边已经有这个数据项，增加数量</span><br><span class="line">                    quantity = parseInt(selectedItem.querySelector(&#x27;input[type=&quot;number&quot;]&#x27;).value, 10) + 1;</span><br><span class="line">                    selectedItem.querySelector(&#x27;input[type=&quot;number&quot;]&#x27;).value = quantity;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    // 如果右边没有这个数据项，创建新的列表项</span><br><span class="line">                    selectedItem = document.createElement(&#x27;li&#x27;);</span><br><span class="line">                    selectedItem.className = &#x27;list-group-item d-flex justify-content-between align-items-center&#x27;;</span><br><span class="line">                    selectedItem.setAttribute(&#x27;data-id&#x27;, itemId);</span><br><span class="line">                    selectedItem.innerHTML = &#x27;&lt;span&gt;&#x27; + itemText + &#x27;&lt;/span&gt;&#x27; +</span><br><span class="line">                        &#x27;&lt;input type=&quot;number&quot; class=&quot;quantity form-control form-control-sm&quot; value=&quot;&#x27; + quantity + &#x27;&quot; min=&quot;1&quot; style=&quot;max-width: 80px;&quot;&gt;&#x27; +</span><br><span class="line">                        &#x27;&lt;button type=&quot;button&quot; class=&quot;close&quot; aria-label=&quot;Remove&quot;&gt;&lt;span aria-hidden=&quot;true&quot;&gt;&amp;times;&lt;/span&gt;&lt;/button&gt;&#x27;;</span><br><span class="line">                    selectedItem.querySelector(&#x27;.close&#x27;).addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">                        // 删除右边列表中的项</span><br><span class="line">                        selectedList.removeChild(selectedItem);</span><br><span class="line">                    &#125;);</span><br><span class="line">                    selectedList.appendChild(selectedItem);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"> </span><br><span class="line">  // 监听添加按钮的点击事件</span><br><span class="line">  addButton.addEventListener(&#x27;click&#x27;, function() &#123;</span><br><span class="line">    // 这里可以根据需要添加逻辑，比如更新数据库或执行其他操作</span><br><span class="line">    // ...</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"># 前端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/09/29/vue-quill-editor%E5%AF%8C%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8/" rel="prev" title="vue-quill-editor富文本编辑器">
+      <i class="fa fa-chevron-left"></i> vue-quill-editor富文本编辑器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/09/29/Vue3-Elementplus-%E9%80%92%E5%BD%92%E8%8F%9C%E5%8D%95%E5%B1%95%E7%A4%BA/" rel="next" title="Vue3+Elementplus 递归菜单展示">
+      Vue3+Elementplus 递归菜单展示 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue"><span class="nav-number">1.</span> <span class="nav-text">vue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html%E7%89%88%E6%9C%AC"><span class="nav-number">2.</span> <span class="nav-text">html版本</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">技术栈</p>
+  <div class="site-description" itemprop="description">PHP、Go、Python、Js、Html、Vue、Mysql、Redis、Mongo、Linux、Es、ClickHouse、K8s、Docker、分布式...</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">56</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">技术栈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
