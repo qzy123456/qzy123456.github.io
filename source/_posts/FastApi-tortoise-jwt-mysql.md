@@ -2,7 +2,7 @@
 title: FastApi-tortoise-jwt-mysql
 date: 2024-09-29 17:28:08
 tags: python
-categories: [python,fastapi]
+categories: python
 ---
 ### 抽了半天时间学了一下fastapi,为了方便，代码没分结构。
 ```

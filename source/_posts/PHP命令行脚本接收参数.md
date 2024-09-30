@@ -1,8 +1,8 @@
 ---
 title: PHP命令行脚本接收参数
 date: 2024-09-29 16:12:53
-tags: [php]
-categories: [php]
+tags: php
+categories: php
 ---
 ### 使用$argv or $argc参数接收
 ```

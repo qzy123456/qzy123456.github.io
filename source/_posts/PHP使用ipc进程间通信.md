@@ -1,8 +1,8 @@
 ---
 title: PHP使用ipc进程间通信
 date: 2024-09-29 16:14:18
-tags: [php]
-categories: [php]
+tags: php
+categories: php
 ---
 ### que.php
 ```

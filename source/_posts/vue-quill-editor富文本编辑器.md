@@ -2,7 +2,7 @@
 title: vue-quill-editor富文本编辑器
 date: 2024-09-29 17:32:52
 tags: 前端
-categories: vue
+categories: 前端
 ---
 ### 安装
 ```

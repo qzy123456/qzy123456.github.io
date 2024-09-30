@@ -1,8 +1,8 @@
 ---
 title: Linux如何设置证书免密登录
 date: 2024-09-29 17:44:47
-tags: [linux]
-categories: [linux]
+tags: linux
+categories: linux
 ---
 ### 执行ssh-keygen命令，生成id_rsa和id_rsa.pub两个文件，id_rsa是私钥（重要，需安全保管），id_rsa.pub是公钥，密钥生成过程中可根据提示对密钥设置密码，也可留空直接回车。
 ```

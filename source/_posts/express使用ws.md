@@ -2,7 +2,7 @@
 title: express使用ws
 date: 2024-09-29 17:36:50
 tags: 前端
-categories: express
+categories: 前端
 ---
 ```
 var express = require('express');

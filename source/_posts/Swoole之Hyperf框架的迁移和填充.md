@@ -1,8 +1,8 @@
 ---
 title: Swoole之Hyperf框架的迁移和填充
 date: 2024-09-29 10:28:03
-tags: PHP
-categories: PHP
+tags: php
+categories: php
 ---
 ### hyperf框架的orm其实就是基于laravel改造的。会laravel就会hyperf，只不过目前为止hyperf的文档都没有填充相关的。
 ### 生成迁移文件,这点文档有，具体可以参考文档 https://hyperf.wiki/3.1/#/zh-cn/db/migration

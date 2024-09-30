@@ -2,7 +2,7 @@
 title: html简单的响应式布局
 date: 2024-09-29 17:39:47
 tags: 前端
-categories: html
+categories: 前端
 ---
 ### html版本
 ```

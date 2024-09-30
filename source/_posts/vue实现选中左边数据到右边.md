@@ -2,7 +2,7 @@
 title: vue实现选中左边数据到右边
 date: 2024-09-29 17:34:16
 tags: 前端
-categories: vue
+categories: 前端
 ---
 ### vue
 ```

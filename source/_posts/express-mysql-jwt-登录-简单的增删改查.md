@@ -2,7 +2,7 @@
 title: express + mysql + jwt 登录+简单的增删改查
 date: 2024-09-29 17:38:12
 tags: [前端]
-categories: [nodejs,mysql,jwt]
+categories: [前端]
 ---
 ### gitee地址 https://gitee.com/newly-released_0/express-mysql-jwt
 ### jwt的代码

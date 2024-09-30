@@ -1,8 +1,8 @@
 ---
 title: Vue从后端取数据，实现动态路由
 date: 2024-09-29 17:41:38
-tags: [Vue]
-categories: [前端]
+tags: 前端
+categories: 前端
 ---
 ### 1.App.vue
 #### 将获取菜单的方法放在全局中，以便每次刷新页面时，能够加载出。this.$store.state.userInfo是登入后存放在Vuex的用户信息

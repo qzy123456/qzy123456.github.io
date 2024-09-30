@@ -1,8 +1,8 @@
 ---
 title: Go+seata实现分布式事务-ta-xa
 date: 2024-09-29 16:05:40
-tags: [分布式事务,Go]
-categories: [分布式事务,Go]
+tags: Go
+categories: Go
 ---
 ### docker安装seata
 ```

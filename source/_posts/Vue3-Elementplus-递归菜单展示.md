@@ -2,7 +2,7 @@
 title: Vue3+Elementplus 递归菜单展示
 date: 2024-09-29 17:35:21
 tags: 前端
-categories: vue
+categories: 前端
 ---
 ### 这里只是做个笔记，js，css那些都没写
 ### 子组件 MenuItem

@@ -1,8 +1,8 @@
 ---
 title: Go+seata实现分布式事务-tcc
 date: 2024-09-29 16:04:28
-tags: [分布式事务,Go]
-categories: [分布式事务,Go]
+tags: Go
+categories: Go
 ---
 ### 上篇用的ta跟xa。这次试试tcc
 #### client

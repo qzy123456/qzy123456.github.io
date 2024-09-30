@@ -2,6 +2,7 @@
 title: x5-video-player-type='h5'
 date: 2024-09-29 17:30:36
 tags: 前端
+categories: 前端
 ---
 ```
 <video
